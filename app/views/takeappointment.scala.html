@@ -1,0 +1,38 @@
+@(user: securesocial.core.java.SocialUser ,message: String)
+@scripts = {    
+	<script type='text/javascript' src="@routes.Assets.at("javascripts/jquery-ui-1.8.23.custom.min.js")"></script>
+	<script type='text/javascript' src="@routes.Assets.at("javascripts/fullcalendar_hyperlink.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/takeappointmentview.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.lightbox_me.js")"></script>
+}
+@main(user,"Welcome!",scripts) {
+ 			<div class="toppart">
+        		<div class="mainpart">
+        			<div id='calendar'></div>
+        		</div>
+	            <div id="modal_window">
+	                <div id="modal_form">
+	                    <label><strong>Brief Description:</strong> <input class="sprited"/></label>
+	                    <label ><strong>Appointment Time:</strong> <input id="appointmentdate" class="firstField smallText" disabled="disabled"/>
+	                    <strong>Duration:</strong> <input id="duration" class="smallText" disabled="disabled"/></label>
+	                    <label><strong>Additional Information:</strong> <textarea class="sprited"></textarea></label>
+	                    <div id="actions">
+							<span class="fc-button fc-button-today ui-state-default ui-corner-left ui-corner-right">
+								<span class="fc-button-inner">
+									<span class="fc-button-content">Submit</span>
+									<span class="fc-button-effect">
+										<span></span>
+									</span>
+								</span>
+							</span>
+	                    </div>
+	                </div>
+	                <a id="close_x" class="close " href="#">close</a>
+	            </div>
+
+	        </div>
+
+
+
+    
+}
