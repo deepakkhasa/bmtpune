@@ -1,0 +1,47 @@
+@(user: securesocial.core.java.SocialUser ,message: String)
+@scripts = {    
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/indexview.js")"></script>
+}
+@main(user,"Welcome!",scripts) {
+       
+       	<div id="message" style="display: none;">
+        	<div id="fixednav">
+				<a href="/appmentlogin">Join</a>
+				<a href="/appmentlogin"	class="last">My Account</a>
+			</div> 
+    	</div>
+ 			<div class="toppart">
+		       <div id="slides">
+		            <div class="slides_container">
+		                <div>
+		                    <img src="http://4.bp.blogspot.com/-jdZJUuEjqD4/TqlACtIKCJI/AAAAAAAAAhA/gRHpUqoPafQ/001.JPG">
+		                </div>
+		                <div>
+		                    <img src="@routes.Assets.at("images/DSC_0408.JPG")">
+		                </div>
+		                <div>
+		                    <img src="@routes.Assets.at("images/DSC_0414.JPG")">
+		                </div>
+		                <div>
+		                    <img src="@routes.Assets.at("images/DSC_0415.JPG")">
+		                </div>
+		                <div>
+		                    <img src="@routes.Assets.at("images/DSC_0416.JPG")">
+		                </div>
+		                <div>
+		                    <img src="@routes.Assets.at("images/DSC_0417.JPG")">
+		                </div>
+		                
+		            </div>
+		        </div>
+        		<div class="mainpart"><h1>Welcome to Yashoda Hematology Clinic</h1>
+        		
+        		</div>
+
+        </div>
+
+		
+
+
+    
+}
