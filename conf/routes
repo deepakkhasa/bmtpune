@@ -9,9 +9,13 @@ GET /appmentlogin							controllers.Application.login
 
 # Dashboard
 GET /dashboard							controllers.Application.dashboard
-
+POST /updateDetails						controllers.Application.updateDetails
+GET /getDoctors							controllers.Application.getDoctors
+GET /getDoctorAppointments				controllers.Application.getDoctorAppointments
+POST /addAppointment                    controllers.Application.putAppointment
+ 
 #Take Appointment
-GET /takeappointment							controllers.Application.takeAppointment
+GET /takeappointment					controllers.Application.takeAppointment
 
 # Login page
 GET     /login                      securesocial.controllers.LoginPage.login

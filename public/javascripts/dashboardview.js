@@ -1,6 +1,6 @@
 var dashboardView = Backbone.View.extend({
 	
-	 events: { 'click #uploadbtn' : 'uploadDialog' } ,
+	 events: {  } ,
 
 	 initialize: function() {
 	     Backbone.Validation.bind(this,{forceUpdate: true});
@@ -8,7 +8,6 @@ var dashboardView = Backbone.View.extend({
 	     		var d = date.getDate();
 	     		var m = date.getMonth();
 	     		var y = date.getFullYear();
-	     		
 	     		$('#calendar').fullCalendar({
 	     			theme: true,
 	     			header: {
@@ -23,16 +22,42 @@ var dashboardView = Backbone.View.extend({
 	     					start: new Date(y, m, 1)
 	     				}
 	     			]
-		});
-	 },
+	     		});
+	     		$(".fc-button-content").click(function() {
+	     			if($("#emailid").val() == ""){
+	     				$("#errorMsgemailid").text("Email cannot be blank");
+	     				$("#errorMsgemailid").css({
+	     					"color": "red"
+	     				});
+	     			}else{
+	     				 $.ajax({
+	     			        type: "POST",
+	     			        url: "/updateDetails",				        
+	     			        data: {emailid: $("#emailid").val(), phonenumber: $("#phonenumber").val(), usertype: $("#usertype").val()},
+	     			        success: function(data){
+	     			        	if(data == "success"){
+	     			        		$("#modal_window").trigger('close');
+	     			        		alert("Thank you. We have updated your details.");
+	     			        	}
+     			        	}
+	     			    });
 
-	uploadDialog: function(data) {
-		 $("#overlayEffect").fadeIn("slow");
-		 $("#popupdetails").fadeIn("slow");
-
-  	}
+	     			}
+	     				
+	     		});
+	     		
+	 }
 });
 var dashboardview = new dashboardView();
 
 
 
+$(function(){
+	$("#modal_window").lightbox_me({
+		centered: true, 
+		onLoad: function() {
+			$("#modal_window").find("input:first").focus();
+		}
+	});
+
+});

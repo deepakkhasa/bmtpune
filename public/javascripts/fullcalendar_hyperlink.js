@@ -19,7 +19,6 @@
 
 
 var defaults = {
-
 	// display
 	defaultView: 'month',
 	aspectRatio: 1.35,
@@ -205,7 +204,6 @@ function Calendar(element, options, eventSources) {
 	t.getView = getView;
 	t.option = option;
 	t.trigger = trigger;
-	
 	
 	// imports
 	EventManager.call(t, options, eventSources);
@@ -3129,12 +3127,15 @@ function AgendaView(element, calendar, viewName) {
 		});
 		$('[class^="fc-slot"]').bind( 'showModal', function(e) {
 			if("" != $.trim($(this).children("th").text())){
-				$("#duration").val(($(this).children("th").text()));
+				var currTime = $(this).children("th").text();
+				var len = currTime.length;
+				var nowTime = currTime.substring(0,len-2) + ":00 " +currTime.substring(len-2,len);
+				$("#appointmenttime").val(nowTime);
 			}else{
 				var prevTime = $(this).prev().children("th").text();
 				var len = prevTime.length;
-				var nowTime = prevTime.substring(0,len-2) + ":30" +prevTime.substring(len-2,len);
-				$("#duration").val(nowTime);
+				var nowTime = prevTime.substring(0,len-2) + ":30 " +prevTime.substring(len-2,len);
+				$("#appointmenttime").val(nowTime);
 			}
 			$("#appointmentdate").val($('[class*=" fc-col0"]').text());
             $("#modal_window").lightbox_me({centered: true, onLoad: function() {
@@ -3142,6 +3143,20 @@ function AgendaView(element, calendar, viewName) {
 			}
             });
             e.preventDefault();
+		});
+		$("#AppmentSubmit").click(function() {
+			 $.ajax({
+			        type: "POST",
+			        url: "/addAppointment",				        
+			        data: {doctorId: $("#doctorId").val(), headline: $("#appointmentheadline").val(), dateOfAppointment: $("#appointmentdate").val(), timeOfAppointment: $("#appointmenttime").val(), comment: $("#appointmentcomment").val()},
+			        success: function(data){
+			        	if(data == "success"){
+			        		$("#modal_window").trigger('close');
+			        		alert("Thank you. We have updated your details.");
+			        	}
+		        	}
+			    });
+
 		});
 
 	}

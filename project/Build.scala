@@ -13,7 +13,8 @@ object ApplicationBuild extends Build {
       "org.mindrot" % "jbcrypt" % "0.3m",
       "org.fusesource.scalate" % "sbt-scalate-plugin" % "1.5.3",
       "org.fusesource.scalate" % "scalate-util" % "1.5.3",
-      "org.fusesource.scalate" % "scalate-core" % "1.5.3"
+      "org.fusesource.scalate" % "scalate-core" % "1.5.3",
+      "mysql" % "mysql-connector-java" % "5.1.18"      
     )
  
     val secureSocial = PlayProject(
