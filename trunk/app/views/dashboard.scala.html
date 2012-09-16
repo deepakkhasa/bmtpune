@@ -1,15 +1,48 @@
-@(user: securesocial.core.java.SocialUser ,message: String)
+@(user: securesocial.core.java.SocialUser ,message: String, auser: models.User)
 @scripts = {    
 	<script type='text/javascript' src="@routes.Assets.at("javascripts/jquery-ui-1.8.23.custom.min.js")"></script>
 	<script type='text/javascript' src="@routes.Assets.at("javascripts/fullcalendar.min.js")"></script>
     <script type="text/javascript" src="@routes.Assets.at("javascripts/dashboardview.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.lightbox_me.js")"></script>
+    
 }
 @main(user,"Welcome!",scripts) {
  			<div class="toppart">
         		<div class="mainpart">
         		<div id='calendar'></div>
         	</div>
+@if(message =="N"){
+	            <div id="modal_window" class="modal_window">
+	                <div id="modal_form" class="modal_form"><br>
+	                	<label><strong>It seems you are visiting for the first time. In order to serve you well, we would like you to provide us this information.</strong> </label>
+	                	<br><br><br><br>
+	                    <label><strong>Name:</strong> <input id="name" class="sprited" value="@auser.name" disabled="disabled"/></label>
+	                    <label ><strong>Email ID:</strong> <input id="emailid" class="sprited"  value="@auser.email"/></label>
+						<label id="errorMsgemailid"><strong></strong></label> 
+	                    <label ><strong>Phone Number:</strong> <input id="phonenumber" class="sprited"  value="@auser.phoneNumber"/></label>
+						<label id="errorMsgphonenumber"><strong></strong></label> 
+	                    <label ><strong>Using as:</strong>
+	                    	<select id ="usertype" class="spritedselected">
+	                    		<option value="P">Patient</option>
+	                    		<option  value="D">Doctor</option>
+	                    	</select> 
+	                    </label>
+						<label id="errorMsgusertype"><strong></strong></label> 
 
+	                    <div id="actions" class="actions">
+							<span class="fc-button fc-button-today ui-state-default ui-corner-left ui-corner-right">
+								<span class="fc-button-inner">
+									<span class="fc-button-content">Submit</span>
+									<span class="fc-button-effect">
+										<span></span>
+									</span>
+								</span>
+							</span>
+	                    </div>
+	                </div>
+	                <a id="close_x" class="close close_x" href="#">close</a>
+	            </div>
+}
         </div>
 
 
