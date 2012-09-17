@@ -3148,11 +3148,11 @@ function AgendaView(element, calendar, viewName) {
 			 $.ajax({
 			        type: "POST",
 			        url: "/addAppointment",				        
-			        data: {doctorId: $("#doctorId").val(), headline: $("#appointmentheadline").val(), dateOfAppointment: $("#appointmentdate").val(), timeOfAppointment: $("#appointmenttime").val(), comment: $("#appointmentcomment").val()},
+			        data: {doctorId: $("#doctorId").val(), headline: $("#appointmentdescription").val(), dateOfAppointment: $("#appointmentdate").val(), timeOfAppointment: $("#appointmenttime").val(), comment: $("#appointmentcomments").val()},
 			        success: function(data){
 			        	if(data == "success"){
 			        		$("#modal_window").trigger('close');
-			        		alert("Thank you. We have updated your details.");
+			        		alert("Thank you. We have scheduled the appointment.");
 			        	}
 		        	}
 			    });

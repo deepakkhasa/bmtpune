@@ -27,14 +27,18 @@ public class AppointmentHistory extends Model {
 	@Column(name="idDoctor")
 	public long doctorId;
 
+    @Formats.DateTime(pattern="MM/dd/yyyy")
 	@Column(name="date_of_appointment")
-    public Date dateOfAppointment;
+    public Date dateOfAppointment = new Date();
 
     @Constraints.Required
     @Column(name="time_of_appointment")
     public String appointmentTime;
 
-	@Column(name="appointment_headline")
+    @Column(name="appointment_duration")
+    public String appointmentDuration ="00:30";
+
+    @Column(name="appointment_headline")
     public String appointmentHeadline;
 
 	@Column(name="appointment_comment")
@@ -44,6 +48,10 @@ public class AppointmentHistory extends Model {
     @Column(name="created")
     public String created=null;
 
+    @Transient
+    public String appointmentEndTime=null;
+
+    
     // -- Queries
 
     public static Model.Finder<String,AppointmentHistory> find = new Model.Finder(String.class, AppointmentHistory.class);

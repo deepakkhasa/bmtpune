@@ -44,17 +44,21 @@ function showDoctorPopUp(doctorList){
 }
 
 function showCalendar(data,doctorId){
-		var date = new Date();
- 		var d = date.getDate();
- 		var m = date.getMonth();
- 		var y = date.getFullYear();
  		$("#doctorId").val(doctorId);
-		var event ="";
+		var event =[];
 		for(var i in data){
 			var appment = data[i];
-			event += "{title: " + appment.appointmentHeadline + "," + "start: "+ appment.dateOfAppointment + "},";
+			var date = new Date(appment.dateOfAppointment);
+	 		var d = date.getDate();
+	 		var m = date.getMonth();
+	 		var y = date.getFullYear();
+	 		var endDate = new Date();
+	 		var hour=((appment.appointmentTime.substring(0,2)*1) + (appment.appointmentDuration.substring(0,2)*1));
+	 		var min=((appment.appointmentTime.substring(3,5)*1)+(appment.appointmentDuration.substring(3,5)*1));
+	 		endDate.setHours(hour);
+	 		endDate.setMinutes(min);
+	 		event[i] = {title: appment.appointmentHeadline ,start: new Date(y,m,d,appment.appointmentTime.substring(0,2),appment.appointmentTime.substring(3,5)), end: new Date(y,m,d,endDate.getHours(),endDate.getMinutes()),allDay: false};		 		
 		}
-
  		$('#calendar').fullCalendar({
  			theme: true,
  			header: {
@@ -63,7 +67,7 @@ function showCalendar(data,doctorId){
  				right: 'month,agendaWeek,agendaDay'
  			},
  			editable: true,
- 			events: [event]
+ 			events: event
  		});
 
 }
