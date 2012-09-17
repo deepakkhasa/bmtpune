@@ -62,7 +62,7 @@
 #highlights{margin:0 auto;width:1050px;float:left}
 tr.selected {background-color: red; color: white;}
 /*light me*/
-.modal_window {-moz-border-radius: 6px;background: #eef2f7;-webkit-border-radius: 6px;border: 1px solid #536376;-webkit-box-shadow: rgba(0,0,0,.6) 0px 2px 12px;-moz-box-shadow:  rgba(0,0,0,.6) 0px 2px 12px;;padding: 14px 22px;width: 600px;height:600px;position: relative;display: none;}
+.modal_window {-moz-border-radius: 6px;background: #eef2f7;-webkit-border-radius: 6px;border: 1px solid #536376;-webkit-box-shadow: rgba(0,0,0,.6) 0px 2px 12px;-moz-box-shadow:  rgba(0,0,0,.6) 0px 2px 12px;;padding: 14px 22px;width: 600px;height:auto;position: relative;display: none;}
 .modal_window #modal_form {margin-top: 13px;}
 .modal_window label {display: block;margin-bottom: 10px;color: #536376;font-size: .9em;}  
 .modal_window label input {padding: 2px 8px;font-size: 1.2em;line-height: 31px;}
@@ -72,6 +72,8 @@ a.form_button {float: left;width: 93px; height: 31px;margin-right: 15px;}
 .close_x {background-size: 100%;width: 32px; height: 32px;overflow: hidden; line-height: 1000px;display: block;position: absolute; top: 5px; right: 5px;background:url(../images/x.png) no-repeat;}
 .spritedselected {line-height: 200px;overflow: hidden;display: block;width:90%;height:30px}
 .sprited {line-height: 200px;overflow: hidden;display: block;width:90%;}
+.spritedtextarea {overflow: hidden;display: block;width:90%;height:100px}
+
 .firstField{padding-right:20px;}
 .smallText{width:100px}
 /*light me*/

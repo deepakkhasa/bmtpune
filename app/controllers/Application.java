@@ -125,6 +125,7 @@ public class Application extends Controller {
 		  	SocialUser sUser = SecureSocial.currentUser();
 			User user = User.authenticate(sUser.id.provider,sUser.id.id);
 		  	AppointmentHistory appointment = new AppointmentHistory();
+		  	appointment.patientId=user.id;
 		  	appointment.appointmentComment = appointmentForm.get().comment;
 		  	appointment.appointmentHeadline= appointmentForm.get().headline;
 		  	appointment.doctorId= appointmentForm.get().doctorId;
@@ -133,10 +134,9 @@ public class Application extends Controller {
 			  	Date d = df.parse(appointmentForm.get().dateOfAppointment); 
 			  	appointment.dateOfAppointment = d;
 			    DateFormat TWELVE_TF = new SimpleDateFormat("hh:mm a");
-			    DateFormat TWENTY_FOUR_TF = new SimpleDateFormat("HH:mm");
-		    	TWENTY_FOUR_TF.format(TWELVE_TF.parse(appointmentForm.get().timeOfAppointment));
-			    System.out.println(d.toString()+ " "+ TWENTY_FOUR_TF.format(TWELVE_TF.parse(appointmentForm.get().timeOfAppointment))+ " " + appointment.doctorId);
-
+			    DateFormat TWENTY_FOUR_TF = new SimpleDateFormat("HH:mm");		    	
+			    appointment.appointmentTime =TWENTY_FOUR_TF.format(TWELVE_TF.parse(appointmentForm.get().timeOfAppointment));
+			    appointment.save();
 		    }catch(ParseException ex){
 		    	System.out.println(ex.getStackTrace());
 		    }
