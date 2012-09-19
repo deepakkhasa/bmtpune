@@ -291,6 +291,7 @@ a.fc-event {
 	border-style: solid;
 	border-width: 0;
 	overflow: hidden;
+	cursor: pointer;
 	}
 	
 .fc-event-time,

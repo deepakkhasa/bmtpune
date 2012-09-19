@@ -57,18 +57,24 @@ function showCalendar(data,doctorId){
 	 		var min=((appment.appointmentTime.substring(3,5)*1)+(appment.appointmentDuration.substring(3,5)*1));
 	 		endDate.setHours(hour);
 	 		endDate.setMinutes(min);
-	 		event[i] = {title: appment.appointmentHeadline ,start: new Date(y,m,d,appment.appointmentTime.substring(0,2),appment.appointmentTime.substring(3,5)), end: new Date(y,m,d,endDate.getHours(),endDate.getMinutes()),allDay: false};		 		
+	 		event[i] = {title: appment.appointmentHeadline ,start: new Date(y,m,d,appment.appointmentTime.substring(0,2),appment.appointmentTime.substring(3,5)), end: new Date(y,m,d,endDate.getHours(),endDate.getMinutes()),allDay: false,aid: appment.id};		 		
 		}
  		$('#calendar').fullCalendar({
  			theme: true,
+ 			aid: 1,
  			header: {
  				left: 'prev,next today',
  				center: 'title',
  				right: 'month,agendaWeek,agendaDay'
  			},
  			editable: true,
+ 			disableDragging: true,
  			events: event
  		});
+  		 $('[class="fc-event-inner fc-event-skin"]').click(function() {
+				alert();
+			});
+
 
 }
 
