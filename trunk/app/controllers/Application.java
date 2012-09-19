@@ -100,6 +100,29 @@ public class Application extends Controller {
 	  
   }
 
+  @SecureSocial.Secured  
+  public static Result getMyAppointments(){
+	  	SocialUser sUser = SecureSocial.currentUser();
+	  	User user = User.authenticate(sUser.id.provider,sUser.id.id);
+	    return ok(toJson(AppointmentHistory.getMyAppointments(user.id)));
+	  
+  }
+
+  @SecureSocial.Secured  
+  public static Result getAppointmentDetails(Long id){
+	  System.out.println("id is : "+id);
+	  	SocialUser sUser = SecureSocial.currentUser();
+	  	User user = User.authenticate(sUser.id.provider,sUser.id.id);
+	  	AppointmentHistory appointment = AppointmentHistory.getAppointmentDetails(id.longValue());
+	  	System.out.println("Date : "+ appointment.dateOfAppointment + " "+ appointment.dateOfAppointment.toString());
+	  	if(user.id != appointment.patientId && user.id != appointment.doctorId){
+	  		appointment = new AppointmentHistory();
+	  	}
+	    return ok(toJson(appointment));
+	  
+  }
+
+  
   @SecureSocial.Secured
   public static Result login() {
       SocialUser user = (SocialUser) ctx().args.get(SecureSocial.USER_KEY);      

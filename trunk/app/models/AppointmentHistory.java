@@ -29,7 +29,7 @@ public class AppointmentHistory extends Model {
 
     @Formats.DateTime(pattern="MM/dd/yyyy")
 	@Column(name="date_of_appointment")
-    public Date dateOfAppointment = new Date();
+    public Date dateOfAppointment;
 
     @Constraints.Required
     @Column(name="time_of_appointment")
@@ -57,15 +57,33 @@ public class AppointmentHistory extends Model {
     public static Model.Finder<String,AppointmentHistory> find = new Model.Finder(String.class, AppointmentHistory.class);
 
     /**
-     * Authenticate a User.
+     * Get Appointments for the Doctor.
      */
     public static List<AppointmentHistory> getAppointments(long doctorId) {
-    	System.out.println("here...");
         return find.where()
             .eq("idDoctor", doctorId)
             .findList();
     }
 
 
+    /**
+     * Get Appointments for the Patient.
+     */
+    public static List<AppointmentHistory> getMyAppointments(long myId) {
+        return find.where()
+            .eq("idPatient", myId)
+            .findList();
+    }
+
+    /**
+     * Get Appointments for the Patient.
+     */
+    public static AppointmentHistory getAppointmentDetails (long id) {
+        return find.where()
+            .eq("idAppointment_History", id)
+            .findUnique();
+    }
+
+    
 }
 

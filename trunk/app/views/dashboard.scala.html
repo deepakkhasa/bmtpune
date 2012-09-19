@@ -1,7 +1,7 @@
 @(user: securesocial.core.java.SocialUser ,message: String, auser: models.User)
 @scripts = {    
 	<script type='text/javascript' src="@routes.Assets.at("javascripts/jquery-ui-1.8.23.custom.min.js")"></script>
-	<script type='text/javascript' src="@routes.Assets.at("javascripts/fullcalendar.min.js")"></script>
+	<script type='text/javascript' src="@routes.Assets.at("javascripts/fullcalendar.js")"></script>
     <script type="text/javascript" src="@routes.Assets.at("javascripts/dashboardview.js")"></script>
     <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.lightbox_me.js")"></script>
     
@@ -43,6 +43,26 @@
 	                <a id="close_x" class="close close_x" href="#">close</a>
 	            </div>
 }
+	            <div class="modal_window" id="modal_window_appt">
+	                <div class="modal_form" id="modal_form_appt">
+	                    <label><strong>Brief Description:</strong> <input id="appointmentdescription" class="sprited" disabled="disabled"/></label>
+	                    <label ><strong>Date:</strong> <input id="appointmentdate" class="firstField smallText" disabled="disabled"/>
+	                    <strong>Time:</strong> <input id="appointmenttime" class="smallText" disabled="disabled"/></label>
+	                    <label><strong>Additional Information:</strong> <textarea id="appointmentcomments" class="spritedtextarea" disabled="disabled"></textarea></label>
+	                    <div class="actions" id="actions">
+							<span class="fc-button fc-button-today ui-state-default ui-corner-left ui-corner-right">
+								<span class="fc-button-inner">
+									<span id="AppmentSubmit" class="fc-button-content">Submit</span>
+									<span class="fc-button-effect">
+										<span></span>
+									</span>
+								</span>
+							</span>
+	                    </div>
+	                </div>
+	                <a  id="close_x" class="close close_x" href="#">close</a>
+	            </div>
+
         </div>
 
 

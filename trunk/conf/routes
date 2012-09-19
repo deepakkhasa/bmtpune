@@ -13,7 +13,8 @@ POST /updateDetails						controllers.Application.updateDetails
 GET /getDoctors							controllers.Application.getDoctors
 GET /getDoctorAppointments				controllers.Application.getDoctorAppointments
 POST /addAppointment                    controllers.Application.putAppointment
- 
+GET /getMyAppointments					controllers.Application.getMyAppointments
+GET /getAppointmentDetails				controllers.Application.getAppointmentDetails(id:Long) 
 #Take Appointment
 GET /takeappointment					controllers.Application.takeAppointment
 
