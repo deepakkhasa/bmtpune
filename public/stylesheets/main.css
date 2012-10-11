@@ -1,4 +1,4 @@
-#maincontainer{margin:0 auto;width:1050px;}
+#maincontainer{margin:0 auto;}
 #topsection{background:#fff url(../images/logo.jpg) no-repeat top center;border-bottom:0;height:162px;margin:0 0 15px 0;overflow:hidden;padding:0;}
 #topsection #searchandlogin{height:40px;margin:19px 0px 0px 652px;padding:0px;}
 #topsection #searchandlogin #searcharea{padding-top:0px;}
@@ -14,7 +14,7 @@
 #menunav {top:-20px;position: relative;margin:12px 0px 0px 0px;padding:0px;font-size:12px;color:#FFFFFF;float:left;}
 #menunav a{color:white;}
 #menunav a.last{border:none;}
-#nav{clear:left;margin:18px 0 0;height:35px;width:1050px;background: url(../images/menu.jpg) top center;}
+#nav{height:35px;background: url(../images/menu.jpg) top center;width: 100%;}
 #secondarynav{font-size:114%;height:39px;margin:0 0 0 524px;}
 #secondarynav li{color:#5d501b;display:inline;float:left;margin:0px;padding:0px}
 #secondarynav li a{display:block;height:39px;overflow:hidden;text-indent:-9999px;}
@@ -26,7 +26,7 @@
 #jsddm{	margin: 0;padding: 0;background: #9D2D2C;z-index:1000;}
 #jsddm li{	float: right;list-style: none;font-size: 14px;text-align:center;z-index:1000;}
 #jsddm li a{display: block;background: ##8E1609;padding: 8px;text-decoration: none;border-right: 1px solid white;border-left: 1px solid white;width: 120px;color: #EAFFED;white-space: nowrap}
-#jsddm li a:hover{background: #1A4473}
+#jsddm li a:hover{background: #1A4473;font-weight: bold;}
 #jsddm li ul{margin: 0;padding: 0;position: absolute;visibility: hidden;border-top: 1px solid white;z-index:1000;}
 #jsddm li ul li{float: none;display: inline;z-index:1000;}
 #jsddm li ul li a{width: auto;background: #9F1B1B;border-bottom: 1px solid white;}
@@ -53,12 +53,15 @@
 #quicklinks {width:310px;background:white;font-family:Verdana,Arial,Sans-Serif;font-size:12px;float:right;border: 1px solid #9D2D2C;background: #F2F5F7;}
 #quicklinks .title {text-align:center;font-size:14px;font-weight:bold;padding:5px;color:white;background:#8E1609}
 #quicklinks ul li{ list-style:none; display:block; border: 1px solid #CCC;padding-bottom: 10px;padding-top: 10px;}
-#quicklinks .info { width:250px;text-decoration: none;font-size:17px; }
+#quicklinks .info { width:250px;text-decoration: none;font-size:17px;font-weight:bold }
 #quicklinks .info a{ text-decoration: none;font-size:17px;color:#8E1609 }
 .mainpart{width:670px;padding:5px 5px 0;margin:20px auto;float:left;}
-.centerpart{width:300px;padding-top: 10px;float:right;}
-.mainpart h1 {font-size: 28px;font-family: Tahoma;font-weight: bold;color:#8E1609;text-align:center;height:200px}
-.toppart{padding-top: 10px;width:700px;float:left;background: white url(../images/contentbackground.gif) repeat-y top left;}
+.centerpart{width:20%;padding-top: 10px;float:right;}
+.mainpart h1 {font-size: 28px;font-family: Tahoma;font-weight: bold;color:#8E1609;text-align:center;height:50px}
+.mainpart h2 {font-size: 20px;font-family: Tahoma;font-weight: bold;color:#8E1609;height:60px;padding-top: 30px}
+.mainpart ul {font-size: 14px;font-family: Tahoma;color:#8E1609;height:50px;padding-left: 40px;}
+.mainpart #intro {font-size: 14px;font-family: Tahoma;color:#8E1609;padding-right: 10px;}
+.toppart{padding-top: 10px;width:75%;height: 500px;float:left;border-right-width:1px;border-right-style:solid;border-right-color:#8E1609;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#8E1609;}
 #highlights{margin:0 auto;width:1050px;float:left}
 tr.selected {background-color: red; color: white;}
 /*light me*/
@@ -73,14 +76,13 @@ a.form_button {float: left;width: 93px; height: 31px;margin-right: 15px;}
 .spritedselected {line-height: 200px;overflow: hidden;display: block;width:90%;height:30px}
 .sprited {line-height: 200px;overflow: hidden;display: block;width:90%;}
 .spritedtextarea {overflow: hidden;display: block;width:90%;height:100px}
-
 .firstField{padding-right:20px;}
 .smallText{width:100px}
 /*light me*/
-#news {border: 1px solid #9D2D2C;;width:310px;background:#F2F5F7;font-family:Verdana,Arial,Sans-Serif;font-size:12px;margin:20px auto;float:right;}
-#news a { text-decoration:none; }
-#news img { border: 2px solid #FFFFFF;max-width: 100%; }
-#news .title {text-align:center;font-size:14px;font-weight:bold;padding:5px;color:white;background:#8E1609}
+.news {border: 1px solid #9D2D2C;;width:310px;background:#F2F5F7;font-family:Verdana,Arial,Sans-Serif;font-size:12px;margin:20px auto;float:right;display: none}
+.news a { text-decoration:none; }
+.news img { border: 2px solid #FFFFFF;max-width: 100%; }
+.news .title {text-align:center;font-size:14px;font-weight:bold;padding:5px;color:white;background:#8E1609}
 .news-jcarousellite { width:100%; }
 .news-jcarousellite ul li{ list-style:none; display:block; padding-bottom: 10px;padding-top: 10px;border: 1px solid #CCC;}
 .news-jcarousellite .thumbnail { float:left; width:70px;height:70px;background-size: 100%; }
@@ -88,3 +90,20 @@ a.form_button {float: left;width: 93px; height: 31px;margin-right: 15px;}
 .news-jcarousellite .info span.cat { display: block; font-size:10px; color:#808080; }
 .clear { clear: both; }
 .appmentFont{color: #536376;font-size: .9em;font-weight:bold;}
+p {text-indent:50px;}
+.footer{background-color: #8E1609;font-family:Verdana,Arial,Sans-Serif;font-size:12px;text-align: right;height:30px;color:white}
+.arrowlistmenu{width: 30%; /*width of accordion menu*/}
+.arrowlistmenu .menuheader{ /*CSS class for menu headers in general (expanding or not!)*/font: bold 14px Arial;color: white;background: black url(../images/titlebar.png) repeat-x center left;margin-bottom: 10px; /*bottom spacing between header and rest of content*/text-transform: uppercase;padding: 4px 0 4px 10px; /*header text is indented 10px*/cursor: hand;cursor: pointer;}
+.arrowlistmenu .openheader{ /*CSS class to apply to expandable header when it's expanded*/background-image: url(../images/titlebar-active.png);}
+.arrowlistmenu ul{ /*CSS for UL of each sub menu*/list-style-type: none;margin: 0;padding: 0;margin-bottom: 8px; /*bottom spacing between each UL and rest of content*/}
+.arrowlistmenu ul li{padding-bottom: 2px; /*bottom spacing between menu items*/}
+.arrowlistmenu ul li .opensubheader{ /*Open state CSS for sub menu header*/background: lightblue !important;}
+.arrowlistmenu ul li .closedsubheader{ /*Closed state CSS for sub menu header*/background: lightgreen !important;}
+.arrowlistmenu ul li a{color: #A70303;background: url(../images/arrowbullet.png) no-repeat center left; /*custom bullet list image*/display: block;padding: 2px 0;padding-left: 19px; /*link text is indented 19px*/text-decoration: none;font-weight: bold;border-bottom: 1px solid #dadada;font-size: 90%;}
+.arrowlistmenu ul li a:visited{color: #A70303;}
+.arrowlistmenu ul li a:hover{ /*hover state CSS*/background-color: #F3F3F3;}
+.arrowlistmenu ul li a.subexpandable:hover{ /*hover state CSS for sub menu header*/background: lightblue;}
+.titlec {font-size: small;}
+ul.videos li {float: left; width: 10em;  margin-bottom: 1em;}
+ul.videos{  margin-bottom: 1em;  padding-left : 0em;  margin-left: 0em;  list-style: none;}
+#playContainer{width: 20em; height: 180px; }

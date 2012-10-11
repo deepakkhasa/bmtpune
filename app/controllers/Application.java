@@ -110,7 +110,6 @@ public class Application extends Controller {
 
   @SecureSocial.Secured  
   public static Result getAppointmentDetails(Long id){
-	  System.out.println("id is : "+id);
 	  	SocialUser sUser = SecureSocial.currentUser();
 	  	User user = User.authenticate(sUser.id.provider,sUser.id.id);
 	  	AppointmentHistory appointment = AppointmentHistory.getAppointmentDetails(id.longValue());
@@ -129,7 +128,26 @@ public class Application extends Controller {
       return ok(login.render(user));
   }
  
-	/**
+
+  public static Result contactus() {
+      return ok(contactus.render(SecureSocial.currentUser()));
+  }
+
+
+  public static Result aboutus() {
+      return ok(aboutus.render(SecureSocial.currentUser()));
+  }
+
+  
+  public static Result knowledgeCenter() {
+      return ok(knowledgecenter.render(SecureSocial.currentUser()));
+  }
+
+  public static Result videos() {
+      return ok(videos.render(SecureSocial.currentUser()));
+  }
+
+  /**
 	 * Form class for inserting Appointment.
 	 */
 

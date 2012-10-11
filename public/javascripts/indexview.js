@@ -3,6 +3,7 @@ var dashboardView = Backbone.View.extend({
 	 events: { } ,
 
 	 initialize: function() {
+		 
 	     Backbone.Validation.bind(this,{forceUpdate: true});
 			$('#slides').slides({
 				preload: true,

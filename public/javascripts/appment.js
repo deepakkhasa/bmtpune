@@ -41,3 +41,6 @@ $(function(){
 
 
 });
+window.onload=function(){
+	$(".news").toggle();
+}
