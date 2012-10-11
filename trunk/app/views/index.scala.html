@@ -1,47 +1,57 @@
 @(user: securesocial.core.java.SocialUser ,message: String)
-@scripts = {    
+@scripts = {
     <script type="text/javascript" src="@routes.Assets.at("javascripts/indexview.js")"></script>
 }
-@main(user,"Welcome!",scripts) {
-       
-       	<div id="message" style="display: none;">
-        	<div id="fixednav">
-				<a href="/appmentlogin">Join</a>
-				<a href="/appmentlogin"	class="last">My Account</a>
-			</div> 
-    	</div>
- 			<div class="toppart">
-		       <div id="slides">
-		            <div class="slides_container">
-		                <div>
-		                    <img src="http://4.bp.blogspot.com/-jdZJUuEjqD4/TqlACtIKCJI/AAAAAAAAAhA/gRHpUqoPafQ/001.JPG">
-		                </div>
-		                <div>
-		                    <img src="@routes.Assets.at("images/DSC_0408.JPG")">
-		                </div>
-		                <div>
-		                    <img src="@routes.Assets.at("images/DSC_0414.JPG")">
-		                </div>
-		                <div>
-		                    <img src="@routes.Assets.at("images/DSC_0415.JPG")">
-		                </div>
-		                <div>
-		                    <img src="@routes.Assets.at("images/DSC_0416.JPG")">
-		                </div>
-		                <div>
-		                    <img src="@routes.Assets.at("images/DSC_0417.JPG")">
-		                </div>
-		                
-		            </div>
-		        </div>
-        		<div class="mainpart"><h1>Welcome to Yashoda Hematology Clinic</h1>
-        		
-        		</div>
-
-        </div>
-
-		
-
-
-    
-}
+	@main(user,"Welcome!",scripts,"Y") {
+	
+	 			<div class="toppart">
+			       <div id="slides">
+			        </div>
+	        		<div class="mainpart">
+	        		<br>
+	        			<h1>Welcome to Yashoda Hematology Clinic, Pune</h1>
+						<span id="intro">
+							<p><b>"Yashoda Hematology Clinic"</b> is run by Dr. Vijay Ramanan who is clinical hematologist and bone marrow physicians. Yashoda Hematology Clinic,Pune is the only stand alone lab doing work on Hemophilia and Thrombophilia. He is also the founding Director and transplant unit head at <a href="http://www.rubyhall.com" target="_blank">Ruby Hall</a>, Pune. 
+							</p><br>
+							<p>
+								We specialize in diagnosis and treatment of :
+								<ul>
+									<li> Aplastic anemia and other nutritional anemias
+									</li>
+									<li> Polycythemia
+									</li>
+									<li> Neutropenia, P.U.O.
+									</li>
+									<li> Thrombocytopenia of all types-ITP, Dengue etc
+									</li>
+									<li> Haemophilia and other bleeding disorders
+									</li>
+									<li> Thalassaemia and other haemoglobinopathies
+									</li>
+									<li> Problems with immunity - cogenitial of acquired
+									</li>
+									<li> Recurrent pregnancy losses
+									</li>
+									<li> Myelodysplastic syndrome
+									</li>
+									<li> Leukemias: CML/CLL/AML/ALL
+									</li>
+									<li> Lymphoma - Hodgkin's and Non Hodgkin's
+									</li>
+									<li> Myeloma and other cancers, myclofibrosis
+									</li>
+									<li> Bone marrow transplantation and allogenic/autologous peripheral blood steam cells transplant
+									</li>
+									
+								</ul>
+							</p>							
+						</span>
+	        		</div>
+	
+	        </div>
+	
+	
+	
+	
+	
+	}

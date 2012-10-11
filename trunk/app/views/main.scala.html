@@ -1,4 +1,4 @@
-@(user: securesocial.core.java.SocialUser , title: String, scripts: Html = Html(""))(content: Html)
+@(user: securesocial.core.java.SocialUser , title: String, scripts: Html = Html(""),showhighlight: String ="N")(content: Html)
 
 <!DOCTYPE html>
 
@@ -9,18 +9,18 @@
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/global.css")">
 		<link rel='stylesheet' type='text/css' href="@routes.Assets.at("stylesheets/theme.css")" />
 		<link rel='stylesheet' type='text/css' href="@routes.Assets.at("stylesheets/fullcalendar.css")" />
-		<link rel='stylesheet' type='text/css' href="@routes.Assets.at("stylesheets/fullcalendar.print.css")" media='print' />        
+		<link rel='stylesheet' type='text/css' href="@routes.Assets.at("stylesheets/fullcalendar.print.css")" media='print' />
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/icon.jpg")">
         <script src="@routes.Assets.at("javascripts/jquery-1.8.1.min.js")" type="text/javascript"></script>
         <script src="@routes.Assets.at("javascripts/slides.min.jquery.js")" type="text/javascript"></script>
         <script src="@routes.Assets.at("javascripts/jcarousellite_1.0.1c4.js")" type="text/javascript"></script>
         <script type="text/javascript" src="@routes.Assets.at("javascripts/underscore-min.js")"></script>
     	<script type="text/javascript" src="@routes.Assets.at("javascripts/backbone.js")"></script>
-    	<script type="text/javascript" src="@routes.Assets.at("javascripts/backbone.validation.min.js")"></script>       
+    	<script type="text/javascript" src="@routes.Assets.at("javascripts/backbone.validation.min.js")"></script>
 	    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
 	    <script type="text/javascript" src="@routes.Assets.at("javascripts/gfeedfetcher.js")"></script>
-        
-        
+
+
     </head>
     <body>
 
@@ -29,69 +29,66 @@
 				<div id="logoarea">
 					<a name="top"></a>
 					<h1>
-						<a href="/"><span>Yashoda Hematology Clinic</span>
+						<a href="/"><span>Yashoda Hematology Clinic, Pune</span>
 						</a>
 					</h1>
 				</div>
-@if(null != user){			
+@if(null != user){
 		       	<div id="message" style="display: none;">
 		        	<div id="menunav">
 							<ul id="jsddm">
-								<li><a href="#">CONTACT US</a></li>
-								<li><a href="#">ABOUT US</a></li>
-							    <li><a href="#">SERVICES</a>
-							        <ul>
-							            <li><a href="#">BONE MARROW TRANSPLANT UNIT</a></li>
-							            <li><a href="#">ADULT & PAEDIATRIC HAEMATOLOGY</a></li>
-							            <li><a href="#">SURGICAL SERVICES</a></li>
-							            <li><a href="#">PATHOLOGY</a></li>
-							            
-							        </ul>
-							    </li>
-							    <li><a href="#">ACTION</a>
+							    <li><a href="#">MORE..</a>
 							        <ul>
 							            <li><a href="/takeappointment">TAKE APPOINTMENT</a></li>
-							            <li><a href="#">KNOWLEDGE CENTER</a></li>
+							            <li><a href="/knowledgecenter">KNOWLEDGE CENTER</a></li>
 							            <li><a href="#">CLINICAL TRIALS</a></li>
-							            <li><a href="#">VIDEOS</a></li>
-							            
+							            <li><a href="/videos">VIDEOS</a></li>
 							        </ul>
 							    </li>
 							    <li><a href="/">HOME</a></li>
-							</ul>					
-					</div> 
+							</ul>
+					</div>
 
 
 					<div id="fixednav">
-							Welcome @user.displayName<a href="/logout">Logout</a> 
+							Welcome @user.displayName<a href="/logout">Logout</a>
 					</div>
 
 		    	</div>
 
-}				
+} else {
+
+	       	<div id="message" style="display: none;">
+	        	<div id="fixednav">
+					<a href="/appmentlogin">Join</a>
+					<a href="/appmentlogin"	class="last">My Account</a>
+				</div>
+	    	</div>
+
+}
 			</div>
-@if(null == user){			
+@if(null == user){
 
 			<div id="nav">
 				<ul id="jsddm">
-					<li><a href="#">CONTACT US</a></li>
-					<li><a href="#">ABOUT US</a></li>
-				    <li><a href="#">SERVICES</a>
-				        <ul>
-				            <li><a href="#">BONE MARROW TRANSPLANT UNIT</a></li>
-				            <li><a href="#">ADULT & PAEDIATRIC HAEMATOLOGY</a></li>
-				            <li><a href="#">SURGICAL SERVICES</a></li>
-				            <li><a href="#">PATHOLOGY</a></li>
-				            
-				        </ul>
-				    </li>
-				    <li><a href="/">HOME</a></li>
-				</ul>					
+							<li><a href="/contactus">CONTACT US</a></li>
+						    <li><a href="#">MORE..</a>
+						        <ul>
+						            <li><a href="/takeappointment">TAKE APPOINTMENT</a></li>
+						            <li><a href="/knowledgecenter">KNOWLEDGE CENTER</a></li>
+						            <li><a href="#">CLINICAL TRIALS</a></li>
+						            <li><a href="/videos">VIDEOS</a></li>
+						        </ul>
+						    </li>
+
+							<li><a href="/aboutus">ABOUT US</a></li>
+						    <li><a href="/">HOME</a></li>
+				</ul>
 			</div>
-}			
-    
+}
+
  @content
-@if(null == user){			
+@if(null == user){
          <div class="centerpart">
 		        <div id="quicklinks">
 		        	<div class="title">Quick Links</div>
@@ -105,11 +102,11 @@
 							</li>
 				            <li>
 								<div class="info">
-									<a href="/">Knowledge Center</a>
+									<a href="/knowledgecenter">Knowledge Center</a>
 								</div>
 								<div class="clear"></div>
 							</li>
-							
+
 				            <li>
 								<div class="info">
 									<a href="/">Clinical Trials</a>
@@ -124,7 +121,7 @@
 							</li>
 				            <li>
 								<div class="info">
-									<a href="/">Videos</a>
+									<a href="/videos">Videos</a>
 								</div>
 								<div class="clear"></div>
 							</li>
@@ -132,73 +129,22 @@
 		        	</div>
 		        </div>
 }
-			<div id="news">    
-			    <div class="title">Latest News</div>
+			<div class="news">
+			    <div class="title">In News</div>
 			    <div class="news-jcarousellite">
 			    		<script type="text/javascript">
-								var cssfeed=new gfeedfetcher("example1", "example1class", "")
+								var cssfeed=new gfeedfetcher("example1", "example1class", "_blank")
 						 		cssfeed.addFeed("News", "https://news.google.co.in/news/feeds?hl=en&gl=in&q=%22Dr.+VIjay+Ramanan%22&um=1&ie=UTF-8&output=rss") //Specify "label" plus URL to RSS feed
 						 		cssfeed.displayoptions("date") //show the specified additional fields
 						 		cssfeed.setentrycontainer("li") //Display each entry as a list (li element)
 						 		cssfeed.filterfeed(10, "date") //Show 10 entries, sort by date
 						 		cssfeed.init() //Always call this last
-						</script>				    
+						</script>
 			    </div>
 			</div>
 
-@if(null == user){			
-				<div id="newsticker">    
-				    <div class="title">Latest Events</div>
-				    <div class="newsticker-jcarousellite">
-						<ul>
-				            <li>
-								<div class="thumbnail">
-									<img src="data:image/jpeg;base64,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">
-								</div>
-								<div class="info">
-									<a href="http://bmtpune.blogspot.in/">Dr. Vijay Ramanan speaks about Cancer</a>
-									<span class="cat">Category: Cancer</span>
-								</div>
-								<div class="clear"></div>
-							</li>
-							
-				            <li>
-								<div class="thumbnail">
-									<img src="">
-								</div>
-								<div class="info">
-									<a href="http://bmtpune.blogspot.in/2012/02/thalassaemia-meeting-at-red-cross.html">Thalassaemia meeting at Red Cross</a>
-									<span class="cat">Category: Cancer</span>
-								</div>
-								<div class="clear"></div>
-							</li>
-				            <li>
-								<div class="thumbnail">
-									<img src="">
-								</div>
-								<div class="info">
-									<a href="http://haematology.blogspot.in/2012/03/fwd-final-haep-broucher.html">Clinical Haematology India</a>
-									<span class="cat">Category: Cancer</span>
-								</div>
-								<div class="clear"></div>
-							</li>
-				            <li>
-								<div class="thumbnail">
-									<img src="">
-								</div>
-								<div class="info">
-									<a href="http://bmtpune.blogspot.in/2012/02/thalassaemia-meeting-at-red-cross.html">Thalassaemia meeting at Red Cross</a>
-									<span class="cat">Category: Cancer</span>
-								</div>
-								<div class="clear"></div>
-							</li>
-				        </ul>
-			    	</div>
-				</div>		
-			
-}
-@if(null != user){			
-				<div id="news">    
+@if(null != user){
+				<div class="news" >
 				    <div class="title">Events</div>
 				    <div class="news-jcarousellite">
 				    		<script type="text/javascript">
@@ -208,13 +154,13 @@
 							 		cssfeed.setentrycontainer("li") //Display each entry as a list (li element)
 							 		cssfeed.filterfeed(10, "date") //Show 10 entries, sort by date
 							 		cssfeed.init() //Always call this last
-							</script>				    
+							</script>
 				    </div>
 				</div>
 }
-		</div>	
+		</div>
 
-@if(null == user){			
+@if("Y" == showhighlight){
 			<div id="highlights">
 				<div id="highlights_container">
 					<div id="highlights_subcontainer">
@@ -242,7 +188,7 @@
 								<div class="highlights_slide">
 									<a href="https://plus.google.com/u/0/photos/110019530475844593844/albums/posts/5662295842498454418" title="Ingaguration of Bone Marrow Transplant Unit" target="_blank"><img src="@routes.Assets.at("images/11 - 1.jpg")" width="570" height="270" alt="Slide 2"></a>
 									<div class="caption">
-										<p>Ingaguration of Bone Marrow Transplant Unit</p>
+										<p>Inaguration of Bone Marrow Transplant Unit</p>
 									</div>
 								</div>
 								<div class="highlights_slide">
@@ -289,15 +235,20 @@
 								</div>
 
 							</div>
-							
+
 							<a href="#" class="next"><img src="@routes.Assets.at("images/arrow-next.png")" width="24" height="43" alt="Arrow Next"></a>
 						</div>
 					</div>
-				</div>				
-			</div>	
-}			
+				</div>
+			</div>
+}
 		</div>
+              <div class="clear"></div>
+              <div  class="footer">
+                     <span>© 2012 Appment-All Rights Reserved</span>
+              </div> 
+
   @scripts
-<script type="text/javascript" src="@routes.Assets.at("javascripts/appment.js")"></script>	
+<script type="text/javascript" src="@routes.Assets.at("javascripts/appment.js")"></script>
 </body>
 </html>
