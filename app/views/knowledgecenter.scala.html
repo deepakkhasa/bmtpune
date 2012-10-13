@@ -2,6 +2,7 @@
 @scripts = {    
 	<script type='text/javascript' src="@routes.Assets.at("javascripts/ddaccordion.js")"></script>
 	<script type="text/javascript">
+	$(".toppart").css('height', '680px');
 	//for knowledge center
 	ddaccordion.init({ //top level headers initialization
 		headerclass: "expandable", //Shared CSS class name of headers group that are expandable
@@ -54,7 +55,6 @@
 		       <div id="slides">
 		        </div>
         		<div class="mainpart">
-        			<div class="clear"></div>
         		
         			<div class="arrowlistmenu">
 
@@ -80,6 +80,7 @@
 							</ul>
 							
 					</div>
+					<div class="documentdisplay"><iframe id="documentdisplay" name="documentdisplay"></iframe></div>
         		</div>
 
         </div>
