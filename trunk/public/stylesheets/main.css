@@ -55,13 +55,13 @@
 #quicklinks ul li{ list-style:none; display:block; border: 1px solid #CCC;padding-bottom: 10px;padding-top: 10px;}
 #quicklinks .info { width:250px;text-decoration: none;font-size:17px;font-weight:bold }
 #quicklinks .info a{ text-decoration: none;font-size:17px;color:#8E1609 }
-.mainpart{width:670px;padding:5px 5px 0;margin:20px auto;float:left;}
+.mainpart{width:97%;padding:5px 5px 0;margin:20px auto;float:left;display: inline-block;}
 .centerpart{width:20%;padding-top: 10px;float:right;}
 .mainpart h1 {font-size: 28px;font-family: Tahoma;font-weight: bold;color:#8E1609;text-align:center;height:50px}
 .mainpart h2 {font-size: 20px;font-family: Tahoma;font-weight: bold;color:#8E1609;height:60px;padding-top: 30px}
 .mainpart ul {font-size: 14px;font-family: Tahoma;color:#8E1609;height:50px;padding-left: 40px;}
 .mainpart #intro {font-size: 14px;font-family: Tahoma;color:#8E1609;padding-right: 10px;}
-.toppart{padding-top: 10px;width:75%;height: 500px;float:left;border-right-width:1px;border-right-style:solid;border-right-color:#8E1609;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#8E1609;}
+.toppart{padding-top: 10px;padding-left: 20px;width:75%;float:left;border-right-width:1px;border-right-style:solid;border-right-color:#8E1609;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#8E1609;border-top-width:1px;border-top-style:solid;border-top-color:#8E1609;}
 #highlights{margin:0 auto;width:1050px;float:left}
 tr.selected {background-color: red; color: white;}
 /*light me*/
@@ -92,7 +92,7 @@ a.form_button {float: left;width: 93px; height: 31px;margin-right: 15px;}
 .appmentFont{color: #536376;font-size: .9em;font-weight:bold;}
 p {text-indent:50px;}
 .footer{background-color: #8E1609;font-family:Verdana,Arial,Sans-Serif;font-size:12px;text-align: right;height:30px;color:white}
-.arrowlistmenu{width: 30%; /*width of accordion menu*/}
+.arrowlistmenu{width: 30%;float: left; /*width of accordion menu*/}
 .arrowlistmenu .menuheader{ /*CSS class for menu headers in general (expanding or not!)*/font: bold 14px Arial;color: white;background: black url(../images/titlebar.png) repeat-x center left;margin-bottom: 10px; /*bottom spacing between header and rest of content*/text-transform: uppercase;padding: 4px 0 4px 10px; /*header text is indented 10px*/cursor: hand;cursor: pointer;}
 .arrowlistmenu .openheader{ /*CSS class to apply to expandable header when it's expanded*/background-image: url(../images/titlebar-active.png);}
 .arrowlistmenu ul{ /*CSS for UL of each sub menu*/list-style-type: none;margin: 0;padding: 0;margin-bottom: 8px; /*bottom spacing between each UL and rest of content*/}
@@ -106,4 +106,9 @@ p {text-indent:50px;}
 .titlec {font-size: small;}
 ul.videos li {float: left; width: 10em;  margin-bottom: 1em;}
 ul.videos{  margin-bottom: 1em;  padding-left : 0em;  margin-left: 0em;  list-style: none;}
-#playContainer{width: 20em; height: 180px; }
+#playContainer{width: 20em; height: 180px;padding-left: 40%; }
+#news{display: none}
+#calendar{padding-left: 50px;width: 80%}
+.documentdisplay{width: 68%;float:right}
+#documentdisplay{width: 100%;height: 600px}
+iframe {  margin-top: 20px;  margin-bottom: 30px;  -moz-border-radius: 12px;  -webkit-border-radius: 12px;  border-radius: 12px;  -moz-box-shadow: 4px 4px 14px #000;  -webkit-box-shadow: 4px 4px 14px #000;  box-shadow: 4px 4px 14px #000;    filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=.2)}
