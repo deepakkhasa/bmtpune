@@ -9,6 +9,7 @@ GET /appmentlogin							controllers.Application.login
 
 # Dashboard
 GET /dashboard							controllers.Application.dashboard
+GET /getApptmentsForPhone				controllers.Application.androidDashboard
 POST /updateDetails						controllers.Application.updateDetails
 GET /getDoctors							controllers.Application.getDoctors
 GET /getDoctorAppointments				controllers.Application.getDoctorAppointments

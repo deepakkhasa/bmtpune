@@ -147,6 +147,20 @@ public class Application extends Controller {
       return ok(videos.render(SecureSocial.currentUser()));
   }
 
+	public static class UserDetails {
+
+		public String userId;
+		public String provider;
+	}
+
+//@SecureSocial.Secured
+  public static Result androidDashboard(){
+	//  System.out.println("user is :"+ SecureSocial.currentUser());
+	  Form<UserDetails> userDetails = form(UserDetails.class).bindFromRequest();
+	  User user = User.authenticate(userDetails.get().provider,userDetails.get().userId);	  
+	  return ok(toJson(toJson(AppointmentHistory.getMyAppointments(user.id))));
+	  
+}
   /**
 	 * Form class for inserting Appointment.
 	 */
