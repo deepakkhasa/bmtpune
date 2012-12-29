@@ -112,3 +112,4 @@ ul.videos{  margin-bottom: 1em;  padding-left : 0em;  margin-left: 0em;  list-st
 .documentdisplay{width: 68%;float:right}
 #documentdisplay{width: 100%;height: 600px}
 iframe {  margin-top: 20px;  margin-bottom: 30px;  -moz-border-radius: 12px;  -webkit-border-radius: 12px;  border-radius: 12px;  -moz-box-shadow: 4px 4px 14px #000;  -webkit-box-shadow: 4px 4px 14px #000;  box-shadow: 4px 4px 14px #000;    filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=.2)}
+.aboutul{ height:300px !important;}
