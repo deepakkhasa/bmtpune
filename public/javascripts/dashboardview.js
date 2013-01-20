@@ -4,18 +4,36 @@ var dashboardView = Backbone.View.extend({
 
 	 initialize: function() {
 	     Backbone.Validation.bind(this,{forceUpdate: true});
-		 $.ajax({
-		        type: "GET",
-		        url: "/getMyAppointments",
-		        success: function(data){
-		        	showCalendar(data);
-		   		 $('[class="fc-event-inner fc-event-skin"]').click(function() {
-						//alert($(this).attr('id'));
-		   			 	showDetails($(this).attr('id'));
-					});
+	     
+	     if(null== $('#hospital').val()){
+			 $.ajax({
+			        type: "GET",
+			        url: "/getMyAppointments",
+			        success: function(data){
+			        	showCalendar(data);
+			   		 $('[class="fc-event-inner fc-event-skin"]').click(function() {
+							//alert($(this).attr('id'));
+			   			 	showDetails($(this).attr('id'));
+						});
 
-		        }
-		    });
+			        }
+			    });
+
+	     }else{
+			 $.ajax({
+			        type: "GET",
+			        url: "/getMyAppointments?hospitalId="+$('#hospital').val(),
+			        success: function(data){
+			        	showCalendar(data);
+			   		 $('[class="fc-event-inner fc-event-skin"]').click(function() {
+							//alert($(this).attr('id'));
+			   			 	showDetails($(this).attr('id'));
+						});
+
+			        }
+			    });
+	    	 
+	     }
 
 	     		$(".fc-button-content").click(function() {
 	     			if($("#emailid").val() == ""){
