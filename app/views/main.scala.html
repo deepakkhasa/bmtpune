@@ -25,15 +25,9 @@
     <body>
 
 		<div id="maincontainer">
-			<div id="topsection">
-				<div id="logoarea">
-					<a name="top"></a>
-					<h1>
-						<a href="/"><span>Yashoda Hematology Clinic, Pune</span>
-						</a>
-					</h1>
-				</div>
+			
 @if(null != user){
+	<div id="topsection">
 		       	<div id="message" style="display: none;">
 		        	<div id="menunav">
 							<ul id="jsddm">
@@ -56,22 +50,14 @@
 					</div>
 
 		    	</div>
+		    	</div>
 
-} else { 
-
-	       	<div id="message" style="display: none;">
-	        	<div id="fixednav">
-					<a href="/login">Join</a>
-					<a href="/login"	class="last">My Account</a>
-				</div>
-	    	</div>
-
-}
-			</div>
-@if(null == user){
-
-			<div id="nav">
-				<ul id="jsddm">
+} else { 	
+	<div>
+		       	<div id="message" style="display: none;">
+		        	<div id="menunav">
+							<ul id="jsddm">
+							<li><a href="/login">LOGIN</a></li>
 							<li><a href="/contactus">CONTACT US</a></li>
 						    <li><a href="#">MORE..</a>
 						        <ul>
@@ -84,9 +70,23 @@
 
 							<li><a href="/aboutus">ABOUT US</a></li>
 						    <li><a href="/">HOME</a></li>
-				</ul>
-			</div>
+							</ul>
+					</div>
+
+
+
+
+		    	</div>
+
+	       	<div id="message" style="display: none;">
+	        	<div id="fixednav">
+					<a href="/login">Join</a>
+					<a href="/login"	class="last">My Account</a>
+				</div>
+	    	</div>
+</div>
 }
+			
 
  @content
  
@@ -162,88 +162,6 @@
 }
 		</div>
 
-@if("Y" == showhighlight){
-			<div id="highlights">
-				<div id="highlights_container">
-					<div id="highlights_subcontainer">
-						<div id="highlights_slides">
-							<a href="#" class="prev"><img src="@routes.Assets.at("images/arrow-prev.png")" width="24" height="43" alt="Arrow Prev"></a>
-							<div class="highlights_slides_container">
-								<div class="highlights_slide">
-									<a href="http://haematology.blogspot.in/2011/10/prof-reuven-or.html" title="Ruby Hall Bone Marrow Transplant Inaguration" target="_blank"><img src="http://4.bp.blogspot.com/-jdZJUuEjqD4/TqlACtIKCJI/AAAAAAAAAhA/gRHpUqoPafQ/001.JPG" width="570" height="270" alt="Slide 1"></a>
-									<div class="caption" style="bottom:0">
-										<p>Dr. Vijay Ramanan with Dr. Grant</p>
-									</div>
-								</div>
-								<div class="highlights_slide">
-									<a href="https://www.facebook.com/media/set/?set=a.10150682055803439.401630.791253438&type=3" title="Hematology CME 2012 photographs." target="_blank"><img src="@routes.Assets.at("images/Hema_CME.jpg")" width="570" height="270" alt="Slide 2"></a>
-									<div class="caption">
-										<p>Hematology CME 2012 photographs.</p>
-									</div>
-								</div>
-								<div class="highlights_slide">
-									<a href="http://bmtpune.blogspot.in/2012/02/thalassaemia-meeting-at-red-cross.html" title="Thalassaemia meeting at Red Cross" target="_blank"><img src="http://lh5.ggpht.com/-CSFI7cTqZUg/TytVNGDJEmI/AAAAAAAAABk/B_BfgLleZHQ/2011-11-14%25252012.48.09.png" width="570" height="270" alt="Slide 2"></a>
-									<div class="caption">
-										<p>Thalassaemia meeting at Red Cross</p>
-									</div>
-								</div>
-								<div class="highlights_slide">
-									<a href="https://plus.google.com/u/0/photos/110019530475844593844/albums/posts/5662295842498454418" title="Ingaguration of Bone Marrow Transplant Unit" target="_blank"><img src="@routes.Assets.at("images/11 - 1.jpg")" width="570" height="270" alt="Slide 2"></a>
-									<div class="caption">
-										<p>Inaguration of Bone Marrow Transplant Unit</p>
-									</div>
-								</div>
-								<div class="highlights_slide">
-									<a href="https://plus.google.com/u/0/photos/110019530475844593844/albums/posts/5662295842498454418" title="Ingaguration of Bone Marrow Transplant Unit" target="_blank"><img src="@routes.Assets.at("images/11 - 3.jpg")" width="570" height="270" alt="Slide 2"></a>
-									<div class="caption">
-										<p>Ingaguration of Bone Marrow Transplant Unit</p>
-									</div>
-								</div>
-								<div class="highlights_slide">
-									<a href="https://plus.google.com/u/0/photos/110019530475844593844/albums/5447061999643807777" title="Prof Reuven Or visit and BMT Inauguration" target="_blank"><img src="@routes.Assets.at("images/DSC_3608.JPG")" width="570" height="270" alt="Slide 2"></a>
-									<div class="caption">
-										<p>Prof Reuven Or visit and BMT Inauguration</p>
-									</div>
-								</div>
-								<div class="highlights_slide">
-									<a href="https://plus.google.com/u/0/photos/110019530475844593844/albums/5447061999643807777" title="Prof Reuven Or visit and BMT Inauguration" target="_blank"><img src="@routes.Assets.at("images/DSC_3555.JPG")" width="570" height="270" alt="Slide 2"></a>
-									<div class="caption">
-										<p>Prof Reuven Or visit and BMT Inauguration</p>
-									</div>
-								</div>
-								<div class="highlights_slide">
-									<a href="https://plus.google.com/u/0/photos/110019530475844593844/albums/5447061999643807777" title="Prof Reuven Or visit and BMT Inauguration" target="_blank"><img src="@routes.Assets.at("images/DSC_3524.JPG")" width="570" height="270" alt="Slide 2"></a>
-									<div class="caption">
-										<p>Prof Reuven Or visit and BMT Inauguration</p>
-									</div>
-								</div>
-								<div class="highlights_slide">
-									<a href="https://plus.google.com/u/0/photos/110019530475844593844/albums/5447061999643807777" title="Prof Reuven Or visit and BMT Inauguration" target="_blank"><img src="@routes.Assets.at("images/DSC_3511.JPG")" width="570" height="270" alt="Slide 2"></a>
-									<div class="caption">
-										<p>Prof Reuven Or visit and BMT Inauguration</p>
-									</div>
-								</div>
-								<div class="highlights_slide">
-									<a href="https://plus.google.com/u/0/photos/110019530475844593844/albums/5447061999643807777" title="Prof Reuven Or visit and BMT Inauguration" target="_blank"><img src="@routes.Assets.at("images/DSC_3495.JPG")" width="570" height="270" alt="Slide 2"></a>
-									<div class="caption">
-										<p>Prof Reuven Or visit and BMT Inauguration</p>
-									</div>
-								</div>
-								<div class="highlights_slide">
-									<a href="https://plus.google.com/u/0/photos/110019530475844593844/albums/5447061999643807777" title="Prof Reuven Or visit and BMT Inauguration" target="_blank"><img src="@routes.Assets.at("images/DSC_3492.JPG")" width="570" height="270" alt="Slide 2"></a>
-									<div class="caption">
-										<p>Prof Reuven Or visit and BMT Inauguration</p>
-									</div>
-								</div>
-
-							</div>
-
-							<a href="#" class="next"><img src="@routes.Assets.at("images/arrow-next.png")" width="24" height="43" alt="Arrow Next"></a>
-						</div>
-					</div>
-				</div>
-			</div>
-}
 		</div>
               <div class="clear"></div>
               <div  class="footer">
