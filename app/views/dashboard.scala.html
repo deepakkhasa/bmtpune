@@ -15,7 +15,7 @@
         		  			<strong>Select Hospital:</strong> 
         		  			<select id="hospital" >
         		  			@for(hospital <- doctorDetails ){
-        		  			<option value="">@hospital.hospital.hospitalName</option>
+        		  			<option value="@hospital.hospital.id">@hospital.hospital.hospitalName</option>
         		  			}
         		  			</select>
         		  		</label>        		

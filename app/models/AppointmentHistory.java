@@ -80,7 +80,14 @@ public class AppointmentHistory extends Model {
     /**
      * Get Appointments for the Patient.
      */
-    public static List<AppointmentHistory> getMyAppointments(long myId) {
+    public static List<AppointmentHistory> getMyAppointments(long myId,long hospitalId) {
+    	if(hospitalId >0){
+            return find.where()
+                    .eq("idDoctor", myId)
+                     .eq("idHospital", hospitalId)
+                    .findList();
+
+    	}
         return find.where()
             .eq("idPatient", myId)
             .findList();

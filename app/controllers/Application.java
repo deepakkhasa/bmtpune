@@ -121,9 +121,16 @@ public class Application extends Controller {
 
   @SecureSocial.Secured  
   public static Result getMyAppointments(){
+	  String userId = Http.Context.current().session().get(APPMENT_USER);
+	  Form<Appointment> appointmentForm = form(Appointment.class).bindFromRequest();
+	  Long id = new Long(userId);
 	  	SocialUser sUser = SecureSocial.currentUser();
 	  	User user = User.authenticate(sUser.id.provider,sUser.id.id);
-	    return ok(toJson(AppointmentHistory.getMyAppointments(user.id)));
+	  	System.out.println("Date : "+ id + " "+ user.id+ " "+appointmentForm.get().hospitalId );
+	  	if(appointmentForm.get().hospitalId >0){
+	  		return ok(toJson(AppointmentHistory.getMyAppointments(id,appointmentForm.get().hospitalId)));
+	  	}
+	    return ok(toJson(AppointmentHistory.getMyAppointments(id,0)));
 	  
   }
 
@@ -177,7 +184,7 @@ public class Application extends Controller {
 	//  System.out.println("user is :"+ SecureSocial.currentUser());
 	  Form<UserDetails> userDetails = form(UserDetails.class).bindFromRequest();
 	  User user = User.authenticate(userDetails.get().provider,userDetails.get().userId);	  
-	  return ok(toJson(toJson(AppointmentHistory.getMyAppointments(user.id))));
+	  return ok(toJson(toJson(AppointmentHistory.getMyAppointments(user.id,0))));
 	  
 }
   /**
