@@ -1,4 +1,4 @@
-@(user: securesocial.core.java.SocialUser ,message: String)
+@(user: securesocial.core.java.SocialUser ,message: String, doctorDetails: java.util.List[DoctorDetails])
 @scripts = {    
 	<script type='text/javascript' src="@routes.Assets.at("javascripts/jquery-ui-1.8.23.custom.min.js")"></script>
 	<script type='text/javascript' src="@routes.Assets.at("javascripts/fullcalendar_hyperlink.js")"></script>
@@ -9,6 +9,17 @@
  			<div class="toppart">
         		<div class="mainpart">
         			<div id="heading" class="appmentFont"></div>
+        			  <div class="hospitaldrowdown">
+        		  		<label>
+        		  			<strong>Select Hospital:</strong> 
+        		  			<select id="hospital" >
+        		  			@for(hospital <- doctorDetails ){
+        		  			<option value="@hospital.hospital.id">@hospital.hospital.hospitalName</option>
+        		  			}
+        		  			</select>
+        		  		</label>        		
+        		</div>
+        			
         			<div id='calendar'></div>
         			<input type="hidden" id="doctorId"/>
         		</div>

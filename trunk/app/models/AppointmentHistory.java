@@ -6,6 +6,11 @@ import javax.persistence.*;
 import play.db.ebean.*;
 import play.data.format.*;
 import play.data.validation.*;
+import com.avaje.ebean.Ebean;
+import com.avaje.ebean.Query;
+import com.avaje.ebean.RawSql;
+import com.avaje.ebean.RawSqlBuilder;
+import com.avaje.ebean.validation.NotNull;
 
 
 /**
@@ -44,7 +49,11 @@ public class AppointmentHistory extends Model {
 	@Column(name="appointment_comment")
     public String appointmentComment;
 
-    
+    @NotNull
+    @OneToOne
+    @JoinColumn(name="idHospital")
+    public Hospitals hospital;
+	
     @Column(name="created")
     public String created=null;
 
@@ -59,9 +68,11 @@ public class AppointmentHistory extends Model {
     /**
      * Get Appointments for the Doctor.
      */
-    public static List<AppointmentHistory> getAppointments(long doctorId) {
-        return find.where()
+    public static List<AppointmentHistory> getAppointments(long doctorId,long hospitalId) {
+        return find
+        	.where()
             .eq("idDoctor", doctorId)
+            .eq("idHospital", hospitalId)
             .findList();
     }
 

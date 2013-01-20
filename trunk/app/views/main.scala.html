@@ -39,13 +39,14 @@
 							<ul id="jsddm">
 							    <li><a href="#">MORE..</a>
 							        <ul>
-							            <li><a href="/dashboard">DASHBOARD</a></li>
-							            <li><a href="/takeappointment">TAKE APPOINTMENT</a></li>
 							            <li><a href="/knowledgecenter">KNOWLEDGE CENTER</a></li>
 							            <li><a href="/videos">VIDEOS</a></li>
 							        </ul>
 							    </li>
-							    <li><a href="/">HOME</a></li>
+							    @if("P"==Http.Context.current().session().get("appment.usertype")){
+					            <li><a href="/takeappointment">SCHEDULE</a></li>
+					            }
+					            <li><a href="/dashboard">DASHBOARD</a></li>
 							</ul>
 					</div>
 
@@ -56,12 +57,12 @@
 
 		    	</div>
 
-} else {
+} else { 
 
 	       	<div id="message" style="display: none;">
 	        	<div id="fixednav">
-					<a href="/appmentlogin">Join</a>
-					<a href="/appmentlogin"	class="last">My Account</a>
+					<a href="/login">Join</a>
+					<a href="/login"	class="last">My Account</a>
 				</div>
 	    	</div>
 
@@ -88,6 +89,7 @@
 }
 
  @content
+ 
 @if(null == user){
          <div class="centerpart">
 		        <div id="quicklinks">

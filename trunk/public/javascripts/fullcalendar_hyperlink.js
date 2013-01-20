@@ -2303,6 +2303,7 @@ function BasicView(element, calendar, viewName) {
 			}
 			cell.find('div.fc-day-number a').text(date.getDate());
 			cell.find('div.fc-day-number a').bind('click',function(event){
+				alert();
 				calendar.gotoDate(calendar.getDate().getFullYear(), calendar.getDate().getMonth(), $(this).text());
 				calendar.changeView('agendaDay');
 			});
