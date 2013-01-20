@@ -1,11 +1,11 @@
 package controllers;
 
 import java.util.Date;
+import java.util.List;
 
 import java.text.*;
 
-import models.AppointmentHistory;
-import models.User;
+import models.*;
 import play.*;
 import play.mvc.*;
 import securesocial.core.java.SecureSocial;
@@ -15,7 +15,12 @@ import play.data.Form;
 import static play.libs.Json.toJson;
 
 public class Application extends Controller {
-  
+
+	 public static final String APPMENT_USER = "appment.user";
+	 public static final String APPMENT_USER_TYPE = "appment.usertype";
+	 public static final String APPMENT_USER_EMAIL = "appment.useremail";
+	 public static final String APPMENT_USER_NAME = "appment.username";
+
   public static Result index() {
     return ok(index.render(SecureSocial.currentUser(),""));
   }
@@ -35,6 +40,7 @@ public class Application extends Controller {
 	public static class Appointment {
 
 		public long doctorId;
+		public long hospitalId;
 
 	}
 
@@ -59,6 +65,7 @@ public class Application extends Controller {
 	  	SocialUser sUser = SecureSocial.currentUser();
 	  	
 	  	User user = User.authenticate(sUser.id.provider,sUser.id.id);
+	  	
 	  	if(null == user){
 	  		user = new User();
 	  		user.userid = sUser.id.id;
@@ -70,19 +77,31 @@ public class Application extends Controller {
 		  	askUser ="N";
 		  	user.name = sUser.displayName;		  	
 		  	user.save();
-	  		return ok(dashboard.render(sUser,askUser,user));	  		
+	  		return ok(dashboard.render(sUser,askUser,user,null));	  		
 	  	}else{
+	  		
+	  		
+	  		Http.Context.current().session().put(APPMENT_USER, new Long(user.id).toString());
+	  		Http.Context.current().session().put(APPMENT_USER_TYPE, user.userType);
+	  		Http.Context.current().session().put(APPMENT_USER_EMAIL, user.email);
+	  		Http.Context.current().session().put(APPMENT_USER_NAME, user.name);
+	  		 List<User> doctor= User.getDoctors();
+	  		List<DoctorDetails> doctorDetails = DoctorDetails.getHospitalsForDoctor(doctor.get(0).id);
 	  		if(null == user.email || null == user.phoneNumber || null == user.userType){
-		  		return ok(dashboard.render(sUser,"N",user));
+		  		return ok(dashboard.render(sUser,"N",user,doctorDetails));
 	  		}else{
-		  		return ok(dashboard.render(sUser,"",user));
+		  		return ok(dashboard.render(sUser,"",user,doctorDetails));
 	  		}
 	  	}
 	  }
 
   @SecureSocial.Secured  
   public static Result takeAppointment(){
-	    return ok(takeappointment.render(SecureSocial.currentUser(),""));
+	 // System.out.println("user is :"+ Http.Context.current().session().get(APPMENT_USER));
+	  List<User> doctor= User.getDoctors();
+	 // String user = Http.Context.current().session().get(APPMENT_USER);
+	  List<DoctorDetails> doctorDetails = DoctorDetails.getHospitalsForDoctor(doctor.get(0).id);
+	    return ok(takeappointment.render(SecureSocial.currentUser(),"",doctorDetails));
 	  
   }
 
@@ -96,7 +115,7 @@ public class Application extends Controller {
   @SecureSocial.Secured  
   public static Result getDoctorAppointments(){
 		Form<Appointment> appointmentForm = form(Appointment.class).bindFromRequest();
-	    return ok(toJson(AppointmentHistory.getAppointments(appointmentForm.get().doctorId)));
+	    return ok(toJson(AppointmentHistory.getAppointments(appointmentForm.get().doctorId,appointmentForm.get().hospitalId)));
 	  
   }
 
