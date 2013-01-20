@@ -44,10 +44,10 @@ public class DoctorDetails extends Model {
     
 
     @Column(name="start_time")
-    public Date startTime;
+    public String startTime;
 
     @Column(name="end_time")
-    public Date endTime;
+    public String endTime;
     // -- Queries
 
     public static Model.Finder<Long,DoctorDetails> find = new Model.Finder(Long.class, DoctorDetails.class);
