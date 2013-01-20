@@ -72,7 +72,7 @@ tr.selected {background-color: red; color: white;}
 .modal_form {position: relative;padding-bottom: 54px;margin-bottom: 12px;}
 .actions {float: left;position: absolute;right: 0;height: 31px;bottom: 20px;}
 a.form_button {float: left;width: 93px; height: 31px;margin-right: 15px;}
-.close_x {background-size: 100%;width: 32px; height: 32px;overflow: hidden; line-height: 1000px;display: block;position: absolute; top: 5px; right: 5px;background:url(../images/x.png) no-repeat;}
+.close_x {background-size: 100%;width: 32px; height: 32px;overflow: hidden; line-height: 1000px;display: block;position: absolute; top: 5px; right: 5px;background:url(../images/x.gif) no-repeat;background-position: 50% 50%;}
 .spritedselected {line-height: 200px;overflow: hidden;display: block;width:90%;height:30px}
 .sprited {line-height: 200px;overflow: hidden;display: block;width:90%;}
 .spritedtextarea {overflow: hidden;display: block;width:90%;height:100px}
