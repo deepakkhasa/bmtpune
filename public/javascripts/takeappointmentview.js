@@ -25,7 +25,7 @@ var takeappointmentview = new takeappointmentView();
 function getCalendarEvents(doctorId){
 	 $.ajax({
 	        type: "GET",
-	        url: "/getDoctorAppointments?doctorId=" + doctorId,
+	        url: "/getDoctorAppointments?doctorId=" + doctorId+"&hospitalId="+$('#hospital').val(),
 	        success: function(data){
 	        	showCalendar(data,doctorId);
 	        }
