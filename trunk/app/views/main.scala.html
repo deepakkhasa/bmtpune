@@ -22,9 +22,9 @@
 
 
     </head>
-    <body>
+    <body class="background">
 
-		<div id="maincontainer">
+		<div id="maincontainer" >
 			
 @if(null != user){
 	<div id="topsection">
@@ -53,25 +53,16 @@
 		    	</div>
 
 } else { 	
-	<div class="banner">Welcome to Yashoda Hematology Clinic, Pune
+	<div class="banner" onclick='window.location.href="/"'>Welcome to Yashoda Hematology Clinic, Pune
 	</div>
 
 	<div>
 		       	<div id="message" style="display: none;">
 		        	<div id="menunav">
 							<ul id="jsddm">
-						    <li><a href="#">MORE..</a>
-						        <ul>
-						            <li><a href="/takeappointment">TAKE APPOINTMENT</a></li>
-						            <li><a href="/knowledgecenter">KNOWLEDGE CENTER</a></li>
-						            <li><a href="#">FAQ</a></li>
-						            <li><a href="/videos">VIDEOS</a></li>
-						        </ul>
-						    </li>
 							<li><a href="/login">LOGIN</a></li>
 							<li><a href="/contactus">CONTACT US</a></li>
 							<li><a href="/aboutus">ABOUT US</a></li>
-						    <li><a href="/">HOME</a></li>
 							</ul>
 					</div>
 
@@ -89,63 +80,17 @@
 </div>
 }
 			
+				<div class="control" >
+
+				<div class="button"><a href="/takeappointment">TAKE APPOINTMENT</a></div>
+				<div class="button"><a href="/knowledgecenter">KNOWLEDGE CENTER</a></div>
+				<div class="button"><a href="#">FAQ</a></div>
+				<div class="button"><a href="/videos">VIDEOS</a></div>
+				</div>
 
  @content
- 
-@if(null == user){
-         <div class="centerpart">
-		        <div id="quicklinks">
-		        	<div class="title">Quick Links</div>
-		        	<div>
-		        		<ul>
-				            <li>
-								<div class="info">
-									<a href="/">Testimonials</a>
-								</div>
-								<div class="clear"></div>
-							</li>
-				            <li>
-								<div class="info">
-									<a href="/knowledgecenter">Knowledge Center</a>
-								</div>
-								<div class="clear"></div>
-							</li>
 
-				            <li>
-								<div class="info">
-									<a href="/">FAQ</a>
-								</div>
-								<div class="clear"></div>
-							</li>
-				            <li>
-								<div class="info">
-									<a href="/">Patient & Cancer Information</a>
-								</div>
-								<div class="clear"></div>
-							</li>
-				            <li>
-								<div class="info">
-									<a href="/videos">Videos</a>
-								</div>
-								<div class="clear"></div>
-							</li>
-		        		</ul>
-		        	</div>
-		        </div>
-}
-			<div class="news">
-			    <div class="title">In News</div>
-			    <div class="news-jcarousellite">
-			    		<script type="text/javascript">
-								var cssfeed=new gfeedfetcher("example1", "example1class", "_blank")
-						 		cssfeed.addFeed("News", "https://news.google.co.in/news/feeds?hl=en&gl=in&q=%22Dr.+VIjay+Ramanan%22&um=1&ie=UTF-8&output=rss") //Specify "label" plus URL to RSS feed
-						 		cssfeed.displayoptions("date") //show the specified additional fields
-						 		cssfeed.setentrycontainer("li") //Display each entry as a list (li element)
-						 		cssfeed.filterfeed(10, "date") //Show 10 entries, sort by date
-						 		cssfeed.init() //Always call this last
-						</script>
-			    </div>
-			</div>
+ 
 
 @if(null != user){
 				<div class="news" >
