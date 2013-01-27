@@ -19,40 +19,23 @@
     	<script type="text/javascript" src="@routes.Assets.at("javascripts/backbone.validation.min.js")"></script>
 	    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
 	    <script type="text/javascript" src="@routes.Assets.at("javascripts/gfeedfetcher.js")"></script>
-
+<script>
+$(document).ready(function()
+{  $('.button > a').click(function(e){
+	//alert(e.pageX +', '+ e.pageY);
+	var top = e.pageY-20;
+	//$("#ss").toggle();
+	//$("#ss").animate({  'top': top+'px' });
+	  $('#slides').animate({top:"400px"},'slow');
+	});
+});
+</script>
 
     </head>
     <body class="background">
 
 		<div id="maincontainer" >
 			
-@if(null != user){
-	<div id="topsection">
-		       	<div id="message" style="display: none;">
-		        	<div id="menunav">
-							<ul id="jsddm">
-							    <li><a href="#">MORE..</a>
-							        <ul>
-							            <li><a href="/knowledgecenter">KNOWLEDGE CENTER</a></li>
-							            <li><a href="/videos">VIDEOS</a></li>
-							        </ul>
-							    </li>
-							    @if("P"==Http.Context.current().session().get("appment.usertype")){
-					            <li><a href="/takeappointment">SCHEDULE</a></li>
-					            }
-					            <li><a href="/dashboard">DASHBOARD</a></li>
-							</ul>
-					</div>
-
-
-					<div id="fixednav">
-							Welcome @user.displayName<a href="/logout">Logout</a>
-					</div>
-
-		    	</div>
-		    	</div>
-
-} else { 	
 	<div class="banner" onclick='window.location.href="/"'>Welcome to Yashoda Hematology Clinic, Pune
 	</div>
 
@@ -71,18 +54,9 @@
 
 		    	</div>
 
-	       	<div id="message" style="display: none;">
-	        	<div id="fixednav">
-					<a href="/login">Join</a>
-					<a href="/login"	class="last">My Account</a>
-				</div>
-	    	</div>
-</div>
-}
 			
 				<div class="control" >
-
-				<div class="button"><a href="/takeappointment">TAKE APPOINTMENT</a></div>
+				<div class="button"><a href="#">TAKE APPOINTMENT</a></div>
 				<div class="button"><a href="/knowledgecenter">KNOWLEDGE CENTER</a></div>
 				<div class="button"><a href="#">FAQ</a></div>
 				<div class="button"><a href="/videos">VIDEOS</a></div>
