@@ -3,27 +3,14 @@
 @import helper._
 @implicitFieldConstructor = @{ FieldConstructor(securesocial.views.html.inputFieldConstructor.f) }
 
-@main(Messages("securesocial.login.title")) {
-    <div class="page-header">
-        <h1>Login</h1>
-    </div>
-
-    @errorMsg.map { msg =>
-        <div class="alert alert-error">
-            @Messages(msg)
-        </div>
-    }
-
     <div class="clearfix">
-        <p>@Messages("securesocial.login.instructions")</p>
 
         <p>
             @for(p <- providers if p.authMethod != securesocial.core.AuthenticationMethod.UserPassword) {
                 @defining( "images/providers/%s.png".format(p.providerId) ) { imageUrl =>
-                    <a href="@p.authenticationUrl"> <img src="@routes.Assets.at(imageUrl)"/></a>
+                    <a href="@p.authenticationUrl" target="_parent"> <img src="@routes.Assets.at(imageUrl)"/></a>
                 }
             }
         </p>
     </div>
 
-}
