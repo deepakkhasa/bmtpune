@@ -64,7 +64,7 @@ object LoginPage extends Controller
    * @return
    */
   def logout = Action { implicit request =>
-    val to = Play.configuration.getString(onLogoutGoTo).getOrElse(routes.LoginPage.login().absoluteURL())
+    val to = Play.configuration.getString(Root).getOrElse(Root)
     Redirect(to).withSession(session - SecureSocial.UserKey - SecureSocial.ProviderKey)
   }
 
