@@ -1,9 +1,11 @@
 var dashboardView = Backbone.View.extend({
-	
-	 events: { } ,
+	  el: $("#maincontainer"),
+	//  template: _.template($('#test').html()),
+	 events: {'click #loginbutton' : 'showloginframe' ,'click #schedulelogin' : 'showloginframesch'    } ,
 
 	 initialize: function() {
-		 
+		// this.render();
+		// document.getElementById('maincontent').src = "data:text/html;charset=utf-8," + escape(");
 	     Backbone.Validation.bind(this,{forceUpdate: true});
 			$('#slides').slides({
 				preload: true,
@@ -47,14 +49,29 @@ var dashboardView = Backbone.View.extend({
 					
 					});
 	 },
+/*	 render: function(){
+		 $(this.el).html(this.template());
+		 return this;
+		 
+	 },*/
 
 	uploadDialog: function(data) {
 		 $("#overlayEffect").fadeIn("slow");
 		 $("#popupdetails").fadeIn("slow");
 
+  	},
+  	showloginframe: function(){
+  		$('#loginframe').toggle();
+  		$('.uparrowdiv').toggle();
+  	},
+  	showloginframesch: function(){
+  		$('#loginframe').toggle();
+  		$('#loginframe').css({top: '200px',left:'400px'});
+  		//$('.uparrowdiv').toggle();
   	}
 });
 var dashboardview = new dashboardView();
+
 
 
 

@@ -43,7 +43,9 @@ $(document).ready(function()
 		       	<div id="message" style="display: none;">
 		        	<div id="menunav">
 							<ul id="jsddm">
-							<li><a href="/login">LOGIN</a></li>
+@if(null == user){							
+							<li><a id="loginbutton" href="#" >LOGIN</a></li>							
+				}
 							<li><a href="/contactus">CONTACT US</a></li>
 							<li><a href="/aboutus">ABOUT US</a></li>
 							</ul>
@@ -54,9 +56,19 @@ $(document).ready(function()
 
 		    	</div>
 
-			
+	<iframe id="loginframe" src="/login"></iframe>		
 				<div class="control" >
-				<div class="button"><a href="#">TAKE APPOINTMENT</a></div>
+@if(null == user){							
+				<div class="button"><a id="schedulelogin" href="#">SCHEDULE APPOINTMENT</a></div>
+				}
+@if(null != user){	
+				<div class="button"><a  href="/dashboard">DASHBOARD</a></div>	
+				 @if("P"==Http.Context.current().session().get("appment.usertype")){					
+				<div class="button"><a  href="/takeappointment">SCHEDULE APPOINTMENT</a></div>
+				}
+				}
+				
+				
 				<div class="button"><a href="/knowledgecenter">KNOWLEDGE CENTER</a></div>
 				<div class="button"><a href="#">FAQ</a></div>
 				<div class="button"><a href="/videos">VIDEOS</a></div>
@@ -64,23 +76,11 @@ $(document).ready(function()
 
  @content
 
- 
+ 					<div class="fixednav">
+							<pre>Welcome @user.displayName <a href="/logout">Logout</a> </pre>
+					</div>
 
-@if(null != user){
-				<div class="news" >
-				    <div class="title">Events</div>
-				    <div class="news-jcarousellite">
-				    		<script type="text/javascript">
-									var cssfeed=new gfeedfetcher("example2", "example2class", "_blank")
-							 		cssfeed.addFeed("Blog", "http://bmtpune.blogspot.in/feeds/posts/default?alt=rss") //Specify "label" plus URL to RSS feed
-							 		cssfeed.displayoptions("date") //show the specified additional fields
-							 		cssfeed.setentrycontainer("li") //Display each entry as a list (li element)
-							 		cssfeed.filterfeed(10, "date") //Show 10 entries, sort by date
-							 		cssfeed.init() //Always call this last
-							</script>
-				    </div>
-				</div>
-}
+
 		</div>
 
 		</div>
