@@ -1,6 +1,6 @@
 var dashboardView = Backbone.View.extend({
 	
-	 events: {  } ,
+	 events: {} ,
 
 	 initialize: function() {
 	     Backbone.Validation.bind(this,{forceUpdate: true});
@@ -59,6 +59,7 @@ var dashboardView = Backbone.View.extend({
 	     		});
 	     		
 	 }
+	 
 });
 var dashboardview = new dashboardView();
 

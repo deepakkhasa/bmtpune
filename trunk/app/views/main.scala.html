@@ -19,6 +19,7 @@
     	<script type="text/javascript" src="@routes.Assets.at("javascripts/backbone.validation.min.js")"></script>
 	    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
 	    <script type="text/javascript" src="@routes.Assets.at("javascripts/gfeedfetcher.js")"></script>
+	    
 <script>
 $(document).ready(function()
 {  $('.button > a').click(function(e){
@@ -46,8 +47,8 @@ $(document).ready(function()
 @if(null == user){							
 							<li><a id="loginbutton" href="#" >LOGIN</a></li>							
 				}
-							<li><a href="/contactus">CONTACT US</a></li>
-							<li><a href="/aboutus">ABOUT US</a></li>
+							<li><a id="contactus" href="#">CONTACT US</a></li>
+							<li><a id="aboutus" href="#">ABOUT US</a></li>
 							</ul>
 					</div>
 
@@ -56,7 +57,7 @@ $(document).ready(function()
 
 		    	</div>
 
-	<iframe id="loginframe" src="/login"></iframe>		
+	<iframe id="loginframe" src="/login" scrolling="no"></iframe>		
 				<div class="control" >
 @if(null == user){							
 				<div class="button"><a id="schedulelogin" href="#">SCHEDULE APPOINTMENT</a></div>
@@ -94,3 +95,78 @@ $(document).ready(function()
 <script type="text/javascript" src="@routes.Assets.at("javascripts/appment.js")"></script>
 </body>
 </html>
+
+<script type="text/template" id="aboutus-template">
+        			<h2>Dr. Vijay Ramanan is a clinical hematologist and bone marrow transplant physician. </h2>
+						
+						<ul class="aboutul">
+							<li>
+								Founding Director of transplant unit at Ruby Hall Clinic, Pune. 
+							</li>
+							<li>
+								He currently heads the transplant unit at Ruby Hall, Pune.
+							</li>
+							<li>
+								Done over 140 bone marrow transplants in Ruby Hall Clinic, Pune .
+							</li>
+							<li>
+								Pioneer of cord blood transplant in India.
+							</li>
+							<li>
+								Done his D.M. Clinical hematology from C.M.C Vellore, which has the most advanced hematology labs in Asia.
+							</li>
+							<li>
+								He is the First DM in CLINICAL HAEMATOLOGY/HAEM-ONCOLOGY in Maharastra, Madhya Pradesh, Gujarat, Andra Pradesh.
+							</li>
+							<li>
+								Gold Medalist in M.D. and D.M. Done his MBBS and M.D.(Medicine) from prestigious B.J. Medical College, Pune.
+							</li>
+							<li>
+								Honorary consultant at K.E.M Hospital, Apollo, Jehangir and Poona Hospital.
+							</li>
+							<li>
+								Has started Thalassemia Day care under the aeigis of Red Cross Pune.
+							</li>
+							<li>
+								Ex- Assistant Professor at B.J. Medical College and Sassoon General Hospital.
+							</li>
+							<li>
+								Yashoda Hematology Clinic is the only stand alone lab doing work on Hemophilia and Thrombophilia.
+							</li>
+							<li>
+								The center was leading recruiter for a clinical study under Dr Mannuchi of Milan University.
+							</li>
+							<li>
+								Member of American Society of Hematology and Member of Scientific Committee of the Asia Pacific Bone Marrow Transplant.
+							</li>
+							<li>
+								Collaboration with <a href="http://cure2children.co.uk/news.asp?id=28" target="_blank">Cure2thalassaemia - Prof Lawerence Faulkner</a>.
+							</li>
+							<li>
+								Collaboration with <a href="http://isracast.com/article.aspx?ID=1201&t=Israel-India-Joint-Cancer-research" target="_blank">Hadassah University, Jerusalem, Israel</a>.
+							</li>
+							<li>
+								Collaboration with <a href="http://www.curethalassemia.org/bone-marrow-transplantation-bmt/transplant-centers/" target="_blank">Dr P Sodani </a> an International giant in Thalassaemia.
+							</li>
+
+						</ul>
+
+
+
+</script>
+<script type="text/template" id="contactus-template">
+ 
+        			<h1>Yashoda Hematology Clinic</h1>
+        			<h2>Centre for blood diseases, cancer treatment and research</h2>
+        			<span><b>
+        				109, Mangalmurti Complex, Hirabaug Chowk, Tilak Road.<br>
+						Ph-02024484213(6:00PM - 9:00PM), 02024484213(9:00AM - 6:00PM), 02024484212, 02032926215<br>
+						Mob-9923693304, 9325315471<br>
+        				</b>
+        			</span>
+        			<br><br><br>
+        			<iframe width="500" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps/ms?msa=0&amp;msid=205820112565659617757.0004cb5d5fa7738698d89&amp;ie=UTF8&amp;ll=18.503731,73.855682&amp;spn=0,0&amp;t=m&amp;iwloc=0004cb5d5fad98c7cf878&amp;output=embed"></iframe><br />
+ 
+</script>
+
+<script type="text/javascript" src="@routes.Assets.at("javascripts/indexview.js")"></script>

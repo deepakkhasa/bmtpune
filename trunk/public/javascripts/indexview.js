@@ -1,7 +1,8 @@
 var dashboardView = Backbone.View.extend({
 	  el: $("#maincontainer"),
 	//  template: _.template($('#test').html()),
-	 events: {'click #loginbutton' : 'showloginframe' ,'click #schedulelogin' : 'showloginframesch'    } ,
+	 events: {'click #loginbutton' : 'showloginframe' ,'click #schedulelogin' : 'showloginframesch','click #aboutus' : 'aboutus' ,
+		 'click #contactus' : 'contactus'  ,'click #toolbardashboard' : 'toolbardashboard'   } ,
 
 	 initialize: function() {
 		// this.render();
@@ -68,7 +69,22 @@ var dashboardView = Backbone.View.extend({
   		$('#loginframe').toggle();
   		$('#loginframe').css({top: '200px',left:'400px'});
   		//$('.uparrowdiv').toggle();
-  	}
+  	},
+  	aboutus: function(){
+  		var template= _.template($('#aboutus-template').html()) ;
+  		$('.mainpart').html(template);
+  		$('.toppart').animate({height:'500px'}, 500);
+  	},
+  	contactus: function(){
+  		var template= _.template($('#contactus-template').html()) ;
+  		$('.mainpart').html(template);
+  		$('.toppart').animate({height:'800px'}, 500);
+  	},
+	 toolbardashboard: function(){
+		 	var template= _.template($('#dashboard-template').html()) ;
+	  		$('.mainpart').html(template);
+	  		$('.toppart').animate({height:'600px'}, 500);
+	 }
 });
 var dashboardview = new dashboardView();
 
