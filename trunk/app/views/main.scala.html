@@ -75,12 +75,12 @@ $(document).ready(function()
 				</div>
 
  @content
-
+@if(null != user){	
  					<div class="fixednav">
 							<pre>Welcome @user.displayName <a href="/logout">Logout</a> </pre>
 					</div>
 
-
+}
 		</div>
 
 		</div>
