@@ -55,8 +55,13 @@ public class Application extends Controller {
 		updateUser.id= user.id;
 		updateUser.email=updateForm.get().emailid;
 		updateUser.phoneNumber=updateForm.get().phonenumber;
-		updateUser.userType=updateForm.get().usertype;
+		//updateUser.userType=updateForm.get().usertype;
 		updateUser.update();
+  		Http.Context.current().session().put(APPMENT_USER, new Long(user.id).toString());
+  		Http.Context.current().session().put(APPMENT_USER_TYPE, user.userType);
+  		Http.Context.current().session().put(APPMENT_USER_EMAIL, user.email);
+  		Http.Context.current().session().put(APPMENT_USER_NAME, user.name);
+
 	    return ok("success");
 	}
 
