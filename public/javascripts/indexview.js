@@ -5,6 +5,8 @@ var dashboardView = Backbone.View.extend({
 		 'click #contactus' : 'contactus'  ,'click #toolbardashboard' : 'toolbardashboard'   } ,
 
 	 initialize: function() {
+		 
+		 //$('body').jAlert('Welcome to jAlert Demo Page', "success");
 		// this.render();
 		// document.getElementById('maincontent').src = "data:text/html;charset=utf-8," + escape(");
 	     Backbone.Validation.bind(this,{forceUpdate: true});
@@ -62,11 +64,13 @@ var dashboardView = Backbone.View.extend({
 
   	},
   	showloginframe: function(){
-  		$('#loginframe').toggle();
-  		$('.uparrowdiv').toggle();
+  		$('#loginframe').show();
+//  		$('.uparrowdiv').toggle();
+  		$('#loginframe').css({top:'30px',left:'350px'});
+  		
   	},
   	showloginframesch: function(){
-  		$('#loginframe').toggle();
+  		$('#loginframe').show();
   		$('#loginframe').css({top: '200px',left:'400px'});
   		//$('.uparrowdiv').toggle();
   	},

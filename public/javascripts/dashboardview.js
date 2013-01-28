@@ -4,37 +4,38 @@ var dashboardView = Backbone.View.extend({
 
 	 initialize: function() {
 	     Backbone.Validation.bind(this,{forceUpdate: true});
-	     
-	     if(null== $('#hospital').val()){
-			 $.ajax({
-			        type: "GET",
-			        url: "/getMyAppointments",
-			        success: function(data){
-			        	showCalendar(data);
-			   		 $('[class="fc-event-inner fc-event-skin"]').click(function() {
-							//alert($(this).attr('id'));
-			   			 	showDetails($(this).attr('id'));
-						});
-
-			        }
-			    });
-
-	     }else{
-			 $.ajax({
-			        type: "GET",
-			        url: "/getMyAppointments?hospitalId="+$('#hospital').val(),
-			        success: function(data){
-			        	showCalendar(data);
-			   		 $('[class="fc-event-inner fc-event-skin"]').click(function() {
-							//alert($(this).attr('id'));
-			   			 	showDetails($(this).attr('id'));
-						});
-
-			        }
-			    });
-	    	 
-	     }
-
+	     $(".background").mask("Loading...");
+	    if(!($("#modal_window").length > 0)){
+		     if(null== $('#hospital').val() ){
+				 $.ajax({
+				        type: "GET",
+				        url: "/getMyAppointments",
+				        success: function(data){
+				        	showCalendar(data);
+				   		 $('[class="fc-event-inner fc-event-skin"]').click(function() {
+								//alert($(this).attr('id'));
+				   			 	showDetails($(this).attr('id'));
+							});
+	
+				        }
+				    });
+	
+		     }else{
+				 $.ajax({
+				        type: "GET",
+				        url: "/getMyAppointments?hospitalId="+$('#hospital').val(),
+				        success: function(data){
+				        	showCalendar(data);
+				   		 $('[class="fc-event-inner fc-event-skin"]').click(function() {
+								//alert($(this).attr('id'));
+				   			 	showDetails($(this).attr('id'));
+							});
+	
+				        }
+				    });
+		    	 
+		     }
+	 }
 	     		$(".fc-button-content").click(function() {
 	     			if($("#emailid").val() == ""){
 	     				$("#errorMsgemailid").text("Email cannot be blank");
@@ -50,9 +51,24 @@ var dashboardView = Backbone.View.extend({
 	     			        	if(data == "success"){
 	     			        		$("#modal_window").trigger('close');
 	     			        		alert("Thank you. We have updated your details.");
+	     							 $.ajax({
+	     						        type: "GET",
+	     						        url: "/getMyAppointments",
+	     						        success: function(data){
+	     						        	showCalendar(data);
+	     						   		 $('[class="fc-event-inner fc-event-skin"]').click(function() {
+	     										//alert($(this).attr('id'));
+	     						   			 	showDetails($(this).attr('id'));
+	     									});
+	     			
+	     						        }
+	     						    });
+	     			
+
 	     			        	}
      			        	}
 	     			    });
+	     				 
 
 	     			}
 	     				
@@ -95,7 +111,7 @@ function showDetails(appointmentId){
 	        			$("#modal_window_appt").find("input:first").focus();
 	        		}
 	        	});
-
+	        	
 	        }
 	    });
 	
@@ -126,6 +142,6 @@ function showCalendar(data){
  			disableDragging: true,
  			events: event
  		});
-
+ 		$(".background").unmask();
 }
 

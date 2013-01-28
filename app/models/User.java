@@ -38,7 +38,7 @@ public class User extends Model {
     public String phoneNumber;
 
     @Column(name="user_type")
-    public String userType;
+    public String userType= "P";
 
     @Column(name="created")
     public String created=null;
