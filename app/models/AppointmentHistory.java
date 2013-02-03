@@ -49,7 +49,6 @@ public class AppointmentHistory extends Model {
 	@Column(name="appointment_comment")
     public String appointmentComment;
 
-    @NotNull
     @OneToOne
     @JoinColumn(name="idHospital")
     public Hospitals hospital;
@@ -69,11 +68,18 @@ public class AppointmentHistory extends Model {
      * Get Appointments for the Doctor.
      */
     public static List<AppointmentHistory> getAppointments(long doctorId,long hospitalId) {
+    	if(hospitalId > 0){
+	    	 return find
+	     	.where()
+	         .eq("idDoctor", doctorId)
+	         .eq("idHospital", hospitalId)
+	         .findList();
+    	} 
         return find
-        	.where()
-            .eq("idDoctor", doctorId)
-            .eq("idHospital", hospitalId)
-            .findList();
+            	.where()
+                .eq("idDoctor", doctorId)
+                .findList();
+
     }
 
 
