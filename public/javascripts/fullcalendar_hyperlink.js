@@ -263,8 +263,19 @@ function Calendar(element, options, eventSources) {
 			.prependTo(element);
 		header = new Header(t, options);
 		headerElement = header.render();
+		var legendColors = ['#FF0000','#0000FF','#ADD8E6','#808080','#808000'];
+		var legn="<table class='legends'><tr>";
+		var leg;
+		for(i=0;i<hospitals.hospitals.length;i++){
+			hospitals.hospitals[i].color=legendColors[i];
+			legn =legn+"<td><div class='legendbox' style='background-color:"+legendColors[i]+"'/><div class='hospitalname'>	"+hospitals.hospitals[i].hospitalname+" </div></td>";
+		//	legn.append(leg);
+		}
+		legn=legn+"</tr></table>";
+
 		if (headerElement) {
 			element.prepend(headerElement);
+			element.prepend(legn);
 		}
 		changeView(options.defaultView);
 		$(window).resize(windowResize);
@@ -2303,7 +2314,6 @@ function BasicView(element, calendar, viewName) {
 			}
 			cell.find('div.fc-day-number a').text(date.getDate());
 			cell.find('div.fc-day-number a').bind('click',function(event){
-				alert();
 				calendar.gotoDate(calendar.getDate().getFullYear(), calendar.getDate().getMonth(), $(this).text());
 				calendar.changeView('agendaDay');
 			});
@@ -3160,6 +3170,13 @@ function AgendaView(element, calendar, viewName) {
 			    });
 
 		});
+		$('.fc-agenda-slots tr').each(function() {
+		//	$(this).find("td").addClass('test');
+			//$(this).css('background','white');
+		    //console.log( $(this).find("td").html()); 
+			//console.log( $(this).find("th").html());
+		});
+
 
 	}
 	
@@ -3903,6 +3920,7 @@ function AgendaEventRenderer() {
 		
 		// record event sides and title positions
 		for (i=0; i<segCnt; i++) {
+			alert();
 			seg = segs[i];
 			if (eventElement = seg.element) {
 				val = vsideCache[key = seg.key = cssKey(eventElement[0])];
@@ -5254,6 +5272,7 @@ function _fixUIEvent(event) { // for issue 1168
 		event.pageY = event.originalEvent.pageY;
 	}
 }
+
 function HorizontalPositionCache(getElement) {
 
 	var t = this,

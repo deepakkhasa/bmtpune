@@ -63,7 +63,7 @@
 mainpart ul a{font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#65B2B8;height:50px;padding-left: 40px;}
 .mainpart #intro {font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#65B2B8;padding-right: 10px;}
 .mainpart #intro ul{font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#65B2B8;padding-right: 10px;}
-.toppart{padding-top: 10px;padding-left: 20px;width:75%;float:right; -moz-border-radius: 12px;  -webkit-border-radius: 12px;  border-radius: 12px;  -moz-box-shadow: 4px 4px 14px #000;  -webkit-box-shadow: 4px 4px 14px #000;  box-shadow: 4px 4px 14px #000;    filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=.2)}
+.toppart{min-height: 400px;padding-top: 10px;padding-left: 20px;width:75%;float:right; -moz-border-radius: 12px;  -webkit-border-radius: 12px;  border-radius: 12px;  -moz-box-shadow: 4px 4px 14px #000;  -webkit-box-shadow: 4px 4px 14px #000;  box-shadow: 4px 4px 14px #000;    filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=.2)}
 #highlights{margin:0 auto;width:1050px;float:left}
 tr.selected {background-color: red; color: white;}
 /*light me*/
