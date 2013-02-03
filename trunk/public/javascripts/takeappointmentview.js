@@ -12,7 +12,7 @@ var takeappointmentView = Backbone.View.extend({
 //		        		alert(data.length + " "+ i);
 //		        	}
 		        	if(data.length == 1){
-		        		$("#heading").text("For booking appointment with " + data[0].name + " please click on the date when you want it.");
+//		        		$("#heading").text("For booking appointment with " + data[0].name + " please click on the date when you want it.");
 		        		getCalendarEvents(data[0].id);
 		        	}
 		        }
@@ -23,11 +23,14 @@ var takeappointmentView = Backbone.View.extend({
 var takeappointmentview = new takeappointmentView();
 
 function getCalendarEvents(doctorId){
+	
+//	var hospital = ($('#hospital').val()===undefined)?0:$('#hospital').val();
 	 $.ajax({
 	        type: "GET",
-	        url: "/getDoctorAppointments?doctorId=" + doctorId+"&hospitalId="+$('#hospital').val(),
+	        url: "/getDoctorAppointments?doctorId=" + doctorId+"&hospitalId=0",
 	        success: function(data){
 	        	showCalendar(data,doctorId);
+	        	//console.log(hospitals.hospitals[0].hospitalid);
 	        }
 	    });
 
