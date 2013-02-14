@@ -57,17 +57,17 @@
 #quicklinks .info a{ text-decoration: none;font-size:17px;color:#8E1609 }
 .mainpart{width:97%;float:left;}
 .centerpart{width:20%;padding-top: 10px;float:right;}
-.mainpart h1 {font-size: 28px;font-family: Verdana, Geneva, sans-serif;font-weight: bold;color:#65B2B8;text-align:center;height:50px}
-.mainpart h2 {font-size: 20px;font-family: Verdana, Geneva, sans-serif;font-weight: bold;color:#65B2B8;height:60px;padding-top: 30px}
-.mainpart ul {font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#65B2B8;height:50px;padding-left: 40px;}
-mainpart ul a{font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#65B2B8;height:50px;padding-left: 40px;}
-.mainpart #intro {font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#65B2B8;padding-right: 10px;}
-.mainpart #intro ul{font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#65B2B8;padding-right: 10px;}
-.toppart{min-height: 400px;padding-top: 10px;padding-left: 20px;width:75%;float:right; -moz-border-radius: 12px;  -webkit-border-radius: 12px;  border-radius: 12px;  -moz-box-shadow: 4px 4px 14px #000;  -webkit-box-shadow: 4px 4px 14px #000;  box-shadow: 4px 4px 14px #000;    filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=.2)}
+.mainpart h1 {font-size: 28px;font-family: Verdana, Geneva, sans-serif;font-weight: bold;color:#8E1609;text-align:center;height:50px}
+.mainpart h2 {font-size: 20px;font-family: Verdana, Geneva, sans-serif;font-weight: bold;color:#8E1609;height:60px;padding-top: 30px}
+.mainpart ul {font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#8E1609;height:50px;padding-left: 40px;}
+mainpart ul a{font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#8E1609;height:50px;padding-left: 40px;}
+.mainpart #intro {font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#8E1609;padding-right: 10px;}
+.mainpart #intro ul{font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#8E1609;padding-right: 10px;}
+.toppart{min-height: 400px;padding: 10px 10px 10px 10px;width:75%;float:right; -moz-border-radius: 12px;  -webkit-border-radius: 12px;  border-radius: 12px;  -moz-box-shadow: 4px 4px 14px #000;  -webkit-box-shadow: 4px 4px 14px #000;  box-shadow: 4px 4px 14px #000;    filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=.2)}
 #highlights{margin:0 auto;width:1050px;float:left}
 tr.selected {background-color: red; color: white;}
 /*light me*/
-.modal_window {-moz-border-radius: 6px;background-color:#65B2B8;-webkit-border-radius: 6px;border: 1px solid #536376;-webkit-box-shadow: rgba(0,0,0,.6) 0px 2px 12px;-moz-box-shadow:  rgba(0,0,0,.6) 0px 2px 12px;;padding: 14px 22px;width: 600px;height:auto;position: relative;display: none;}
+.modal_window {-moz-border-radius: 6px;background-color:#8E1609;-webkit-border-radius: 6px;border: 1px solid #536376;-webkit-box-shadow: rgba(0,0,0,.6) 0px 2px 12px;-moz-box-shadow:  rgba(0,0,0,.6) 0px 2px 12px;;padding: 14px 22px;width: 600px;height:auto;position: relative;display: none;}
 .modal_window #modal_form {margin-top: 13px;font-family: Verdana, Geneva, sans-serif;color:black;}
 .modal_window label {display: block;margin-bottom: 10px;color: #536376;font-size: .9em;}  
 .modal_window label input {padding: 2px 8px;font-size: 1.2em;line-height: 31px;}
@@ -93,8 +93,8 @@ a.form_button {float: left;width: 93px; height: 31px;margin-right: 15px;}
 .clear { clear: both; }
 .appmentFont{color: #536376;font-size: .9em;font-weight:bold;}
 p {text-indent:50px;}
-p a{color:#65B2B8;}
-a{color:#65B2B8;}
+p a{color:#8E1609;}
+a{color:#8E1609;}
 .footer{background-color: #8E1609;font-family:Verdana,Arial,Sans-Serif;font-size:12px;text-align: right;height:30px;color:white;width:1200px;margin: 0 auto;}
 .arrowlistmenu{width: 30%;float: left; /*width of accordion menu*/}
 .arrowlistmenu .menuheader{ /*CSS class for menu headers in general (expanding or not!)*/font: bold 14px Arial;color: white;background: black url(../images/titlebar.png) repeat-x center left;margin-bottom: 10px; /*bottom spacing between header and rest of content*/text-transform: uppercase;padding: 4px 0 4px 10px; /*header text is indented 10px*/cursor: hand;cursor: pointer;}
@@ -113,9 +113,9 @@ ul.videos{  margin-bottom: 1em;  padding-left : 0em;  margin-left: 0em;  list-st
 #playContainer{width: 20em; height: 180px;padding-left: 40%; }
 #news{display: none}
 #calendar{padding-left: 50px;width: 80%}
-.documentdisplay{width: 68%;float:right}
-#documentdisplay{width: 100%;height: 600px}
-iframe {  margin-top: 20px;  margin-bottom: 30px;  -moz-border-radius: 12px;  -webkit-border-radius: 12px;  border-radius: 12px;  -moz-box-shadow: 4px 4px 14px #000;  -webkit-box-shadow: 4px 4px 14px #000;  box-shadow: 4px 4px 14px #000;    filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=.2)}
+.documentdisplay{width: 100%;}
+#documentdisplay{width: 100%;height: 100%;}
+.iframe {  margin-top: 20px;  margin-bottom: 30px;  -moz-border-radius: 12px;  -webkit-border-radius: 12px;  border-radius: 12px;  -moz-box-shadow: 4px 4px 14px #000;  -webkit-box-shadow: 4px 4px 14px #000;  box-shadow: 4px 4px 14px #000;    filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=.2)}
 .aboutul{ height:400px !important;}
 .hospitaldrowdown{width: 100%;padding-left: 100px;}
 .hospitaldrowdown label {display: block;margin-bottom: 10px;color: #536376;font-size: .9em;}  
@@ -125,12 +125,12 @@ iframe {  margin-top: 20px;  margin-bottom: 30px;  -moz-border-radius: 12px;  -w
 .background{background:#fff url(../images/bkd.png) repeat;}
 .control{width:20%;float:left;margin-left:15px; }
 .button{border: 1px solid #9D2D2C;width:90%;height:30px;padding-top:10px;font-family:Verdana,Arial,Sans-Serif;font-size:12px;font-weight:bold;color:#8E1609;-moz-border-radius: 12px;  -webkit-border-radius: 12px;  border-radius: 12px;  -moz-box-shadow: 4px 4px 14px #000;  -webkit-box-shadow: 4px 4px 14px #000;  box-shadow: 4px 4px 14px #000;    filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=.2);text-align:center;margin-top:20px;}
-.button a{ text-decoration: none;color:#95BCBF;}
+.button a{ text-decoration: none;color:#8E1609;}
 .button a:hover{ text-decoration: underline;font-weight:bolder;}
 .leftarrowdiv:after{ content:'';display:none;position:absolute;width:0;height:0;border-color: transparent black transparent transparent; /*border color should be same as div div background color*/border-style: solid;border-width: 20px;left:390px;top:220px}
 #maincontent .mainpart{width:97%;float:left;}
 #maincontent .centerpart{width:20%;padding-top: 10px;float:right;}
-#maincontent .mainpart h1 {font-size: 28px;font-family: Verdana, Geneva, sans-serif;font-weight: bold;color:#65B2B8;text-align:center;height:50px}
+#maincontent .mainpart h1 {font-size: 28px;font-family: Verdana, Geneva, sans-serif;font-weight: bold;color:#8E1609;text-align:center;height:50px}
 #loginframe{width: 165px;height: 50px;background: none transparent;position:absolute;top:30px;left:400px;display:none;}
-.uparrowdiv:after{content:'';display:none;position:absolute;top:30px;left:460px;width:0;height:0;border-color: transparent transparent #65B2B8 transparent;border-style: solid;border-width: 10px;}
+.uparrowdiv:after{content:'';display:none;position:absolute;top:30px;left:460px;width:0;height:0;border-color: transparent transparent #8E1609 transparent;border-style: solid;border-width: 10px;}
 .clearfix{text-align:center !important;}
