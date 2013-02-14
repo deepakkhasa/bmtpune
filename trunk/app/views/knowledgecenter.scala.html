@@ -48,6 +48,41 @@
 	//end knowledge center
 
 	</script>
+	
+	<script src="http://www.google.com/jsapi?key=AIzaSyBV6MeANy_ZaLB2f2c-XKCMA7hIu2Fy744"></script>
+    <script type="text/javascript">
+
+    // Use the Google Loader script to load the google.picker script.
+    google.setOnLoadCallback(createPicker);
+    google.load('picker', '1');
+
+    // Create and render a Picker object for searching images.
+    function createPicker() {
+      var view = new google.picker.View(google.picker.ViewId.DOCS);
+     // view.setMimeTypes("image/png,image/jpeg,image/jpg");    
+      var picker = new google.picker.PickerBuilder()
+          .enableFeature(google.picker.Feature.NAV_HIDDEN)
+          .enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
+          .setAppId("AIzaSyAo6RTgWtNVDfM-P6XoITkFg3oVzPuKrA4")
+      //    .setOAuthToken(AUTH_TOKEN) //Optional: The auth token used in the current Drive API session.
+          .addView(view)
+          .addView(new google.picker.DocsUploadView())
+          .setCallback(pickerCallback)
+          .build();
+       picker.setVisible(true);
+    }
+
+    // A simple callback implementation.
+    function pickerCallback(data) {
+      if (data.action == google.picker.Action.PICKED) {
+        //var fileId = data.docs[0].id;
+		$('.toppart').animate({height:'1000px'}, 500);
+		window.open(data.docs[0].embedUrl,"documentdisplay");
+        //alert('The user selected: ' + fileId);
+      }
+    }
+    </script>
+	
 }
 @main(user,"Welcome!",scripts) {
        
@@ -55,35 +90,10 @@
 		       <div id="slides">
 		        </div>
         		<div class="mainpart">
-        		
-        			<div class="arrowlistmenu">
-
-						<h3 class="menuheader expandable">Chart</h3>
-							<ul class="categoryitems">
-								<li><a href="/assets/documents/Cancer_Diet.pdf" target="documentdisplay">Cancer Diet</a></li>
-							</ul>
-						
-						<h3 class="menuheader expandable">Research Papers</h3>
-							<ul class="categoryitems">
-								<li><a href="#" class="subexpandable">Stem Cells</a>
-									<ul class="subcategoryitems" style="margin-left: 15px">
-									<li><a href="/assets/documents/stem_cell.pdf" target="documentdisplay">Rogue Research Paper</a></li>
-									</ul>
-								</li>
-								<li><a href="#" class="subexpandable">Anaemia</a>
-									<ul class="subcategoryitems" style="margin-left: 15px">
-									<li><a href="/assets/documents/iron_def.pdf" target="documentdisplay">Iron Deficiency Anaemia</a></li>
-									<li><a href="/assets/documents/NATA_Guidelines.pdf" target="documentdisplay">NATA Guidelines</a></li>
-									</ul>
-								</li>
-
-							</ul>
-							
-					</div>
-					<div class="documentdisplay"><iframe id="documentdisplay" name="documentdisplay"></iframe></div>
+        		<div class="documentdisplay"><iframe id="documentdisplay" name="documentdisplay"></iframe></div>
         		</div>
-
-        </div>
+        		
+         </div>
 
 		
 
