@@ -19,11 +19,14 @@
         <script src="@routes.Assets.at("javascripts/jcarousellite_1.0.1c4.js")" type="text/javascript"></script>
         <script type="text/javascript" src="@routes.Assets.at("javascripts/underscore-min.js")"></script>
     	<script type="text/javascript" src="@routes.Assets.at("javascripts/backbone.js")"></script>
+    	<script type="text/javascript" data-main="@routes.Assets.at("javascripts/main.js")" src="@routes.Assets.at("javascripts/require.js")"></script>
     	<script type="text/javascript" src="@routes.Assets.at("javascripts/backbone.validation.min.js")"></script>
     	<script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.jalert.packed.js")"></script>
     	<script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.loadmask.min.js")"></script>
 	    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
 	    <script type="text/javascript" src="@routes.Assets.at("javascripts/gfeedfetcher.js")"></script>
+	    <script type="text/javascript" src="http://www.google.com/jsapi?key=AIzaSyBV6MeANy_ZaLB2f2c-XKCMA7hIu2Fy744"></script>
+	    <script type="text/javascript" src="http://swfobject.googlecode.com/svn/trunk/swfobject/swfobject.js"></script>
 	    
 <script>
 $(document).ready(function()
@@ -75,9 +78,9 @@ $(document).ready(function()
 				}
 				
 				
-				<div class="button"><a href="/knowledgecenter">KNOWLEDGE CENTER</a></div>
+				<div class="button"><a id="knowledge" href="#">KNOWLEDGE CENTER</a></div>
 				<div class="button"><a href="#">FAQ</a></div>
-				<div class="button"><a href="/videos">VIDEOS</a></div>
+				<div class="button"><a id="videos" href="#">VIDEOS</a></div>
 				</div>
 
  @content
@@ -173,5 +176,16 @@ $(document).ready(function()
         			<iframe width="500" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps/ms?msa=0&amp;msid=205820112565659617757.0004cb5d5fa7738698d89&amp;ie=UTF8&amp;ll=18.503731,73.855682&amp;spn=0,0&amp;t=m&amp;iwloc=0004cb5d5fad98c7cf878&amp;output=embed"></iframe><br />
  
 </script>
-
+<script type="text/template" id="knowledge-template">
+<div class="documentdisplay"><iframe id="documentdisplay" name="documentdisplay"></iframe></div>
+</script>
+<script type="text/template" id="videos-template">
+<div id="playerContainer" style="padding-left: 25%">
+<object id="player"></object>
+</div>
+<div id="videos2"></div>
+<script type='text/javascript' src="http://gdata.youtube.com/feeds/users/bmtpune/uploads?alt=json-in-script&callback=showMyVideos2&max-results=30"></script> 
+</iframe>
+</script>
 <script type="text/javascript" src="@routes.Assets.at("javascripts/indexview.js")"></script>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/KnowledgeView.js")"></script>
