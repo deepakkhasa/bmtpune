@@ -55,7 +55,7 @@
 #quicklinks ul li{ list-style:none; display:block; border: 1px solid #CCC;padding-bottom: 10px;padding-top: 10px;}
 #quicklinks .info { width:250px;text-decoration: none;font-size:17px;font-weight:bold }
 #quicklinks .info a{ text-decoration: none;font-size:17px;color:#8E1609 }
-.mainpart{width:97%;float:left;}
+.mainpart{width:100%;height:100%}
 .centerpart{width:20%;padding-top: 10px;float:right;}
 .mainpart h1 {font-size: 28px;font-family: Verdana, Geneva, sans-serif;font-weight: bold;color:#8E1609;text-align:center;height:50px}
 .mainpart h2 {font-size: 20px;font-family: Verdana, Geneva, sans-serif;font-weight: bold;color:#8E1609;height:60px;padding-top: 30px}

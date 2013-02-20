@@ -323,6 +323,7 @@ function Calendar(element, options, eventSources) {
 	// TODO: improve view switching (still weird transition in IE, and FF has whiteout problem)
 	
 	function changeView(newViewName) {
+		//alert();
 		if (!currentView || newViewName != currentView.name) {
 			ignoreWindowResize++; // because setMinHeight might change the height before  (and subsequently setSize) is reached
 
@@ -3920,7 +3921,6 @@ function AgendaEventRenderer() {
 		
 		// record event sides and title positions
 		for (i=0; i<segCnt; i++) {
-			alert();
 			seg = segs[i];
 			if (eventElement = seg.element) {
 				val = vsideCache[key = seg.key = cssKey(eventElement[0])];
