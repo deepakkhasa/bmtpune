@@ -1,14 +1,13 @@
-
 var indexview = Backbone.View.extend({
 	  el: $("#maincontainer"),
 	//  template: _.template($('#test').html()),
 	 events: {'click #loginbutton' : 'showloginframe' ,'click #schedulelogin' : 'showloginframesch','click #aboutus' : 'aboutus' ,
 		 'click #contactus' : 'contactus'  ,'click #toolbardashboard' : 'toolbardashboard','click #knowledge' : 'knowledge',
-		 'click #videos': 'videos'} ,
+		 'click #videos': 'videos', 'click #show-documents':'showDocuments'} ,
 
 	 initialize: function() {
-	        google.setOnLoadCallback(createPicker);
-	        google.load('picker', '1');
+	//        google.setOnLoadCallback(createPicker);
+	//        google.load('picker', '1');
 
 		 //$('body').jAlert('Welcome to jAlert Demo Page', "success");
 		// this.render();
@@ -94,10 +93,24 @@ var indexview = Backbone.View.extend({
 	  		$('.toppart').animate({height:'600px'}, 500);
 	 },
   	knowledge: function(){
+  		$(".background").mask("Loading...");
   		var template= _.template($('#knowledge-template').html()) ;
   		$('.mainpart').html(template);
   		$('.toppart').animate({height:'800px'}, 500);
-  		picker.setVisible(true);
+  		//picker.setVisible(true);
+		 $.ajax({
+		        type: "GET",
+		        url: "/knowledgecenter",
+		        success: function(data){
+		        	var documentNames="<ul>";
+		        	for(var i=0;i< data.length;i++){
+		        		documentNames = documentNames+'<li><a href="#"  onClick="loadDocument('+data[i].documentId+',\''+data[i].accessKey+'\')">'+data[i].title+'</a></li>';		        		
+		        	}
+		        	documentNames = documentNames+'</ul>';
+		        	$('#nav-menu').html(documentNames);
+		        	$(".background").unmask();
+		        }
+		    });
   	},
   	videos: function(){
 		var template= _.template($('#videos-template').html()) ;
@@ -105,23 +118,37 @@ var indexview = Backbone.View.extend({
   		$('.toppart').animate({height:'800px'}, 500);
   		$("#playContainer").css('padding-left', '40%');
   		//window.open("http://gdata.youtube.com/feeds/users/bmtpune/uploads?alt=json-in-script&callback=showMyVideos2&max-results=30","playerContainer");
+  	},
+  	showDocuments: function(){
+  		$('#nav-menu').show();
+  		$('#show-documents').hide();
+  		$('#documentdisplay').hide();
   	}
 });
 var indexview = new indexview();
-
+function loadDocument(docId,accessKey){
+	$('#nav-menu').hide();
+	$('#show-documents').show();
+	$('#documentdisplay').show();
+	 var scribd_doc = scribd.Document.getDoc(docId, accessKey);
+	 scribd_doc.write('documentdisplay');
+}
  var picker =null;
   
-// Create and render a Picker object for searching images.
+/*// Create and render a Picker object for searching images.
 function createPicker() {
   var view = new google.picker.View(google.picker.ViewId.DOCS);
+  var docview=new google.picker.DocsView();
+  docview.setMode(google.picker.DocsViewMode.LIST);
+  docview.setOwnedByMe(false);
  // view.setMimeTypes("image/png,image/jpeg,image/jpg");    
    picker = new google.picker.PickerBuilder()
       .enableFeature(google.picker.Feature.NAV_HIDDEN)
-      .enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
+  //    .enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
       .setAppId("AIzaSyAo6RTgWtNVDfM-P6XoITkFg3oVzPuKrA4")
-  //    .setOAuthToken(AUTH_TOKEN) //Optional: The auth token used in the current Drive API session.
-      .addView(view)
-      .addView(new google.picker.DocsUploadView())
+      .setOAuthToken("ya29.AHES6ZST7HuyH1fBapao2O-iVAs_GKnsMm_P55Qk6-ARywk") //Optional: The auth token used in the current Drive API session.
+     // .addView(view)
+      .addView(docview)
       .setCallback(pickerCallback)
       .build();
    
@@ -135,7 +162,7 @@ function pickerCallback(data) {
 	window.open(data.docs[0].embedUrl,"documentdisplay");
     //alert('The user selected: ' + fileId);
   }
-}
+}*/
 
 function loadVideo(playerUrl, autoplay) {
 	  swfobject.embedSWF(
