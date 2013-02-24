@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import java.text.*;
-
+import java.util.ArrayList;
 import models.*;
 import play.*;
 import play.mvc.*;
@@ -14,6 +14,19 @@ import views.html.*;
 import play.data.Form;
 import static play.libs.Json.toJson;
 
+import java.io.IOException;
+
+import com.google.code.javascribd.connection.ScribdClient;
+import com.google.code.javascribd.connection.ScribdConnectionException;
+import com.google.code.javascribd.docs.GetList;
+import com.google.code.javascribd.docs.GetListResponse;
+import com.google.code.javascribd.docs.Search;
+import com.google.code.javascribd.docs.SearchResponse;
+import com.google.code.javascribd.type.ApiKey;
+import com.google.code.javascribd.type.SearchScope;
+import com.google.code.javascribd.type.SessionKey;
+import com.google.code.javascribd.user.Login;
+import com.google.code.javascribd.user.LoginResponse;
 public class Application extends Controller {
 
 	 public static final String APPMENT_USER = "appment.user";
@@ -169,9 +182,45 @@ public class Application extends Controller {
       return ok(aboutus.render(SecureSocial.currentUser()));
   }
 
-  
-  public static Result knowledgeCenter() {
-      return ok(knowledgecenter.render(SecureSocial.currentUser()));
+	public static class Documents {
+
+		public String documentId;
+		public String title;
+		public String description;
+		public String thumbNailURI;
+		public String accessKey;
+
+	} 
+  public static Result knowledgeCenter() throws ScribdConnectionException, IOException{
+      ScribdClient conn = new ScribdClient();
+      conn.setUrl("http://api.scribd.com/api");
+      ApiKey key = new ApiKey("6uf2rzuco62uoju9f5krf");
+      Login method = new Login(key, "", "");
+      LoginResponse result = conn.execute(method);
+      if (result.getError() != null) {
+              System.out.println("rsp.error.code=" + result.getError().getCode());
+              System.out.println("rsp.error.message=" + result.getError().getMessage());
+      }
+      SessionKey session = result.getSessionKey();
+ /*     System.out.println("rsp.sessionKey=" + result.getSessionKey());
+      System.out.println("rsp.name=" + result.getName());
+      System.out.println("rsp.username=" + result.getUserName());
+      System.out.println("rsp.user_id=" + result.getUserId());
+*/
+      GetList getList = new GetList(key, session);
+      GetListResponse resultList = conn.execute(getList);
+      List<Documents> documents =new ArrayList<Documents>();
+      for (GetListResponse.Entry res : resultList.getResultSet().getEntries()) {
+    	  	Documents d1 = new Documents();
+    	  	d1.title = res.getTitle();
+    	  	d1.documentId = res.getDocId().toString();
+    	  	d1.description = res.getDescription();
+    	  	d1.thumbNailURI =res.getThumbnailUrl().toString();
+    	  	d1.accessKey= res.getAccessKey();
+    	  	documents.add(d1);
+      }
+
+      return ok(toJson(documents));
   }
 
   public static Result videos() {
