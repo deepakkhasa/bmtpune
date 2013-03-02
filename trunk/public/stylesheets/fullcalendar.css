@@ -44,6 +44,7 @@ html .fc,
 .fc-header-left {
 	width: 25%;
 	text-align: left;
+	display: none;
 	}
 	
 .fc-header-center {

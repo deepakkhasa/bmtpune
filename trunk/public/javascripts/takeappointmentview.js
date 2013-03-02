@@ -4,6 +4,7 @@ var takeappointmentView = Backbone.View.extend({
 
 	 initialize: function() {
 	    Backbone.Validation.bind(this,{forceUpdate: true});
+	    $(".background").mask("Loading...");
 		 $.ajax({
 		        type: "GET",
 		        url: "/getDoctors",
@@ -30,6 +31,7 @@ function getCalendarEvents(doctorId){
 	        url: "/getDoctorAppointments?doctorId=" + doctorId+"&hospitalId=0",
 	        success: function(data){
 	        	showCalendar(data,doctorId);
+	        	$(".background").unmask();
 	        	//console.log(hospitals.hospitals[0].hospitalid);
 	        }
 	    });

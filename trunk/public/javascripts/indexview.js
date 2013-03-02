@@ -12,6 +12,7 @@ var indexview = Backbone.View.extend({
 		 //$('body').jAlert('Welcome to jAlert Demo Page', "success");
 		// this.render();
 		// document.getElementById('maincontent').src = "data:text/html;charset=utf-8," + escape(");
+	  		$('#loginframe').load("/login");
 	     Backbone.Validation.bind(this,{forceUpdate: true});
 			$('#slides').slides({
 				preload: true,
@@ -69,12 +70,12 @@ var indexview = Backbone.View.extend({
   	showloginframe: function(){
   		$('#loginframe').show();
 //  		$('.uparrowdiv').toggle();
-  		$('#loginframe').css({top:'30px',left:'350px'});
+  		$('#loginframe').css({top:'40px',left:'325px'});
   		
   	},
-  	showloginframesch: function(){
+  	showloginframesch: function(){  		
+  		$('#loginframe').css({top: '225px',left:'360px'});
   		$('#loginframe').show();
-  		$('#loginframe').css({top: '200px',left:'400px'});
   		//$('.uparrowdiv').toggle();
   	},
   	aboutus: function(){
