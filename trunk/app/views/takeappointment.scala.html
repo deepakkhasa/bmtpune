@@ -1,4 +1,4 @@
-@(user: securesocial.core.java.SocialUser ,message: String, doctorDetails: java.util.List[DoctorDetails])
+@(user: securesocial.core.java.SocialUser ,message: String, listOfHospitals: java.util.List[DoctorDetails], doctorDetails: java.util.List[DoctorDetails])
 @scripts = {    
 	<script type='text/javascript' src="@routes.Assets.at("javascripts/jquery-ui-1.8.23.custom.min.js")"></script>
 	<script type='text/javascript' src="@routes.Assets.at("javascripts/fullcalendar_hyperlink.js")"></script>
@@ -23,16 +23,28 @@
   <script>
   var hospitals = {hospitals:[]};
   var hospital;
-	@for(hospital <- doctorDetails ){
+	@for(hospital <- listOfHospitals ){
 		hospital = {hospitalid:"@hospital.hospital.id",
 					hospitalname: "@hospital.hospital.hospitalName",
 					color:""
 		};
 		hospitals.hospitals.push(hospital);
 	}
+	  var doctorDayDetails = [];
+	  var doctorSchedule1;
+		@for(doctorSchedule <- doctorDetails ){
+			doctorSchedule1 = {day:"@doctorSchedule.day",
+						startTime: "@doctorSchedule.startTime",
+						endTime: "@doctorSchedule.endTime",
+						hospitalid:"@doctorSchedule.hospital.id",
+						hospitalname: "@doctorSchedule.hospital.hospitalName",
+			};
+			doctorDayDetails.push(doctorSchedule1);
+		}	
+		console.log(doctorDayDetails);
 	
   </script>   
-          		  			@for(hospital <- doctorDetails ){
+          		  			@for(hospital <- listOfHospitals ){
         		  			<option value="@hospital.hospital.id">@hospital.hospital.hospitalName</option>
         		  			}
          			
@@ -41,6 +53,8 @@
         		</div>
 	            <div class="modal_window" id="modal_window">
 	                <div class="modal_form" id="modal_form">
+	                	<label><strong>Appointment At:</strong> <input id="appointmenthospital" class="sprited" disabled="disabled"/></label>
+	                	<input type="hidden" id="appointmenthospitalid" >
 	                    <label><strong>Brief Description:</strong> <input id="appointmentdescription" class="sprited"/></label>
 	                    <label ><strong>Date:</strong> <input id="appointmentdate" class="firstField smallText" disabled="disabled"/>
 	                    <strong>Time:</strong> <input id="appointmenttime" class="smallText" disabled="disabled"/></label>

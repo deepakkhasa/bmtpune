@@ -53,16 +53,8 @@ public class DoctorDetails extends Model {
     public static Model.Finder<Long,DoctorDetails> find = new Model.Finder(Long.class, DoctorDetails.class);
 
     public static List<DoctorDetails> getHospitalsForDoctor(long doctorId) {    
-    	List<DoctorDetails> listOfHospitals =find.select("idHospitals,hospital_name").join("hospital").where().eq("doctor_id",doctorId).orderBy("hospital_name").findList();
-    	List<DoctorDetails> listOfHospitals1  = new ArrayList<DoctorDetails>();
-    	String hospitalName ="";
-    	for(DoctorDetails d: listOfHospitals){
-    		if(!d.hospital.hospitalName.equals(hospitalName)){
-    			hospitalName=d.hospital.hospitalName;
-    			listOfHospitals1.add(d);
-    		}
-    	}
-    	return listOfHospitals1;
+    	List<DoctorDetails> listOfHospitals =find.join("hospital").where().eq("doctor_id",doctorId).orderBy("hospital_name").findList();
+    	return listOfHospitals;
     			
     }
     

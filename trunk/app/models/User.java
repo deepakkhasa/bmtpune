@@ -66,6 +66,15 @@ public class User extends Model {
             .eq("user_type", "D")
             .findList();
     }
+    
+    /**
+     * Get User Details.
+     */
+    public static User getUserDetails(long userId) {
+        return find.where()
+            .eq("id", userId)
+            .findUnique();
+    }
 
 }
 

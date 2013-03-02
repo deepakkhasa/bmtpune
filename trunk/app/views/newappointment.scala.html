@@ -1,0 +1,193 @@
+@(doctorName: String, patientName: String, hospital: String, title: String, datetime: String,comments: String)
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Yashoda Clinic</title>
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+
+<style>
+#header
+{	width:600px;
+	height:109px;
+}
+#content
+{	width:577px;
+	height:320px;
+	padding-top:30px;
+	padding-left:23px;
+	vertical-align:top;
+}
+#buttons
+{	width:577px;
+	height:40px;
+	padding-left:23px;
+	padding-bottom:10px;
+}
+#content h2
+{	font-family:Lato;
+	font-size:15px;
+	color:#494545;
+	font-weight:400;
+}
+#content h3
+{	font-family:Lato;
+	font-size:13px;
+	color:#5d5b5b;
+	font-weight:400;
+	line-height:22px;
+}
+#content h3 a
+{	color:#5d5b5b;
+	font-size:11px;
+}
+#content h3 a:link
+{	color:#5d5b5b;
+	font-size:11px;
+}
+#content h3 a:hover
+{	color:#5d5b5b;
+	font-size:11px;
+}
+#content h4
+{	font-family:Lato;
+	font-size:22px;
+	color:#5d5b5b;
+	font-weight:400;
+	line-height:22px;
+}
+#content h5
+{	font-family:Lato;
+	font-size:22px;
+	color:#5d5b5b;
+	font-weight:400;
+	line-height:22px;
+}
+#content h1
+{	font-family:Lato;
+	font-size:24px;
+	color:#5d5b5b;
+	font-weight:400;
+	line-height:24px;
+}
+span.post
+{	font-family:Lato;
+	font-size:18px;
+	color:#5d5b5b;
+	font-weight:400;
+}
+
+span.referred
+{	font-family:Lato;
+	font-size:16px;
+	color:#5d5b5b;
+	font-weight:400;
+}
+span.key
+{	font-family:Lato;
+	font-size:18px;
+	color:#5d5b5b;
+	font-weight:400;
+}
+#footer
+{	width:600px;
+	height:83px;
+}
+.signin{
+	border:1px solid #56a0a9;
+	background:#87d6dd;
+	color:#063336;
+	float:left;
+	font-weight:400;
+	font-size:15px;
+	width:auto;
+	height: 28px;
+	cursor:pointer;
+}
+.accept
+{	width:auto;
+	height:auto;
+	margin-right:20px;
+	float:left;
+}
+.nothanks
+{	width:auto;
+	height:auto;
+	margin-right:20px;
+	float:right;
+}
+.success-bt
+{	width:152px;
+	height:27px;
+	float:left;
+	border:1px solid #56a0a9;
+	background:#87d6dd;
+	font-size: 14px;
+	text-align: center;
+}
+.signin-btn{
+	border:none;
+	background:#87d6dd;
+	width:140px;
+	height:22px;
+	color:#063336;
+	float:left;
+	font-weight:400;
+	font-size:15px;
+	text-transform:uppercase;
+	text-decoration:none;
+	text-align:center;
+	padding-top:5px;
+}
+.footer {
+background-color: #8E1609;
+font-family: Verdana,Arial,Sans-Serif;
+font-size: 12px;
+text-align: right;
+height: 30px;
+color: white;
+width: 1200px;
+margin: 0 auto;
+}
+
+</style>
+</head>
+
+<body>
+<table width="600" border="0">
+  <tr>
+    <td id="header"><img src="${0}" width="600" height="109" alt="head" /></td>
+  </tr>
+
+   <tr>
+    <td id="content">
+    <h4>Hi Dr.@doctorName<br/>
+    <span class="referred">@patientName has scheduled a new appointment at @hospital:</span>
+    </h4>
+
+    <h3>
+    <span class="post"> @title</span><br/>
+    <span class="post">at @datetime</span><br/><br/>
+    <span class="post">Additional information provided by patient is:@comments</span><br/><br/>
+    </h3>
+	<h4>
+	    Thanks <br/>
+	Yashoda Clinic
+    
+	
+	</h4>
+    </td>
+  </tr>
+
+
+   <tr>
+    <td id="footer">              
+    			<div  class="footer">
+                     <span>Â© 2012 Appment-All Rights Reserved</span>
+              </div>
+	</td>
+  </tr>
+
+</table>
+</body>
+</html>
