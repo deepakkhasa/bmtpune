@@ -2315,8 +2315,58 @@ function BasicView(element, calendar, viewName) {
 			}
 			cell.find('div.fc-day-number a').text(date.getDate());
 			cell.find('div.fc-day-number a').bind('click',function(event){
+				var clickedDate = new Date(calendar.getDate().getFullYear(), calendar.getDate().getMonth(), $(this).text());	
+				if(clickedDate < new Date()){
+					alert("Please take appointment for today or future date");
+					return;
+				}
 				calendar.gotoDate(calendar.getDate().getFullYear(), calendar.getDate().getMonth(), $(this).text());
 				calendar.changeView('agendaDay');
+							
+				var theDay = clickedDate.getDay()+1;
+				var theDayTiming=[];
+				for(var i=0;i<doctorDayDetails.length;i++){
+					if(theDay == doctorDayDetails[i].day){
+						theDayTiming.push(doctorDayDetails[i]);
+					}					
+				}
+				var timing;
+				var startingTime;
+				var color;
+				var hospitalId;
+				var hospitalName;
+				$('[class^="fc-slot"]').each(function(index){
+					//var days = [""]
+					timing= $(this).text().indexOf("am") >0 ?$(this).text().substring(0,$(this).text().indexOf("am")):
+						($(this).text().substring(0,$(this).text().indexOf("pm")) ==12?parseInt($(this).text().substring(0,$(this).text().indexOf("pm"))):
+							parseInt($(this).text().substring(0,$(this).text().indexOf("pm")))+12);
+					for(var i=0;i<theDayTiming.length;i++){
+						
+						if(!startingTime && parseInt(theDayTiming[i].startTime.substring(0,theDayTiming[i].startTime.indexOf(":")))==timing){
+							startingTime=timing;
+							for(var j=0;j<hospitals.hospitals.length;j++){
+								if(hospitals.hospitals[j].hospitalid==theDayTiming[i].hospitalid){
+									color = hospitals.hospitals[j].color;
+									hospitalId = hospitals.hospitals[j].hospitalid;
+									hospitalName = hospitals.hospitals[j].hospitalname;
+									break;
+								}
+							}								
+						break;
+						}
+						if(startingTime && parseInt(theDayTiming[i].endTime.substring(0,theDayTiming[i].endTime.indexOf(":")))==timing){
+							startingTime=null;
+							color=null;
+							hospitalId=null;
+							hospitalName=null;
+						}
+					}
+					if(color){
+						$(this).find('.ui-widget-content').css('background-color', color);
+						$(this).find('.ui-widget-content').attr('hospital',hospitalId);
+						$(this).find('.ui-widget-content').attr('hospitalName',hospitalName);
+					}
+				});
 			});
 
 			if (dowDirty) {
@@ -2827,8 +2877,10 @@ setDefaults({
 	dragOpacity: {
 		agenda: .5
 	},
-	minTime: 0,
-	maxTime: 24
+	//this is for the start time-paddy
+	minTime: 7,
+	//this is for the end time-paddy
+	maxTime: 22
 });
 
 
@@ -3139,33 +3191,39 @@ function AgendaView(element, calendar, viewName) {
 		    
 		});
 		$('[class^="fc-slot"]').bind( 'showModal', function(e) {
-			if("" != $.trim($(this).children("th").text())){
-				var currTime = $(this).children("th").text();
-				var len = currTime.length;
-				var nowTime = currTime.substring(0,len-2) + ":00 " +currTime.substring(len-2,len);
-				$("#appointmenttime").val(nowTime);
-			}else{
-				var prevTime = $(this).prev().children("th").text();
-				var len = prevTime.length;
-				var nowTime = prevTime.substring(0,len-2) + ":30 " +prevTime.substring(len-2,len);
-				$("#appointmenttime").val(nowTime);
+			if($(this).find('.ui-widget-content').attr('hospital')){
+				$("#appointmenthospital").val($(this).find('.ui-widget-content').attr('hospitalName'));
+				$("#appointmenthospitalid").val($(this).find('.ui-widget-content').attr('hospital'));
+				if("" != $.trim($(this).children("th").text())){
+					var currTime = $(this).children("th").text();
+					var len = currTime.length;
+					var nowTime = currTime.substring(0,len-2) + ":00 " +currTime.substring(len-2,len);
+					$("#appointmenttime").val(nowTime);
+				}else{
+					var prevTime = $(this).prev().children("th").text();
+					var len = prevTime.length;
+					var nowTime = prevTime.substring(0,len-2) + ":30 " +prevTime.substring(len-2,len);
+					$("#appointmenttime").val(nowTime);
+				}
+				$("#appointmentdate").val($('[class*=" fc-col0"]').text());
+	            $("#modal_window").lightbox_me({centered: true, onLoad: function() {
+					$("#modal_window").find("input:first").focus();
+				}
+	            });
+	            e.preventDefault();
 			}
-			$("#appointmentdate").val($('[class*=" fc-col0"]').text());
-            $("#modal_window").lightbox_me({centered: true, onLoad: function() {
-				$("#modal_window").find("input:first").focus();
-			}
-            });
-            e.preventDefault();
+
 		});
 		$("#AppmentSubmit").click(function() {
 			 $.ajax({
 			        type: "POST",
 			        url: "/addAppointment",				        
-			        data: {doctorId: $("#doctorId").val(), headline: $("#appointmentdescription").val(), dateOfAppointment: $("#appointmentdate").val(), timeOfAppointment: $("#appointmenttime").val(), comment: $("#appointmentcomments").val()},
+			        data: {doctorId: $("#doctorId").val(), headline: $("#appointmentdescription").val(), dateOfAppointment: $("#appointmentdate").val(), timeOfAppointment: $("#appointmenttime").val(), comment: $("#appointmentcomments").val(), hospital: $("#appointmenthospitalid").val()},
 			        success: function(data){
 			        	if(data == "success"){
 			        		$("#modal_window").trigger('close');
 			        		alert("Thank you. We have scheduled the appointment.");
+			        		//calendar.changeView('agendaDay');
 			        	}
 		        	}
 			    });

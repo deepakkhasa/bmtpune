@@ -67,7 +67,7 @@ mainpart ul a{font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#8E
 #highlights{margin:0 auto;width:1050px;float:left}
 tr.selected {background-color: red; color: white;}
 /*light me*/
-.modal_window {-moz-border-radius: 6px;background-color:#8E1609;-webkit-border-radius: 6px;border: 1px solid #536376;-webkit-box-shadow: rgba(0,0,0,.6) 0px 2px 12px;-moz-box-shadow:  rgba(0,0,0,.6) 0px 2px 12px;;padding: 14px 22px;width: 600px;height:auto;position: relative;display: none;}
+.modal_window {-moz-border-radius: 6px;background-color:#B3D4EE;-webkit-border-radius: 6px;border: 1px solid #536376;-webkit-box-shadow: rgba(0,0,0,.6) 0px 2px 12px;-moz-box-shadow:  rgba(0,0,0,.6) 0px 2px 12px;;padding: 14px 22px;width: 600px;height:auto;position: relative;display: none;}
 .modal_window #modal_form {margin-top: 13px;font-family: Verdana, Geneva, sans-serif;color:black;}
 .modal_window label {display: block;margin-bottom: 10px;color: #536376;font-size: .9em;}  
 .modal_window label input {padding: 2px 8px;font-size: 1.2em;line-height: 31px;}
@@ -92,7 +92,6 @@ a.form_button {float: left;width: 93px; height: 31px;margin-right: 15px;}
 .news-jcarousellite .info span.cat { display: block; font-size:10px; color:#808080; }
 .clear { clear: both; }
 .appmentFont{color: #536376;font-size: .9em;font-weight:bold;}
-p {text-indent:50px;}
 p a{color:#8E1609;}
 a{color:#8E1609;}
 .footer{background-color: #8E1609;font-family:Verdana,Arial,Sans-Serif;font-size:12px;text-align: right;height:30px;color:white;width:1200px;margin: 0 auto;}
@@ -131,8 +130,8 @@ ul.videos{  margin-bottom: 1em;  padding-left : 0em;  margin-left: 0em;  list-st
 #maincontent .mainpart{width:97%;float:left;}
 #maincontent .centerpart{width:20%;padding-top: 10px;float:right;}
 #maincontent .mainpart h1 {font-size: 28px;font-family: Verdana, Geneva, sans-serif;font-weight: bold;color:#8E1609;text-align:center;height:50px}
-#loginframe{width: 165px;height: 50px;background: none transparent;position:absolute;top:30px;left:400px;display:none;}
+#loginframe{width: 200px;height: 50px;background: none transparent;position:absolute;top:30px;left:400px;display:none;}
 .uparrowdiv:after{content:'';display:none;position:absolute;top:30px;left:460px;width:0;height:0;border-color: transparent transparent #8E1609 transparent;border-style: solid;border-width: 10px;}
 .clearfix{text-align:center !important;}
-#nav-menu ul{font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 12px;font-style: normal;line-height: 2em;font-weight: normal;font-variant: normal;text-transform: none;color: #00CC33;text-decoration: none;text-indent: 5px;list-style-position: outside;list-style-type: square;padding: 6px;margin: 2px;}
+#nav-menu ul{font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 14px;font-style: normal;line-height: 3em;font-weight: normal;font-variant: normal;text-transform: none;color: #00CC33;text-decoration: none;text-indent: 5px;list-style-position: outside;list-style-type: square;padding: 6px;margin: 2px;}
 #show-documents{display:none;text-decoration:none;width: 300px;height: 20px;background: #4E9CAF;padding: 10px;text-align: center;border-radius: 5px;color: white;font-weight: bold;}
