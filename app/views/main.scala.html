@@ -28,6 +28,7 @@
 	    <script type="text/javascript" src="http://swfobject.googlecode.com/svn/trunk/swfobject/swfobject.js"></script>
 	    <script type="text/javascript" src='http://www.scribd.com/javascripts/scribd_api.js'></script>
 <script>
+
 $(document).ready(function()
 {  $('.button > a').click(function(e){
 	//alert(e.pageX +', '+ e.pageY);
@@ -64,7 +65,7 @@ $(document).ready(function()
 
 		    	</div>
 
-	<iframe id="loginframe" src="/login" scrolling="no"></iframe>		
+	<div id="loginframe" ></div>		
 				<div class="control" >
 @if(null == user){							
 				<div class="button"><a id="schedulelogin" href="#">SCHEDULE APPOINTMENT</a></div>

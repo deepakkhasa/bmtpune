@@ -2,9 +2,11 @@ package controllers;
 
 import java.util.Date;
 import java.util.List;
-
+import utils.MailerScheduler;
 import java.text.*;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+
 import models.*;
 import play.*;
 import play.mvc.*;
@@ -119,7 +121,16 @@ public class Application extends Controller {
 	  List<User> doctor= User.getDoctors();
 	 // String user = Http.Context.current().session().get(APPMENT_USER);
 	  List<DoctorDetails> doctorDetails = DoctorDetails.getHospitalsForDoctor(doctor.get(0).id);
-	    return ok(takeappointment.render(SecureSocial.currentUser(),"",doctorDetails));
+	   	List<DoctorDetails> listOfHospitals1  = new ArrayList<DoctorDetails>();
+    	String hospitalName ="";
+    	for(DoctorDetails d: doctorDetails){
+    		if(!d.hospital.hospitalName.equals(hospitalName)){
+    			hospitalName=d.hospital.hospitalName;
+    			listOfHospitals1.add(d);
+    		}
+    	}
+ 
+	    return ok(takeappointment.render(SecureSocial.currentUser(),"",listOfHospitals1,doctorDetails));
 	  
   }
 
@@ -252,6 +263,7 @@ public class Application extends Controller {
 		public String comment;
 		public String dateOfAppointment;
 		public String timeOfAppointment;
+		public long hospital;
 	}
 
 	  @SecureSocial.Secured  
@@ -264,6 +276,9 @@ public class Application extends Controller {
 		  	appointment.appointmentComment = appointmentForm.get().comment;
 		  	appointment.appointmentHeadline= appointmentForm.get().headline;
 		  	appointment.doctorId= appointmentForm.get().doctorId;
+		  	Hospitals hospital = new Hospitals();
+		  	hospital.id = appointmentForm.get().hospital;
+		  	appointment.hospital= hospital;
 		    try{
 			  	SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
 			  	Date d = df.parse(appointmentForm.get().dateOfAppointment); 
@@ -272,7 +287,8 @@ public class Application extends Controller {
 			    DateFormat TWENTY_FOUR_TF = new SimpleDateFormat("HH:mm");		    	
 			    appointment.appointmentTime =TWENTY_FOUR_TF.format(TWELVE_TF.parse(appointmentForm.get().timeOfAppointment));
 			    appointment.save();
-		    }catch(ParseException ex){
+			    MailerScheduler.newAppointment(appointment,user);
+		    }catch(Exception ex){
 		    	System.out.println(ex.getStackTrace());
 		    }
 
@@ -280,5 +296,6 @@ public class Application extends Controller {
 		  
 	  }
 
+	  
 
 }

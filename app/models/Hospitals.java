@@ -50,5 +50,12 @@ public class Hospitals extends Model {
     public static List<Hospitals> getAllHospitals() {    
     	return find.all();
     }
+    
+    public static Hospitals getHospital(long hospitalId) {    
+        return find.where()
+                .eq("id", hospitalId)
+                .findUnique();
+    }
+
 }
 
