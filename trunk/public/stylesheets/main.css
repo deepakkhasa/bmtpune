@@ -67,7 +67,7 @@ mainpart ul a{font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#8E
 #highlights{margin:0 auto;width:1050px;float:left}
 tr.selected {background-color: red; color: white;}
 /*light me*/
-.modal_window {-moz-border-radius: 6px;background-color:#B3D4EE;-webkit-border-radius: 6px;border: 1px solid #536376;-webkit-box-shadow: rgba(0,0,0,.6) 0px 2px 12px;-moz-box-shadow:  rgba(0,0,0,.6) 0px 2px 12px;;padding: 14px 22px;width: 600px;height:auto;position: relative;display: none;}
+.modal_window {-moz-border-radius: 6px;background-image:url(../images/msgBoxBackGround.png);-webkit-border-radius: 6px;border: 1px solid #536376;-webkit-box-shadow: rgba(0,0,0,.6) 0px 2px 12px;-moz-box-shadow:  rgba(0,0,0,.6) 0px 2px 12px;;padding: 14px 22px;width: 600px;height:auto;position: relative;display: none;}
 .modal_window #modal_form {margin-top: 13px;font-family: Verdana, Geneva, sans-serif;color:black;}
 .modal_window label {display: block;margin-bottom: 10px;color: #536376;font-size: .9em;}  
 .modal_window label input {padding: 2px 8px;font-size: 1.2em;line-height: 31px;}
@@ -135,3 +135,10 @@ ul.videos{  margin-bottom: 1em;  padding-left : 0em;  margin-left: 0em;  list-st
 .clearfix{text-align:center !important;}
 #nav-menu ul{font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 14px;font-style: normal;line-height: 3em;font-weight: normal;font-variant: normal;text-transform: none;color: #00CC33;text-decoration: none;text-indent: 5px;list-style-position: outside;list-style-type: square;padding: 6px;margin: 2px;}
 #show-documents{display:none;text-decoration:none;width: 300px;height: 20px;background: #4E9CAF;padding: 10px;text-align: center;border-radius: 5px;color: white;font-weight: bold;}
+.knowledgetable{margin:10px;}
+.knowledgetable td{padding-left:30px;text-align:left;vertical-align:top;}
+.knowledgetable h2{font-size: 14px;font-family: Verdana, Geneva, sans-serif;font-weight: bold;color:#8E1609;padding-top:1px;height:30px}
+.knowledgetable h2 a{text-decoration:none;}
+.knowledgetable h2 a:hover{text-decoration:underline;}
+.knowledgediv{line-height:115%;border-bottom: 1px solid #8E1609;}
+.knowledgediv h1 {font-size: 20px;font-family: Verdana, Geneva, sans-serif;font-weight: bold;color:#8E1609;text-align:center;height:15px}

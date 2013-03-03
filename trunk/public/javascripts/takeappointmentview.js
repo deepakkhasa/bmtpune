@@ -41,7 +41,13 @@ function showDoctorPopUp(doctorList){
     $("#modal_window_doc").lightbox_me({centered: true, onLoad: function() {
 		$("#modal_window_doc").find("select:first").focus();
 		}, onClose: function(){
-			alert("You will now be taken to calendar for "+ $("#doctorname").text() +" Speciality: "+ $("#speciality").val());
+			//alert("You will now be taken to calendar for "+ $("#doctorname").text() +" Speciality: "+ $("#speciality").val());
+      		 $.msgBox({
+				    title:"Yashoda Clinic",
+				    content:"You will now be taken to calendar for "+ $("#doctorname").text() +" Speciality: "+ $("#speciality").val(),
+				    type:"info"
+				});
+
 	
 		}
     });

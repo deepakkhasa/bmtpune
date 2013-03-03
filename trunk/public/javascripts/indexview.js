@@ -6,6 +6,7 @@ var indexview = Backbone.View.extend({
 		 'click #videos': 'videos', 'click #show-documents':'showDocuments'} ,
 
 	 initialize: function() {
+
 	//        google.setOnLoadCallback(createPicker);
 	//        google.load('picker', '1');
 
@@ -103,11 +104,20 @@ var indexview = Backbone.View.extend({
 		        type: "GET",
 		        url: "/knowledgecenter",
 		        success: function(data){
-		        	var documentNames="<ul>";
+		        	var documentNames="<div class=\"knowledgediv\"><h1>Featured<h1></div><table class=\"knowledgetable\">";
+		        	var row=0;
 		        	for(var i=0;i< data.length;i++){
-		        		documentNames = documentNames+'<li><a href="#"  onClick="loadDocument('+data[i].documentId+',\''+data[i].accessKey+'\')">'+data[i].title+'</a></li>';		        		
+		        		if(row ==0){
+		        			documentNames = documentNames+"<tr>";
+		        		}	
+		        		documentNames = documentNames+'<td><img src="'+data[i].thumbNailURI+'"></td><td><div><h2><a href="#"  onClick="loadDocument('+data[i].documentId+',\''+data[i].accessKey+'\')">'+data[i].title+'</a></h2><div>'+data[i].description+'</div></div></td>';
+		        		row=row+1;
+		        		if(row == 2){
+		        			documentNames = documentNames+"</tr>";
+		        			row=0;
+		        		}
 		        	}
-		        	documentNames = documentNames+'</ul>';
+		        	documentNames = documentNames+'</table>';
 		        	$('#nav-menu').html(documentNames);
 		        	$(".background").unmask();
 		        }

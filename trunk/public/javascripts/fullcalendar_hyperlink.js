@@ -2317,7 +2317,13 @@ function BasicView(element, calendar, viewName) {
 			cell.find('div.fc-day-number a').bind('click',function(event){
 				var clickedDate = new Date(calendar.getDate().getFullYear(), calendar.getDate().getMonth(), $(this).text());	
 				if(clickedDate < new Date()){
-					alert("Please take appointment for today or future date");
+					//alert("Please take appointment for today or future date");
+		      		 $.msgBox({
+						    title:"Yashoda Clinic",
+						    content:"Please take appointment for today or future date",
+						    type:"info"
+						});
+
 					return;
 				}
 				calendar.gotoDate(calendar.getDate().getFullYear(), calendar.getDate().getMonth(), $(this).text());
@@ -3210,7 +3216,7 @@ function AgendaView(element, calendar, viewName) {
 					$("#modal_window").find("input:first").focus();
 				}
 	            });
-	            e.preventDefault();
+				e.preventDefault();
 			}
 
 		});
@@ -3222,7 +3228,13 @@ function AgendaView(element, calendar, viewName) {
 			        success: function(data){
 			        	if(data == "success"){
 			        		$("#modal_window").trigger('close');
-			        		alert("Thank you. We have scheduled the appointment.");
+			        		//alert("Thank you. We have scheduled the appointment.");
+				      		 $.msgBox({
+								    title:"Yashoda Clinic",
+								    content:"Thank you. We have scheduled the appointment.",
+								    type:"info"
+								});
+
 			        		//calendar.changeView('agendaDay');
 			        	}
 		        	}
