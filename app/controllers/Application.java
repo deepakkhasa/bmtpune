@@ -205,7 +205,7 @@ public class Application extends Controller {
   public static Result knowledgeCenter() throws ScribdConnectionException, IOException{
       ScribdClient conn = new ScribdClient();
       conn.setUrl("http://api.scribd.com/api");
-      ApiKey key = new ApiKey("6uf2rzuco62uoju9f5krf");
+      ApiKey key = new ApiKey("61ek1y88milxwuxacyw4o");
       Login method = new Login(key, "", "");
       LoginResponse result = conn.execute(method);
       if (result.getError() != null) {
