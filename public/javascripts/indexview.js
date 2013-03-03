@@ -110,7 +110,7 @@ var indexview = Backbone.View.extend({
 		        		if(row ==0){
 		        			documentNames = documentNames+"<tr>";
 		        		}	
-		        		documentNames = documentNames+'<td><img src="'+data[i].thumbNailURI+'"></td><td><div><h2><a href="#"  onClick="loadDocument('+data[i].documentId+',\''+data[i].accessKey+'\')">'+data[i].title+'</a></h2><div>'+data[i].description+'</div></div></td>';
+		        		documentNames = documentNames+'<td>'+'<a href="#"  onClick="loadDocument('+data[i].documentId+',\''+data[i].accessKey+'\')">'+'<img src="'+data[i].thumbNailURI+'"></a></td><td><div><h2><a href="#"  onClick="loadDocument('+data[i].documentId+',\''+data[i].accessKey+'\')">'+data[i].title+'</a></h2><div>'+data[i].description+'</div></div></td>';
 		        		row=row+1;
 		        		if(row == 2){
 		        			documentNames = documentNames+"</tr>";
