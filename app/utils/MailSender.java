@@ -39,15 +39,15 @@ public class MailSender  extends UntypedActor{
 		myURL = Play.application().configuration().getString( "my.email.url" );
 
 		try {
-			headerURL = new URL(myURL +"/assets/images/blood_cells.jpg");
-		//	footerURL = new URL(myURL +"/assets/images/footer.gif");
+			headerURL = new URL(myURL +"/assets/images/logo.jpg");
+			footerURL = new URL(myURL +"/assets/images/footer.jpg");
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
 	    String headercid = email.embed(headerURL, "header");
-	  //  String footercid = email.embed(footerURL, "footer");
-		String html=body.replaceAll("\\$\\{" + 0 + "\\}", "cid:" + headercid );
-				//.replaceAll("\\$\\{" + 1 + "\\}", "cid:" + footercid);
+	    String footercid = email.embed(footerURL, "footer");
+		String html=body.replaceAll("\\$\\{" + 0 + "\\}", "cid:" + headercid )
+				.replaceAll("\\$\\{" + 1 + "\\}", "cid:" + footercid);
 	    email.setDebug(bDebug);
 	    email.setAuthenticator(new DefaultAuthenticator(smtpUser, smtpPassword));
 	    email.setSmtpPort(intPort);
