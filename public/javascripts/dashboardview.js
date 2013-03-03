@@ -50,7 +50,12 @@ var dashboardView = Backbone.View.extend({
 	     			        success: function(data){
 	     			        	if(data == "success"){
 	     			        		$("#modal_window").trigger('close');
-	     			        		alert("Thank you. We have updated your details.");
+	     			        		//alert("Thank you. We have updated your details.");
+		     			      		 $.msgBox({
+		     						    title:"Yashoda Clinic",
+		     						    content:"Thank you. We have updated your details.",
+		     						    type:"info"
+		     						});
 	     							 $.ajax({
 	     						        type: "GET",
 	     						        url: "/getMyAppointments",
@@ -82,6 +87,7 @@ var dashboardview = new dashboardView();
 
 
 $(function(){
+	$(".background").unmask();
 	$("#modal_window").lightbox_me({
 		centered: true, 
 		onLoad: function() {
