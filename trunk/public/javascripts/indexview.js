@@ -3,7 +3,7 @@ var indexview = Backbone.View.extend({
 	//  template: _.template($('#test').html()),
 	 events: {'click #loginbutton' : 'showloginframe' ,'click #schedulelogin' : 'showloginframesch','click #aboutus' : 'aboutus' ,
 		 'click #contactus' : 'contactus'  ,'click #toolbardashboard' : 'toolbardashboard','click #knowledge' : 'knowledge',
-		 'click #videos': 'videos', 'click #show-documents':'showDocuments'} ,
+		 'click #videos': 'videos', 'click #show-documents':'showDocuments', 'click .control':'navigate'} ,
 
 	 initialize: function() {
 
@@ -75,16 +75,18 @@ var indexview = Backbone.View.extend({
   		
   	},
   	showloginframesch: function(){  		
-  		$('#loginframe').css({top: '225px',left:'360px'});
+  		$('#loginframe').css({top: '150px',left:'150px'});
   		$('#loginframe').show();
   		//$('.uparrowdiv').toggle();
   	},
   	aboutus: function(){
+  		$('#loginframe').hide();
   		var template= _.template($('#aboutus-template').html()) ;
   		$('.mainpart').html(template);
   		$('.toppart').animate({height:'500px'}, 500);
   	},
   	contactus: function(){
+  		$('#loginframe').hide();
   		var template= _.template($('#contactus-template').html()) ;
   		$('.mainpart').html(template);
   		$('.toppart').animate({height:'800px'}, 500);
@@ -120,9 +122,8 @@ var indexview = Backbone.View.extend({
 		        		}
 		        		
 		        	}
-		        	console.log(totalrows);
 		        	documentNames = documentNames+'</table>';		        	
-		        	totalrows=totalrows*250;
+		        	totalrows=totalrows*180;
 		        	$('.toppart').animate({height:totalrows+'px'}, 500);
 		        	$('#nav-menu').html(documentNames);
 		        	$(".background").unmask();
@@ -140,6 +141,48 @@ var indexview = Backbone.View.extend({
   		$('#nav-menu').show();
   		$('#show-documents').hide();
   		$('#documentdisplay').hide();
+  	},
+  	navigate: function(e){
+  		var x = e.pageX - $(e.currentTarget).offset().left;
+  		var y = e.pageY - $(e.currentTarget).offset().top;
+  		if(x > 0 && x< 100){
+  			if(y >0 && y < 100){
+  				this.showloginframesch();
+  			$(".leftarrowdiv").css({top:'150px',left:'175px','z-index':'999'});
+  				$(".leftarrowdiv").show();
+  			}
+  			if(y >100 && y < 170){
+  				this.knowledge();
+  				$('#loginframe').hide();
+  			$(".leftarrowdiv").css({top:'250px',left:'175px','z-index':'999'});
+  				$(".leftarrowdiv").show();
+  			}
+  			if(y >170 && y < 270){
+  				//this.knowledge();
+  				$('#loginframe').hide();
+  			$(".leftarrowdiv").css({top:'350px',left:'175px','z-index':'999'});
+  				$(".leftarrowdiv").show();
+  			}
+  			if(y >270 && y < 370){
+  				this.videos();
+  				$('#loginframe').hide();
+  			$(".leftarrowdiv").css({top:'450px',left:'175px','z-index':'999'});
+  				$(".leftarrowdiv").show();
+  			}
+  			if(y >370 && y < 470){
+//  				this.knowledge();
+  				$('#loginframe').hide();
+  			$(".leftarrowdiv").css({top:'550px',left:'175px','z-index':'999'});
+  				$(".leftarrowdiv").show();
+  			}
+  			if(y >470 && y < 570){
+  				//this.knowledge();
+  				$('#loginframe').hide();
+  			$(".leftarrowdiv").css({top:'650px',left:'175px','z-index':'999'});
+  				$(".leftarrowdiv").show();
+  			}
+
+  		}
   	}
 });
 var indexview = new indexview();
