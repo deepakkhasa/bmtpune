@@ -48,8 +48,10 @@ $(document).ready(function()
 
 		<div id="maincontainer" >
 			
-	<div class="banner" onclick='window.location.href="/"'>Welcome to Yashoda Hematology Clinic, Pune
+	<div class="banner" onclick='window.location.href="/"'><img src="@routes.Assets.at("images/icon.jpg")">Yashoda Hematology Clinic, Pune
 	</div>
+<div class="leftarrowdiv">
+</div>
 
 	<div>
 		       	<div id="message" style="display: none;">
@@ -69,21 +71,7 @@ $(document).ready(function()
 		    	</div>
 
 	<div id="loginframe" ></div>		
-				<div class="control" >
-@if(null == user){							
-				<div class="button"><a id="schedulelogin" href="#">SCHEDULE APPOINTMENT</a></div>
-				}
-@if(null != user){	
-				<div class="button"><a  href="/dashboard">DASHBOARD</a></div>	
-				 @if("P"==Http.Context.current().session().get("appment.usertype")){					
-				<div class="button"><a  href="/takeappointment">SCHEDULE APPOINTMENT</a></div>
-				}
-				}
-				
-				
-				<div class="button"><a id="knowledge" href="#">KNOWLEDGE CENTER</a></div>
-				<div class="button"><a href="#">FAQ</a></div>
-				<div class="button"><a id="videos" href="#">VIDEOS</a></div>
+				<div class="control" ><a href="#"><img src="@routes.Assets.at("images/left_panel.png")"></a>
 				</div>
 
  @content
@@ -108,7 +96,7 @@ $(document).ready(function()
 </html>
 
 <script type="text/template" id="aboutus-template">
-        			<h2>Dr. Vijay Ramanan is a clinical hematologist and bone marrow transplant physician. </h2>
+        			<h2>Dr. Vijay Ramanan is the best hematologist and bone marrow transplant physician in central India. </h2>
 						
 						<ul class="aboutul">
 							<li>
