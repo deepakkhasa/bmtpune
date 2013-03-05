@@ -75,7 +75,7 @@ var indexview = Backbone.View.extend({
   		
   	},
   	showloginframesch: function(){  		
-  		$('#loginframe').css({top: '150px',left:'150px'});
+  		$('#loginframe').css({top: '150px',left:'170px'});
   		$('#loginframe').show();
   		//$('.uparrowdiv').toggle();
   	},
@@ -145,43 +145,45 @@ var indexview = Backbone.View.extend({
   	navigate: function(e){
   		var x = e.pageX - $(e.currentTarget).offset().left;
   		var y = e.pageY - $(e.currentTarget).offset().top;
+  		console.log(y);
   		if(x > 0 && x< 100){
-  			if(y >0 && y < 100){
+  			if(y >0 && y < 70){
   				this.showloginframesch();
-  			$(".leftarrowdiv").css({top:'150px',left:'175px','z-index':'999'});
+  			$(".leftarrowdiv").css({top:'150px',left:'198px','z-index':'999'});
   				$(".leftarrowdiv").show();
   			}
-  			if(y >100 && y < 170){
-  				this.knowledge();
-  				$('#loginframe').hide();
-  			$(".leftarrowdiv").css({top:'250px',left:'175px','z-index':'999'});
-  				$(".leftarrowdiv").show();
-  			}
-  			if(y >170 && y < 270){
-  				//this.knowledge();
-  				$('#loginframe').hide();
-  			$(".leftarrowdiv").css({top:'350px',left:'175px','z-index':'999'});
-  				$(".leftarrowdiv").show();
-  			}
-  			if(y >270 && y < 370){
+  			if(y >70 && y < 150){
   				this.videos();
   				$('#loginframe').hide();
-  			$(".leftarrowdiv").css({top:'450px',left:'175px','z-index':'999'});
+  			$(".leftarrowdiv").css({top:'230px',left:'198px','z-index':'999'});
   				$(".leftarrowdiv").show();
   			}
-  			if(y >370 && y < 470){
+  			if(y >150 && y < 240){
+  				//this.knowledge();
+  				this.knowledge(); 
+  				$('#loginframe').hide();
+  			$(".leftarrowdiv").css({top:'310px',left:'198px','z-index':'999'});
+  				$(".leftarrowdiv").show();
+  			}
+  			if(y >240 && y < 330){
+  				 				
+  				$('#loginframe').hide();
+  			$(".leftarrowdiv").css({top:'400px',left:'198px','z-index':'999'});
+  				$(".leftarrowdiv").show();
+  			}
+  			if(y >330 && y < 430){
 //  				this.knowledge();
   				$('#loginframe').hide();
-  			$(".leftarrowdiv").css({top:'550px',left:'175px','z-index':'999'});
+  			$(".leftarrowdiv").css({top:'480px',left:'198px','z-index':'999'});
   				$(".leftarrowdiv").show();
   			}
-  			if(y >470 && y < 570){
+/*  			if(y >470 && y < 570){
   				//this.knowledge();
   				$('#loginframe').hide();
   			$(".leftarrowdiv").css({top:'650px',left:'175px','z-index':'999'});
   				$(".leftarrowdiv").show();
   			}
-
+*/
   		}
   	}
 });
