@@ -149,32 +149,32 @@ var indexview = Backbone.View.extend({
   		if(x > 0 && x< 100){
   			if(y >0 && y < 70){
   				this.showloginframesch();
-  			$(".leftarrowdiv").css({top:'150px',left:'198px','z-index':'999'});
+  			$(".leftarrowdiv").css({top:'180px',left:'198px','z-index':'999'});
   				$(".leftarrowdiv").show();
   			}
   			if(y >70 && y < 150){
   				this.videos();
   				$('#loginframe').hide();
-  			$(".leftarrowdiv").css({top:'230px',left:'198px','z-index':'999'});
+  			$(".leftarrowdiv").css({top:'255px',left:'198px','z-index':'999'});
   				$(".leftarrowdiv").show();
   			}
   			if(y >150 && y < 240){
   				//this.knowledge();
   				this.knowledge(); 
   				$('#loginframe').hide();
-  			$(".leftarrowdiv").css({top:'310px',left:'198px','z-index':'999'});
+  			$(".leftarrowdiv").css({top:'340px',left:'198px','z-index':'999'});
   				$(".leftarrowdiv").show();
   			}
   			if(y >240 && y < 330){
   				 				
   				$('#loginframe').hide();
-  			$(".leftarrowdiv").css({top:'400px',left:'198px','z-index':'999'});
+  			$(".leftarrowdiv").css({top:'425px',left:'198px','z-index':'999'});
   				$(".leftarrowdiv").show();
   			}
   			if(y >330 && y < 430){
 //  				this.knowledge();
   				$('#loginframe').hide();
-  			$(".leftarrowdiv").css({top:'480px',left:'198px','z-index':'999'});
+  			$(".leftarrowdiv").css({top:'515px',left:'198px','z-index':'999'});
   				$(".leftarrowdiv").show();
   			}
 /*  			if(y >470 && y < 570){
