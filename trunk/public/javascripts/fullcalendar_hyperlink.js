@@ -263,15 +263,18 @@ function Calendar(element, options, eventSources) {
 			.prependTo(element);
 		header = new Header(t, options);
 		headerElement = header.render();
-		var legendColors = ['#FF0000','#0000FF','#ADD8E6','#808080','#808000'];
-		var legn="<table class='legends'><tr>";
-		var leg;
-		for(i=0;i<hospitals.hospitals.length;i++){
-			hospitals.hospitals[i].color=legendColors[i];
-			legn =legn+"<td><div class='legendbox' style='background-color:"+legendColors[i]+"'/><div class='hospitalname'>	"+hospitals.hospitals[i].hospitalname+" </div></td>";
-		//	legn.append(leg);
+		if(userType=="P"){
+			var legendColors = ['#FF0000','#0000FF','#ADD8E6','#808080','#808000'];
+			var legn="<table class='legends'><tr>";
+			var leg;
+			for(i=0;i<hospitals.hospitals.length;i++){
+				hospitals.hospitals[i].color=legendColors[i];
+				legn =legn+"<td><div class='legendbox' style='background-color:"+legendColors[i]+"'/><div class='hospitalname'>	"+hospitals.hospitals[i].hospitalname+" </div></td>";
+			//	legn.append(leg);
+			}
+			legn=legn+"</tr></table>";
+			
 		}
-		legn=legn+"</tr></table>";
 
 		if (headerElement) {
 			element.prepend(headerElement);
@@ -2307,12 +2310,16 @@ function BasicView(element, calendar, viewName) {
 				cell.removeClass('fc-other-month');
 			}else{
 				cell.addClass('fc-other-month');
+				//cell.find("a").removeAttr("href").css("cursor","pointer");
+				cell.find("a").replaceWith(cell.find("a").text());
+				
 			}
 			if (+date == +today) {
 				cell.addClass(tm + '-state-highlight fc-today');
 			}else{
 				cell.removeClass(tm + '-state-highlight fc-today');
 			}
+			//paddy
 			cell.find('div.fc-day-number a').text(date.getDate());
 			cell.find('div.fc-day-number a').bind('click',function(event){
 				var clickedDate = new Date(calendar.getDate().getFullYear(), calendar.getDate().getMonth(), $(this).text());	
@@ -3198,6 +3205,7 @@ function AgendaView(element, calendar, viewName) {
 		});
 		$('[class^="fc-slot"]').bind( 'showModal', function(e) {
 			if($(this).find('.ui-widget-content').attr('hospital')){
+				$("#modal_window ").find("label:first strong").text("Your appointment will be at "+$(this).find('.ui-widget-content').attr('hospitalName'));
 				$("#appointmenthospital").val($(this).find('.ui-widget-content').attr('hospitalName'));
 				$("#appointmenthospitalid").val($(this).find('.ui-widget-content').attr('hospital'));
 				if("" != $.trim($(this).children("th").text())){

@@ -22,7 +22,8 @@
 	
 html .fc,
 .fc table {
-	font-size: 1em;
+	font-size: 15px;
+	font-weight:bold;
 	font-family: Verdana, Geneva, sans-serif;
 	}
 	
@@ -44,7 +45,7 @@ html .fc,
 .fc-header-left {
 	width: 25%;
 	text-align: left;
-	display: none;
+	display: block;
 	}
 	
 .fc-header-center {
@@ -173,7 +174,6 @@ html .fc,
 	line-height: 1.9em;
 	padding: 0 .6em;
 	white-space: nowrap;
-	color:#536376;
 	}
 	
 /* icon (for jquery ui) */
@@ -445,7 +445,15 @@ table.fc-border-separate {
 	float: right;
 	padding: 0 2px;
 	}
-	
+.fc-day-number a{
+	text-decoration: none;
+}	
+.fc-day-number a:hover{
+	text-decoration: underline;
+	background-color:#8E1609;
+	color:white;
+}	
+
 .fc-grid .fc-other-month .fc-day-number {
 	opacity: 0.3;
 	filter: alpha(opacity=30); /* for IE */
