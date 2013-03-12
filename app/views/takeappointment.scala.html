@@ -1,4 +1,4 @@
-@(user: securesocial.core.java.SocialUser ,message: String, listOfHospitals: java.util.List[DoctorDetails], doctorDetails: java.util.List[DoctorDetails])
+@(user: securesocial.core.java.SocialUser ,message: String,auser: models.User , listOfHospitals: java.util.List[DoctorDetails], doctorDetails: java.util.List[DoctorDetails])
 @scripts = {    
 	<script type='text/javascript' src="@routes.Assets.at("javascripts/jquery-ui-1.8.23.custom.min.js")"></script>
 	<script type='text/javascript' src="@routes.Assets.at("javascripts/fullcalendar_hyperlink.js")"></script>
@@ -47,13 +47,22 @@
           		  			@for(hospital <- listOfHospitals ){
         		  			<option value="@hospital.hospital.id">@hospital.hospital.hospitalName</option>
         		  			}
-         			
+        		  	<script>
+            		@if(null != auser && auser.userType == "D"){
+	    				$(".control").append('<a href="#"><img src="@routes.Assets.at("images/left_panel_login_doctor.png")"></a>');
+	    				userType="D";
+            		}
+            		@if(null != auser && auser.userType != "D"){
+  						$(".control").append('<a href="#"><img src="@routes.Assets.at("images/left_panel_login_patient.png")"></a>');
+  						userType="P";
+            		}  
+            		</script>
         			<div id='calendar'></div>
         			<input type="hidden" id="doctorId"/>
         		</div>
 	            <div class="modal_window" id="modal_window">
 	                <div class="modal_form" id="modal_form">
-	                	<label><strong>Appointment At:</strong> <input id="appointmenthospital" class="sprited" disabled="disabled"/></label>
+	                	<label><strong></strong></label>
 	                	<input type="hidden" id="appointmenthospitalid" >
 	                    <label><strong>Brief Description:</strong> <input id="appointmentdescription" class="sprited"/></label>
 	                    <label ><strong>Date:</strong> <input id="appointmentdate" class="firstField smallText" disabled="disabled"/>

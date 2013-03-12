@@ -13,6 +13,8 @@
 		<link rel='stylesheet' type='text/css' href="@routes.Assets.at("stylesheets/jalert.css")" />
 		<link rel='stylesheet' type='text/css' href="@routes.Assets.at("stylesheets/jquery.loadmask.css")" />
 		<link rel='stylesheet' type='text/css' href="@routes.Assets.at("stylesheets/msgBoxLight.css")" />
+		<link rel='stylesheet' type='text/css' href="@routes.Assets.at("stylesheets/jquery.jgrowl.css")" />
+		<link rel='stylesheet' type='text/css' href="@routes.Assets.at("stylesheets/lightbox.css")" />
 		
 		<link rel='stylesheet' type='text/css' href="@routes.Assets.at("stylesheets/fullcalendar.print.css")" media='print' />
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/icon.jpg")">
@@ -28,8 +30,15 @@
 	    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
 	    <script type="text/javascript" src="@routes.Assets.at("javascripts/gfeedfetcher.js")"></script>
 	    <script type="text/javascript" src="http://www.google.com/jsapi?key=AIzaSyBV6MeANy_ZaLB2f2c-XKCMA7hIu2Fy744"></script>
+	    <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.jgrowl.js")"></script>
+	    <script type="text/javascript" src="@routes.Assets.at("javascripts/lightbox.js")"></script>
+	    
 	    <script type="text/javascript" src="http://swfobject.googlecode.com/svn/trunk/swfobject/swfobject.js"></script>
 	    <script type="text/javascript" src='http://www.scribd.com/javascripts/scribd_api.js'></script>
+	    <script type="text/javascript">
+			google.load("feeds", "1")
+		</script>
+	    
 <script>
 
 $(document).ready(function()
@@ -70,8 +79,13 @@ $(document).ready(function()
 
 		    	</div>
 
-	<div id="loginframe" ></div>		
-				<div class="control" ><a href="#"><img src="@routes.Assets.at("images/left_panel.png")"></a>
+	<div id="loginframe" ></div>	
+				<div class="control" >
+	@if(null == user){		
+
+				<a href="#"><img src="@routes.Assets.at("images/left_panel.png")"></a>
+		}
+				
 				</div>
 
  @content
@@ -182,3 +196,23 @@ $(document).ready(function()
 <script type='text/javascript' src="http://gdata.youtube.com/feeds/users/bmtpune/uploads?alt=json-in-script&callback=showMyVideos2&max-results=30"></script> 
 </script>
 <script type="text/javascript" src="@routes.Assets.at("javascripts/indexview.js")"></script>
+
+<script type="text/template" id="testimonial-template">
+	<div class="testidiv">
+		<h3>Few Arabic testimonials:</h3>
+		<a href="@routes.Assets.at("images/Testimony_1.jpg")" rel="lightbox[testimonials]">
+     		<img src="@routes.Assets.at("images/Testimony_1.jpg")" />
+		</a>
+		<a href="@routes.Assets.at("images/Testimony_2.jpg")" rel="lightbox[testimonials]">
+			<img src="@routes.Assets.at("images/Testimony_2.jpg")" />
+		</a>
+		<a href="@routes.Assets.at("images/Testimony_3.jpg")" rel="lightbox[testimonials]">
+			<img src="@routes.Assets.at("images/Testimony_3.jpg")" />
+		</a>
+		<h3>Kenyan Minister of Medical Services was chief guest to celebrate successful completion of 100 bone marrow transplants:</h3>
+		<a href="@routes.Assets.at("images/invitation_to_Ruby.jpg")" rel="lightbox[testimonials]">
+			<img src="@routes.Assets.at("images/invitation_to_Ruby.jpg")" />
+		</a>
+
+	</div>
+</script>

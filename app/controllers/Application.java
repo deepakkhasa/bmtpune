@@ -129,8 +129,10 @@ public class Application extends Controller {
     			listOfHospitals1.add(d);
     		}
     	}
- 
-	    return ok(takeappointment.render(SecureSocial.currentUser(),"",listOfHospitals1,doctorDetails));
+	  	SocialUser sUser = SecureSocial.currentUser();
+
+    	User user = User.authenticate(sUser.id.provider,sUser.id.id);
+	    return ok(takeappointment.render(SecureSocial.currentUser(),"",user,listOfHospitals1,doctorDetails));
 	  
   }
 
