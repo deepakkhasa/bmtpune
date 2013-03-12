@@ -8,7 +8,7 @@
 #auxillarynav {margin:12px 0px 0px 616px;padding:0px;font-size:23px;color:#9D2D2C;text-align: right;}
 #auxillarynav a{color:#9D2D2C;border-right-width: 1px;border-top-style: none;border-right-style: solid;border-bottom-style:none;border-left-style: none;border-right-color: #FFFFFF;display: inline;margin: 0px;padding-top: 0px;padding-right:7px;padding-bottom: 0px;	padding-left: 5px}
 #auxillarynav a.last{border:none;font-weight: bold;}
-.fixednav {paddingright:0px;font-size:12px;color:#FFFFFF;float:right;top:0px;position:absolute;right: 10px;font-size: 14px;font-family: Verdana, Geneva, sans-serif;}
+.fixednav {paddingright:0px;font-size:12px;color:#FFFFFF;float:right;top:120px;position:absolute;right: 100px;font-size: 14px;font-family: Verdana, Geneva, sans-serif;}
 .fixednav a{color:white;}
 .fixednav pre{color:white;font-size: 14px;font-family: Verdana, Geneva, sans-serif;}
 #menunav {top:-20px;position: relative;margin:12px 0px 0px 0px;padding:0px;font-size:12px;color:#FFFFFF;float:left;}
@@ -67,9 +67,9 @@
 #highlights{margin:0 auto;width:1050px;float:left}
 tr.selected {background-color: red; color: white;}
 /*light me*/
-.modal_window {-moz-border-radius: 6px;background-image:url(../images/msgBoxBackGround.png);-webkit-border-radius: 6px;border: 1px solid #536376;-webkit-box-shadow: rgba(0,0,0,.6) 0px 2px 12px;-moz-box-shadow:  rgba(0,0,0,.6) 0px 2px 12px;;padding: 14px 22px;width: 600px;height:auto;position: relative;display: none;}
+.modal_window {-moz-border-radius: 6px;background-color:#aed0ea;-webkit-border-radius: 6px;border: 1px solid #536376;-webkit-box-shadow: rgba(0,0,0,.6) 0px 2px 12px;-moz-box-shadow:  rgba(0,0,0,.6) 0px 2px 12px;;padding: 14px 22px;width: 600px;height:auto;position: relative;display: none;}
 .modal_window #modal_form {margin-top: 13px;font-family: Verdana, Geneva, sans-serif;color:black;}
-.modal_window label {display: block;margin-bottom: 10px;color: #536376;font-size: .9em;}  
+.modal_window label {display: block;margin-bottom: 10px;color: #8E1609;font-size: .9em;}  
 .modal_window label input {padding: 2px 8px;font-size: 1.2em;line-height: 31px;}
 .modal_form {position: relative;padding-bottom: 54px;margin-bottom: 12px;}
 .actions {float: left;position: absolute;right: 0;height: 31px;bottom: 20px;}
@@ -111,7 +111,7 @@ ul.videos li {float: left; width: 10em;  margin-bottom: 1em;}
 ul.videos{  margin-bottom: 1em;  padding-left : 0em;  margin-left: 0em;  list-style: none;}
 #playContainer{width: 20em; height: 180px;padding-left: 40%; }
 #news{display: none}
-#calendar{padding-left: 50px;width: 80%}
+#calendar{margin:auto;width: 80%}
 .documentdisplay{width: 100%;z-index:1;}
 #documentdisplay{width: 100%;height: 100%;z-index:1;}
 .iframe {  margin-top: 20px;  margin-bottom: 30px;  -moz-border-radius: 12px;  -webkit-border-radius: 12px;  border-radius: 12px;  -moz-box-shadow: 4px 4px 14px #000;  -webkit-box-shadow: 4px 4px 14px #000;  box-shadow: 4px 4px 14px #000;    filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=.2)}
@@ -129,7 +129,7 @@ ul.videos{  margin-bottom: 1em;  padding-left : 0em;  margin-left: 0em;  list-st
 #maincontent .mainpart{width:97%;float:left;}
 #maincontent .centerpart{width:20%;padding-top: 10px;float:right;}
 #maincontent .mainpart h1 {font-size: 28px;font-family: Verdana, Geneva, sans-serif;font-weight: bold;color:#8E1609;text-align:center;height:50px}
-#loginframe{width: 200px;height: 50px;background: none transparent;position:absolute;top:30px;left:400px;display:none;}
+#loginframe{width: 150px;height: 38px;padding-top:5px;position:absolute;top:30px;left:400px;display:none;opacity:0.9; -moz-border-radius: 3px;  -webkit-border-radius: 3px;  border-radius: 3px; background-color:#8E1609; }
 .uparrowdiv:after{content:'';display:none;position:absolute;top:30px;left:460px;width:0;height:0;border-color: transparent transparent #8E1609 transparent;border-style: solid;border-width: 10px;}
 .clearfix{text-align:center !important;}
 #nav-menu ul{font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 14px;font-style: normal;line-height: 3em;font-weight: normal;font-variant: normal;text-transform: none;color: #00CC33;text-decoration: none;text-indent: 5px;list-style-position: outside;list-style-type: square;padding: 6px;margin: 2px;}
@@ -145,4 +145,16 @@ ul.videos{  margin-bottom: 1em;  padding-left : 0em;  margin-left: 0em;  list-st
 .leftarrowdiv{position: absolute;display:none;width:0px;min-height:40px; /*min height of DIV should be set to at least 2x the width of the arrow*/background: #DEDEDE;color:white;word-wrap:break-word;margin-bottom:2em;}
 .leftarrowdiv:after{ /*arrow added to leftarrowdiv DIV*/content:'';display:block;position:absolute;top:10px;left:-20px; /*should be set to -border-width x 2 */width:0;height:0;border-color: transparent #DEDEDE transparent transparent; /*border color should be same as div div background color*/border-style: solid;border-width: 10px;}
 .banner img{height: 120px;width:100px;float: left;}
-
+.infoBox {width: 955px;margin-left: 0px auto;position: absolute;bottom: -100px;}
+.infoBox .tpfrts {background: url(../images/bott_snip_top_hdr.png) no-repeat 0 bottom;height: 7px;}
+.infoBox .midfrts {background: url(../images/bottom_snippet_trans_bg.png) repeat;height: 169px;}
+.infoBox .midfrts ul li {margin-right: 5px;float: left;width: 313px;position: relative;padding-top: 10px;margin-top: -7px;}
+.infoBox .midfrts ul li a.txtHd {font-family: 'helveticaneueregular';font-size: 28px;color: #ffffff;text-transform: uppercase;display: block;padding-left: 25px;border-bottom: 2px solid #00a950;height: 30px;padding-bottom: 5px;padding-top: 5px;}
+.infoBox .cont {background: url(../images/bottom_snippet_trans_bg_content.png) repeat;width: 100%;float: left;padding: 8px 0 16px;height: 100px;}
+.testimony{width:95%;height:100%;border: 4px solid #8E1609;border-left-width:30px;border-right-width:30px;-moz-border-radius: 12px;  -webkit-border-radius: 12px;  border-radius: 12px;}
+.prevdiv:after{ /*arrow added to leftarrowdiv DIV*/content:'';display:block;position:absolute;top:450px;left:188px; /*should be set to -border-width x 2 */width:0;height:0;border-color: transparent #DEDEDE transparent transparent; /*border color should be same as div div background color*/border-style: solid;border-width: 25px;}
+.nextdiv:after{ /*arrow added to rightarrowdiv DIV*/content:'';display:block;position:absolute;top:450px;left:92%; /*should be set to 100% */width:0;height:0;border-color: transparent transparent transparent #DEDEDE; /*border color should be same as div div background color*/border-style: solid;border-width: 25px;}
+.testidiv{font-size: 14px;font-family: Verdana, Geneva, sans-serif;padding-top:30px;padding-left:10px;color:#8E1609;}
+.testidiv a img{    width:10%;}
+.jGrowl-header a{color:#F2F5A9;text-decoration:none;}
+.jGrowl-header a:hover{text-decoration:underline;}

@@ -6,7 +6,7 @@ var indexview = Backbone.View.extend({
 		 'click #videos': 'videos', 'click #show-documents':'showDocuments', 'click .control':'navigate'} ,
 
 	 initialize: function() {
-
+		// rssfeedsetup();
 	//        google.setOnLoadCallback(createPicker);
 	//        google.load('picker', '1');
 
@@ -71,12 +71,18 @@ var indexview = Backbone.View.extend({
   	showloginframe: function(){
   		$('#loginframe').show();
 //  		$('.uparrowdiv').toggle();
-  		$('#loginframe').css({top:'40px',left:'325px'});
+  		$('#loginframe').css({top:'40px',left:'1100px'});
   		
   	},
-  	showloginframesch: function(){  		
-  		$('#loginframe').css({top: '150px',left:'170px'});
-  		$('#loginframe').show();
+  	showloginframesch: function(){  
+  		if($('.fixednav').length){
+  			$('.mainpart').html("<div id='calendar'></div>");
+  			
+  			showCalendar(docData,docId);
+  		}else{
+  	  		$('#loginframe').css({top: '177px',left:'200px'});
+  	  		$('#loginframe').show();
+  		}
   		//$('.uparrowdiv').toggle();
   	},
   	aboutus: function(){
@@ -145,7 +151,6 @@ var indexview = Backbone.View.extend({
   	navigate: function(e){
   		var x = e.pageX - $(e.currentTarget).offset().left;
   		var y = e.pageY - $(e.currentTarget).offset().top;
-  		console.log(y);
   		if(x > 0 && x< 100){
   			if(y >0 && y < 70){
   				this.showloginframesch();
@@ -153,31 +158,70 @@ var indexview = Backbone.View.extend({
   				$(".leftarrowdiv").show();
   			}
   			if(y >70 && y < 150){
-  				this.videos();
-  				$('#loginframe').hide();
+  				if(!userType){
+  	  				this.videos();
+  	  				$('#loginframe').hide();
+  				}
   			$(".leftarrowdiv").css({top:'255px',left:'198px','z-index':'999'});
   				$(".leftarrowdiv").show();
   			}
   			if(y >150 && y < 240){
-  				//this.knowledge();
-  				this.knowledge(); 
-  				$('#loginframe').hide();
+  				if(!userType){
+  	  				this.knowledge(); 
+  	  				$('#loginframe').hide();
+  				}
   			$(".leftarrowdiv").css({top:'340px',left:'198px','z-index':'999'});
   				$(".leftarrowdiv").show();
   			}
   			if(y >240 && y < 330){
-  				 				
+  				if(!userType){
+	      		 $.msgBox({
+					    title:"Yashoda Clinic",
+					    content:"Coming soon!",
+					    type:"info"
+					});
+	      		 
   				$('#loginframe').hide();
+  				}
+  				if(userType){
+  					this.knowledge(); 
+  				}
   			$(".leftarrowdiv").css({top:'425px',left:'198px','z-index':'999'});
   				$(".leftarrowdiv").show();
   			}
   			if(y >330 && y < 430){
-//  				this.knowledge();
-  				$('#loginframe').hide();
+/*  				$('.toppart').animate({height:'600px'}, 500);
+  				$('.mainpart').animate({height:'600px'}, 500);
+  		  		$('.mainpart').html('<div class="prevdiv"></div><image class="testimony" src="/assets/images/Testimony_1.jpg"><div class="nextdiv">');
+  		  		$('.prevdiv').click(function(){});
+  		  	$('.nextdiv').click(function(){});
+*/
+  				if(!userType){
+					var template= _.template($('#testimonial-template').html()) ;
+			  		$('.mainpart').html(template);
+		  			$('#loginframe').hide();
+  				}
+ 				if(userType){
+  					this.videos(); 
+  				}
   			$(".leftarrowdiv").css({top:'515px',left:'198px','z-index':'999'});
   				$(".leftarrowdiv").show();
+  				
   			}
-/*  			if(y >470 && y < 570){
+  			if(y >430 && y < 530){
+//				this.knowledge();
+				$('#loginframe').hide();
+	      		 $.msgBox({
+					    title:"Yashoda Clinic",
+					    content:"Coming soon!",
+					    type:"info"
+					});
+
+			$(".leftarrowdiv").css({top:'600px',left:'198px','z-index':'999'});
+				$(".leftarrowdiv").show();
+			}
+
+  			/*  			if(y >470 && y < 570){
   				//this.knowledge();
   				$('#loginframe').hide();
   			$(".leftarrowdiv").css({top:'650px',left:'175px','z-index':'999'});
@@ -252,3 +296,38 @@ function loadVideo(playerUrl, autoplay) {
 	    loadVideo(entries[0].media$group.media$content[0].url, false);
 	  }
 	}
+	var feedcontainer="";
+	var feedurl="http://www.medicalnewstoday.com/rss/blood.xml";
+	var feedlimit=10;
+	var rssoutput="<ul>";
+
+
+	function rssfeedsetup(){
+		var feedpointer=new google.feeds.Feed(feedurl);
+		feedpointer.setNumEntries(feedlimit) ;
+		feedpointer.load(displayfeed) ;
+	}
+
+	function displayfeed(result){
+		if (!result.error){
+			var thefeeds=result.feed.entries;
+			var text;
+			for (var i=0; i<thefeeds.length; i++){
+				text =thefeeds[i].title.length> 52?thefeeds[i].title.slice(0,50)+"..":thefeeds[i].title;
+				rssoutput+="<li><a target=\"_blank\" href='" + thefeeds[i].link + "' title=\""+thefeeds[i].title+"\">" + text + "</a></li>";
+			}
+				
+			rssoutput+="</ul>";
+			feedcontainer=feedcontainer+rssoutput;
+			$.jGrowl(feedcontainer, { header: '<a href="#" onclick="minimize();">Latest Medical News</a>', sticky: true,position:'bottom-right' },{ beforeClose: function(e,m) {return;}});
+			//$(".jGrowl-header").click(function(){alert();});
+		}
+	}
+function minimize(){
+	$(".jGrowl-message").toggle();
+}
+	window.onload=function(){
+		rssfeedsetup();
+		}
+
+var userType;

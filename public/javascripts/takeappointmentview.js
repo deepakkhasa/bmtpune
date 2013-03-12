@@ -22,7 +22,8 @@ var takeappointmentView = Backbone.View.extend({
 	 }
 	 });
 var takeappointmentview = new takeappointmentView();
-
+var docData;
+var docId;
 function getCalendarEvents(doctorId){
 	
 //	var hospital = ($('#hospital').val()===undefined)?0:$('#hospital').val();
@@ -30,6 +31,8 @@ function getCalendarEvents(doctorId){
 	        type: "GET",
 	        url: "/getDoctorAppointments?doctorId=" + doctorId+"&hospitalId=0",
 	        success: function(data){
+	        	docData=data;
+	        	docId = doctorId;
 	        	showCalendar(data,doctorId);
 	        	$(".background").unmask();
 	        	//console.log(hospitals.hospitals[0].hospitalid);
