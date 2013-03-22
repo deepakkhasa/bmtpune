@@ -8,6 +8,7 @@ GET     /                           controllers.Application.index
 GET /appmentlogin							controllers.Application.login
 
 # Dashboard
+GET /newsfeed							controllers.Application.newsFeed
 GET /dashboard							controllers.Application.dashboard
 GET /getApptmentsForPhone				controllers.Application.androidDashboard
 POST /updateDetails						controllers.Application.updateDetails
