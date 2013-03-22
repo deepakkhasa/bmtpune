@@ -1,0 +1,78 @@
+@(user: securesocial.core.java.SocialUser ,auser: models.User, appointments: java.util.List[AppointmentHistory] )
+<script type="text/template" id="myfeed-template">
+
+@import org.scala_tools.time.Imports._
+@import format._
+@import org.joda.time.Days
+	@for(appointment  <- appointments ){
+		@if(Days.daysBetween(DateTime.now, new DateTime(appointment.dateOfAppointment)).getDays() >=0){
+			<p>You have an upcoming appointment 
+					@if( Days.daysBetween(DateTime.now, new DateTime(appointment.dateOfAppointment)).getDays()==0){
+						<span class="date">Today</span>.
+					}else{
+						on <span class="date">@DateTimeFormat.forPattern("MMMM d, yyyy").print(new DateTime(appointment.dateOfAppointment)) </span>.
+					}	
+				<span class="time">@DateTimeFormat.forPattern("KK:mm a").print(DateTimeFormat.forPattern("HH:mm").parseDateTime(appointment.appointmentTime))</span>
+			</p>
+		}else{
+			@if(appointment.appointmentConfirmation =="N"){
+				<p>You seem to have missed an appointment on 
+						<span class="date">@DateTimeFormat.forPattern("MMMM d, yyyy").print(new DateTime(appointment.dateOfAppointment))</span>
+					. Please click <a href="#">here</a> to reschedule.
+					<span class="time">@DateTimeFormat.forPattern("KK:mm a").print(DateTimeFormat.forPattern("HH:mm").parseDateTime(appointment.appointmentTime))</span>
+				</p>
+			}else{
+				<p>You had visited  <span class="doctor">Dr. Vijay Ramanan</a></span> on 
+					<span class="date">@DateTimeFormat.forPattern("MMMM d, yyyy").print(new DateTime(appointment.dateOfAppointment))</span>.
+					Click 
+					<a href="#">here</a> 
+					to view his diagnosis.
+					<span class="time">@DateTimeFormat.forPattern("KK:mm a").print(DateTimeFormat.forPattern("HH:mm").parseDateTime(appointment.appointmentTime))</span>
+				</p>
+			}
+		
+		}
+		
+		
+	}   
+</script>
+@scripts = {    
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.lightbox_me.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/prettify.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.slimscroll.min.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/hovercard.min.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/newsfeedview.js")"></script>
+    
+}
+@main(user,"My Feed",scripts) {
+       		  	<script>
+            		@if(null != auser && auser.userType == "D"){
+	    				$(".control").append('<a href="#"><img src="@routes.Assets.at("images/left_panel_login_doctor.png")"></a>');
+	    				userType="D";
+            		}
+            		@if(null != auser && auser.userType != "D"){
+  						$(".control").append('<a href="#"><img src="@routes.Assets.at("images/left_panel_login_patient.png")"></a>');
+  						userType="P";
+            		}  
+            		</script>
+ 			<div class="toppart">
+        		<div class="mainpart">
+	        		<div class="outershell">
+	        			<h1>Recent Activities</h1>
+					   <div id="recentactivities">
+					   	
+					   </div>
+					</div>
+					<div id="navright">
+					  <h1>Latest News</h1>
+					  <hr />
+					  <div id="rightnewsdiv">
+						  </div>
+				</div>
+        	</div>
+			</div>
+
+
+}
+
+

@@ -45,6 +45,9 @@ public class AppointmentHistory extends Model {
 
     @Column(name="appointment_headline")
     public String appointmentHeadline;
+    
+    @Column(name="appointment_confirmation")
+    public String appointmentConfirmation;
 
 	@Column(name="appointment_comment")
     public String appointmentComment;
@@ -106,6 +109,16 @@ public class AppointmentHistory extends Model {
         return find.where()
             .eq("idAppointment_History", id)
             .findUnique();
+    }
+
+    public static List<AppointmentHistory> getAppointmentDetailsForFeed (long id,String userType) {
+    	List<AppointmentHistory> appointments = new ArrayList<AppointmentHistory>();
+    	if("D".equals(userType)){
+    		appointments =find.where().eq("idDoctor", id).orderBy("date_of_appointment desc").findList();;
+    	}else{
+    		appointments =find.where().eq("idPatient", id).orderBy("date_of_appointment desc").findList();;
+    	}
+         return appointments;
     }
 
     

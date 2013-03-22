@@ -136,6 +136,15 @@ public class Application extends Controller {
 	  
   }
 
+  @SecureSocial.Secured  
+  public static Result newsFeed(){
+	  	SocialUser sUser = SecureSocial.currentUser();
+	  	
+    	User user = User.authenticate(sUser.id.provider,sUser.id.id);
+    	List<AppointmentHistory> appointments = AppointmentHistory.getAppointmentDetailsForFeed(user.id,user.userType);
+	    return ok(newsfeed.render(SecureSocial.currentUser(),user,appointments));
+	  
+  }
 
   @SecureSocial.Secured  
   public static Result getDoctors(){
