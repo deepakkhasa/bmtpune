@@ -14,6 +14,7 @@ var indexview = Backbone.View.extend({
 		// this.render();
 		// document.getElementById('maincontent').src = "data:text/html;charset=utf-8," + escape(");
 	  		$('#loginframe').load("/login");
+
 	     Backbone.Validation.bind(this,{forceUpdate: true});
 			$('#slides').slides({
 				preload: true,
@@ -112,7 +113,7 @@ var indexview = Backbone.View.extend({
 		        type: "GET",
 		        url: "/knowledgecenter",
 		        success: function(data){
-		        	var documentNames="<div class=\"knowledgediv\"><h1>Featured<h1></div><table class=\"knowledgetable\">";
+		        	var documentNames="<div class=\"knowledgediv\"><h1>Featured</h1></div><table class=\"knowledgetable\">";
 		        	var row=0;
 		        	var totalrows=1;
 		        	for(var i=0;i< data.length;i++){
@@ -327,7 +328,10 @@ function minimize(){
 	$(".jGrowl-message").toggle();
 }
 	window.onload=function(){
+		if(!userName)
 		rssfeedsetup();
+		else
+			rssfeedright();
 		}
 
 var userType;
