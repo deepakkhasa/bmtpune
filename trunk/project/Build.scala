@@ -15,7 +15,8 @@ object ApplicationBuild extends Build {
       "org.fusesource.scalate" % "scalate-util" % "1.5.3",
       "org.fusesource.scalate" % "scalate-core" % "1.5.3",
       "mysql" % "mysql-connector-java" % "5.1.18"     ,
-    	"org.apache.commons" % "commons-email" % "1.2" 
+    	"org.apache.commons" % "commons-email" % "1.2" ,
+    	"org.scalaj" %% "scalaj-time" % "0.6"
     )
  
     val secureSocial = PlayProject(
@@ -32,5 +33,5 @@ object ApplicationBuild extends Build {
       // Add your own project settings here      
     ).dependsOn(secureSocial).aggregate(secureSocial)
 
-	//val libraryDependencies += "org.fusesource.scalate" % "sbt-scalate-plugin" % "1.5.3"
+	//val libraryDependencies += "org.fusesource.scalate" % "sbt-scalate-plugin" % "1.5.3",
 }
