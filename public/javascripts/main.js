@@ -4,8 +4,12 @@ require.config({
     underscore: '/assets/javascripts/underscore-min',
     backbone: '/assets/javascripts/backbone-min',
     bxslider: '/assets/javascripts/jquery.bxslider.min',
+    verimail: '/assets/javascripts/verimail.jquery.min',
     swobject: "http://swfobject.googlecode.com/svn/trunk/swfobject/swfobject",
-    templates: '../templates'
+    templates: '../templates',
+    lightboxme: '/assets/javascripts/jquery.lightbox_me',
+    msgbox: '/assets/javascripts/jquery.msgBox'
+
   }
 
 });
