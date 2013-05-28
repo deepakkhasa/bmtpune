@@ -31,7 +31,7 @@ public class Vijay extends Controller {
 			  ".<br>"+"<b>Query:</b> " + askForm.get().query;
 	  
 	  MailerScheduler.scheduleMail(emails,subject,body);
-      OpenTokSDK sdk = new OpenTokSDK(23104692, "2d8528251e19b0743d9dc27db12bc13703725658");
+ /*     OpenTokSDK sdk = new OpenTokSDK(23104692, "2d8528251e19b0743d9dc27db12bc13703725658");
 
       String sessionId=null, token = null;
       try {
@@ -44,7 +44,7 @@ public class Vijay extends Controller {
       
       System.out.println(sessionId);
       System.out.println(token);
-	    return ok("success");
+*/	    return ok("success");
 	  }
 	  
   
