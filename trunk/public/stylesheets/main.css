@@ -69,12 +69,13 @@
 #highlights{margin:0 auto;width:1050px;float:left}
 tr.selected {background-color: red; color: white;}
 /*light me*/
-.modal_window {-moz-border-radius: 6px;background-color:#aed0ea;-webkit-border-radius: 6px;border: 1px solid #536376;-webkit-box-shadow: rgba(0,0,0,.6) 0px 2px 12px;-moz-box-shadow:  rgba(0,0,0,.6) 0px 2px 12px;;padding: 14px 22px;width: 600px;height:auto;position: relative;display: none;}
+.modal_window {-moz-border-radius: 6px;background-color:#aed0ea;-webkit-border-radius: 6px;border: 1px solid #536376;-webkit-box-shadow: rgba(0,0,0,.6) 0px 2px 12px;-moz-box-shadow:  rgba(0,0,0,.6) 0px 2px 12px;;padding: 14px 22px;width: 600px;height:auto;position: relative;}
 .modal_window #modal_form {margin-top: 13px;font-family: Verdana, Geneva, sans-serif;color:black;}
-.modal_window label {display: block;margin-bottom: 10px;color: #000;font-size: 14px;font-family: Verdana, Geneva, sans-serif;}  
-.modal_window label input {padding: 2px 8px;font-size: 1.2em;line-height: 31px;}
+.modal_window label {display:block;margin-bottom: 10px;color: #000;font-size: 14px;font-family: Verdana, Geneva, sans-serif;}  
+.modal_window  input {padding: 2px 8px;font-size: 1.2em;line-height: 31px;display: block;margin-top:5px;margin-bottom: 5px;}
 .modal_form {position: relative;padding-bottom: 54px;margin-bottom: 12px;font-family: Verdana, Geneva, sans-serif;color: #000;font-size: 14px;font-weight:bold;}
-.actions {float: left;position: absolute;right: 0;height: 31px;bottom: 20px;}
+.modal_form .fields{        vertical-align: middle;    height: 50px;    border: 1px solid red;}
+.actions {float: right;right: 0;height: 31px;bottom: 20px;}
 a.form_button {float: left;width: 93px; height: 31px;margin-right: 15px;}
 .close_x {background-size: 100%;width: 32px; height: 32px;overflow: hidden; line-height: 1000px;display: block;position: absolute; top: 5px; right: 5px;background:url(../images/x.gif) no-repeat;background-position: 50% 50%;}
 .spritedselected {line-height: 200px;overflow: hidden;display: block;width:90%;height:30px}
@@ -203,3 +204,10 @@ legend.collapsed {	color:green;background: transparent url(../images/collapsed.g
 .paboutus{font-size: 16px;font-family: Verdana, Geneva, sans-serif;font-weight: bold;color:#000;padding-top: 50px;padding-left: 100px;line-height: 30px;}
 #playerContainer{padding-top:50px}
 #videos2{padding-left:30px}
+input[type="text"]{    font-family: Verdana, Geneva, sans-serif;font-size: 15px;border: 1px double #DDD;    border-radius: 2px;    box-shadow: 0 0 5px #333;height:25px;width:80%;margin-bottom: 20px;}
+textarea{    font-family: Verdana, Geneva, sans-serif;font-size: 15px;border: 1px double #DDD;    border-radius: 2px;    box-shadow: 0 0 5px #333;margin-bottom: 20px;}
+input[type="button"]{font-family: Verdana, Geneva, sans-serif;font-size: 15px;font-weight:bold;border: 1px double #DDD;border-radius: 2px;
+			box-shadow: 0 0 5px #333;height:30px;width:100px;float: right;margin-right: 100px;}
+input[type="button"]:hover{cursor:pointer;}
+input[type="button"]:active{background-color:#c7e4f6;}
+.green{color:green !important;}
