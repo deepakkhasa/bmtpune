@@ -21,7 +21,7 @@ public class MailerScheduler {
 			AppointmentHistory appointment ,
 			User user
             ) {
-		User duser = User.getUserDetails(appointment.doctorId);
+		User duser = User.getUserDetails(appointment.doctor.id);
 		Hospitals hospital = Hospitals.getHospital(appointment.hospital.id);
 		Html messageBody = newappointment.render(duser.name,user.name,hospital.hospitalName,appointment.appointmentHeadline,appointment.appointmentTime,appointment.appointmentComment);
 		//System.out.println(messageBody);
