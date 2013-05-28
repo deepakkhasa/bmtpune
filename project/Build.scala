@@ -16,7 +16,8 @@ object ApplicationBuild extends Build {
       "org.fusesource.scalate" % "scalate-core" % "1.5.3",
       "mysql" % "mysql-connector-java" % "5.1.18"     ,
     	"org.apache.commons" % "commons-email" % "1.2" ,
-    	"org.scalaj" %% "scalaj-time" % "0.6"
+    	"org.scalaj" %% "scalaj-time" % "0.6",
+    	"com.opentok.api" % "opentok-java-sdk" % "0.91.57"
     )
  
     val secureSocial = PlayProject(
