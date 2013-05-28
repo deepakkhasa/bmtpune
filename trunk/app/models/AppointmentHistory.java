@@ -26,13 +26,23 @@ public class AppointmentHistory extends Model {
 	@Column(name="idAppointment_History")
 	public long id;
 
-	@Column(name="idPatient")
-	public long patientId;
+	/*@Column(name="idPatient")
+	public long patientId;*/
 
-	@Column(name="idDoctor")
+	 @OneToOne
+	   @JoinColumn(name="idPatient")
+	   public User patient;
+	 
+	 
+/*	@Column(name="idDoctor")
 	public long doctorId;
+*/
 
-    @Formats.DateTime(pattern="MM/dd/yyyy")
+	 @OneToOne
+	   @JoinColumn(name="idDoctor")
+	   public User doctor;
+	 
+	 @Formats.DateTime(pattern="MM/dd/yyyy")
 	@Column(name="date_of_appointment")
     public Date dateOfAppointment;
 
@@ -114,9 +124,23 @@ public class AppointmentHistory extends Model {
     public static List<AppointmentHistory> getAppointmentDetailsForFeed (long id,String userType) {
     	List<AppointmentHistory> appointments = new ArrayList<AppointmentHistory>();
     	if("D".equals(userType)){
-    		appointments =find.where().eq("idDoctor", id).orderBy("date_of_appointment desc").findList();;
+    		appointments =find
+    					.fetch("hospital")
+    					.fetch("patient")
+    					.fetch("doctor")
+    					.where()
+    					.eq("idDoctor", id)
+    					.orderBy("date_of_appointment desc")
+    					.findList();
     	}else{
-    		appointments =find.where().eq("idPatient", id).orderBy("date_of_appointment desc").findList();;
+      		appointments =find
+					.fetch("hospital")
+					.fetch("patient")
+					.fetch("doctor")
+					.where()
+					.eq("idPatient", id)
+					.orderBy("date_of_appointment desc")
+					.findList();
     	}
          return appointments;
     }
