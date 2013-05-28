@@ -166,7 +166,6 @@ public class Application extends Controller {
 	  Long id = new Long(userId);
 	  	SocialUser sUser = SecureSocial.currentUser();
 	  	User user = User.authenticate(sUser.id.provider,sUser.id.id);
-	  	System.out.println("Date : "+ id + " "+ user.id+ " "+appointmentForm.get().hospitalId );
 	  	if(appointmentForm.get().hospitalId >0){
 	  		return ok(toJson(AppointmentHistory.getMyAppointments(id,appointmentForm.get().hospitalId)));
 	  	}
@@ -179,8 +178,7 @@ public class Application extends Controller {
 	  	SocialUser sUser = SecureSocial.currentUser();
 	  	User user = User.authenticate(sUser.id.provider,sUser.id.id);
 	  	AppointmentHistory appointment = AppointmentHistory.getAppointmentDetails(id.longValue());
-	  	System.out.println("Date : "+ appointment.dateOfAppointment + " "+ appointment.dateOfAppointment.toString());
-	  	if(user.id != appointment.patientId && user.id != appointment.doctorId){
+	  	if(user.id != appointment.patient.id && user.id != appointment.doctor.id){
 	  		appointment = new AppointmentHistory();
 	  	}
 	    return ok(toJson(appointment));
@@ -283,10 +281,10 @@ public class Application extends Controller {
 		  	SocialUser sUser = SecureSocial.currentUser();
 			User user = User.authenticate(sUser.id.provider,sUser.id.id);
 		  	AppointmentHistory appointment = new AppointmentHistory();
-		  	appointment.patientId=user.id;
+		  	appointment.patient.id=user.id;
 		  	appointment.appointmentComment = appointmentForm.get().comment;
 		  	appointment.appointmentHeadline= appointmentForm.get().headline;
-		  	appointment.doctorId= appointmentForm.get().doctorId;
+		  	appointment.doctor.id= appointmentForm.get().doctorId;
 		  	Hospitals hospital = new Hospitals();
 		  	hospital.id = appointmentForm.get().hospital;
 		  	appointment.hospital= hospital;
