@@ -20,7 +20,6 @@ define([
   'jquery',
   'backbone',
   'underscore',
-  'bxslider',
   'swobject'
 ], function(App){
   // The "app" dependency is passed in as "App"
