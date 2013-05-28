@@ -38,7 +38,7 @@ public class MailSender  extends UntypedActor{
 		String myURL=null;
 		myURL = Play.application().configuration().getString( "my.email.url" );
 
-		try {
+	/*	try {
 			headerURL = new URL(myURL +"/assets/images/logo.jpg");
 			footerURL = new URL(myURL +"/assets/images/footer.jpg");
 		} catch (MalformedURLException e) {
@@ -47,7 +47,8 @@ public class MailSender  extends UntypedActor{
 	    String headercid = email.embed(headerURL, "header");
 	    String footercid = email.embed(footerURL, "footer");
 		String html=body.replaceAll("\\$\\{" + 0 + "\\}", "cid:" + headercid )
-				.replaceAll("\\$\\{" + 1 + "\\}", "cid:" + footercid);
+				.replaceAll("\\$\\{" + 1 + "\\}", "cid:" + footercid);*/
+		String html=body;
 	    email.setDebug(bDebug);
 	    email.setAuthenticator(new DefaultAuthenticator(smtpUser, smtpPassword));
 	    email.setSmtpPort(intPort);
