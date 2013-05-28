@@ -4,7 +4,9 @@ import views.html.*;
 import play.mvc.*;
 import play.data.Form;
 import utils.MailerScheduler;
-
+import com.opentok.api.API_Config;
+import com.opentok.api.OpenTokSDK;
+import com.opentok.exception.OpenTokException;
 public class Vijay extends Controller {
 
 
@@ -29,8 +31,22 @@ public class Vijay extends Controller {
 			  ".<br>"+"<b>Query:</b> " + askForm.get().query;
 	  
 	  MailerScheduler.scheduleMail(emails,subject,body);
+      OpenTokSDK sdk = new OpenTokSDK(23104692, "2d8528251e19b0743d9dc27db12bc13703725658");
+
+      String sessionId=null, token = null;
+      try {
+    	   sessionId = sdk.create_session().getSessionId();
+    	   token = sdk.generate_token(sessionId);
+      }catch(Exception ex){
+	    	System.out.println(ex.getStackTrace());
+	    }
+
+      
+      System.out.println(sessionId);
+      System.out.println(token);
 	    return ok("success");
 	  }
 	  
+  
 
 }
