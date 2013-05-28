@@ -7,8 +7,9 @@ define([
   'views/AboutUsView',
   'views/ContactUsView',
   'views/VideosView',
-  'views/KnowledgeView'
-], function($, _, Backbone, WelcomeView,AboutUsView, ContactUsView,VideosView,KnowledgeView) {
+  'views/KnowledgeView',
+  'views/AskUsView'
+], function($, _, Backbone, WelcomeView,AboutUsView, ContactUsView,VideosView,KnowledgeView,AskUsView) {
   
   var AppRouter = Backbone.Router.extend({
 	  initialize: function(el) {
@@ -22,7 +23,8 @@ define([
       'aboutus': 'showAboutus',
       'contactus': 'showContactus',
       'videos' : 'showVideos',
-      'knowledge': 'showKnowledge',	
+      'knowledge': 'showKnowledge',
+      'askme' : 'showAskme',
       // Default
       '*default': 'decideAction'
     }
@@ -57,6 +59,18 @@ define([
     	videosView.render();
 
     });
+    
+    
+    app_router.on('route:showAskme', function(){
+//    	$(".mainpanel").html("Loading...");
+    	event.preventDefault();
+//		this.feedsView.render();
+    	var askUsView= new AskUsView();
+    	askUsView.render();
+
+    });
+
+    
     app_router.on('route:showKnowledge', function(){
 //    	$(".mainpanel").html("Loading...");
     	event.preventDefault();
