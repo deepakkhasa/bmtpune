@@ -211,3 +211,14 @@ input[type="button"]{font-family: Verdana, Geneva, sans-serif;font-size: 15px;fo
 input[type="button"]:hover{cursor:pointer;}
 input[type="button"]:active{background-color:#c7e4f6;}
 .green{color:green !important;}
+.pinternational{font-size: 16px;font-family: Verdana, Geneva, sans-serif;font-weight: bold;color:#000;padding-top: 30px;padding-left:10px;padding-right:10px;line-height: 30px;}
+.pinternational h2{text-align: center;padding-bottom: 10px}
+.bleft{padding-left: 50px}
+.ibricklets{margin-left:50px; width:100%;height:200px; bottom:0px;padding-top: 5px;padding-left: 10px}
+.ibricklet{-moz-border-radius: 5px;  -webkit-border-radius: 5px;  border-radius: 5px;  margin-right:14px;width:24%;float: left;height:100%;border: 1px solid #000;-webkit-box-shadow: rgba(0,0,0,.6) 0px 2px 12px;-moz-box-shadow:  rgba(0,0,0,.6) 0px 2px 12px;}
+.ibrickletheader{border-bottom:1px;border-bottom-color: #000;border-bottom-style: solid;font-size: 20px;font-family: Verdana, Geneva, sans-serif;font-weight: bold;color:#000;text-align:center;height:30px;width:100%}
+.ibrickletmore{float:right;font-size: 16px;font-family: Verdana, Geneva, sans-serif;font-weight: bold;color:#000;text-align:center;cursor:pointer;}
+.ibrickletinfo{padding-top:10px;padding-left:3px;height:50%;font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#000;}
+.modal_window1 {-moz-border-radius: 6px;background-color:#aed0ea;-webkit-border-radius: 6px;border: 1px solid #536376;-webkit-box-shadow: rgba(0,0,0,.6) 0px 2px 12px;-moz-box-shadow:  rgba(0,0,0,.6) 0px 2px 12px;;padding: 14px 22px;width: 800px;height:auto;position: relative;}
+.modal_window1 #modal_form {margin-top: 13px;font-family: Verdana, Geneva, sans-serif;color:black;}
+
