@@ -18,7 +18,8 @@ define([
 		        	  mode: 'fade',
 		        	  auto: true,
 		        	  captions: true,
-		        	  adaptiveHeight:true
+		        	  adaptiveHeight:true,
+		        	  slideWidth: 450
 		        	});
 			    $('.vbantest').css('display','block') ;   
 		});
