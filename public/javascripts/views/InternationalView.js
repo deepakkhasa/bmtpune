@@ -7,7 +7,7 @@ define([
 ], function($, _, Backbone,internationalTemplate,coreAreaTemplate){
   var InternationalView = Backbone.View.extend({
     el: $(".toppart"),
-    events: {'click .whyus' : 'showwhyus'/*,'click .patappointment' : 'showpatview','click .docappointmentprint' : 'showrddocview'*/} ,
+    events: {'click .whyus' : 'showwhyus','click .icontactus' : 'showcontactus'/*,'click .docappointmentprint' : 'showrddocview'*/} ,
     render: function(){
     	//this.$el.html(welcomeTemplate);
     	this.fadeIn(internationalTemplate, this.$el);
@@ -20,6 +20,9 @@ define([
 			}
         });
    	 
+   },
+   showcontactus: function(event){
+	   this.goTo("icontact");
    }
   });
 
