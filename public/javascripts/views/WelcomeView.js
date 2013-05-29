@@ -23,10 +23,12 @@ define([
 
     },
     showaboutus: function(event){
+    	event.preventDefault();
     	this.goTo("aboutus");
    	 
    },
    showcontactus: function(event){
+	   event.preventDefault();
    	this.goTo("contactus");
   	 
   },
@@ -34,19 +36,24 @@ define([
     	window.location.href="/";
     },
     showVideos: function(event){
+    	event.preventDefault();
     	this.goTo("videos");
     },
     showKnowldge:function(event){
+    	event.preventDefault();
     	this.goTo("knowledge");
     },
     showAskus:function(event){
+    	event.preventDefault();
     	this.goTo("askme");
     },
     showInternational:function(event){
+    	event.preventDefault();
     	this.goTo("international");
     },
     showTestimonials:function(event){
     //	$('.testimony').html(testimonialsTemplate);
+    	event.preventDefault();
     	this.goTo("testimonials");
     }
     
