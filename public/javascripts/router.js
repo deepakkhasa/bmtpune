@@ -42,7 +42,7 @@ define([
     
     app_router.on('route:showAboutus', function(){
 //    	$(".mainpanel").html("Loading...");
-    	event.preventDefault();
+//    	event.preventDefault();
 //		this.feedsView.render();
     	var aboutusView= new AboutUsView();
     	aboutusView.render();
@@ -50,7 +50,7 @@ define([
     });
     app_router.on('route:showContactus', function(){
 //    	$(".mainpanel").html("Loading...");
-    	event.preventDefault();
+ //   	event.preventDefault();
 //		this.feedsView.render();
     	var contactusView= new ContactUsView();
     	contactusView.render();
@@ -59,7 +59,7 @@ define([
 
     app_router.on('route:showVideos', function(){
 //    	$(".mainpanel").html("Loading...");
-    	event.preventDefault();
+  //  	event.preventDefault();
 //		this.feedsView.render();
     	var videosView= new VideosView();
     	videosView.render();
@@ -69,7 +69,7 @@ define([
     
     app_router.on('route:showAskme', function(){
 //    	$(".mainpanel").html("Loading...");
-    	event.preventDefault();
+    //	event.preventDefault();
 //		this.feedsView.render();
     	var askUsView= new AskUsView();
     	askUsView.render();
@@ -79,7 +79,7 @@ define([
     
     app_router.on('route:showKnowledge', function(){
 //    	$(".mainpanel").html("Loading...");
-    	event.preventDefault();
+    	//event.preventDefault();
 //		this.feedsView.render();
     	var knowledgeView= new KnowledgeView();
     	knowledgeView.render();
@@ -87,7 +87,7 @@ define([
     });
     app_router.on('route:showInternational', function(){
 //    	$(".mainpanel").html("Loading...");
-    	event.preventDefault();
+    	//event.preventDefault();
 //		this.feedsView.render();
     	var internationalView= new InternationalView();
     	internationalView.render();
@@ -95,13 +95,13 @@ define([
     });
 
     app_router.on('route:showiContactUs', function(){
-    	event.preventDefault();
+    	//event.preventDefault();
     	var internationalContactView= new InternationalContactView();
     	internationalContactView.render();
 
     });
     app_router.on('route:showTestimonials', function(){
-    	event.preventDefault();
+    	//event.preventDefault();
     	var testimonialsView= new TestimonialsView();
     	testimonialsView.render();
 
