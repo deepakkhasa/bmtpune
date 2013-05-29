@@ -8,7 +8,7 @@ define([
   var WelcomeView = Backbone.View.extend({
     el: $("#maincontainer"),
     events: {'click .aboutus' : 'showaboutus','click .logo': 'showhome', 'click .contactus':'showcontactus', 'click .myvideos': 'showVideos',
-    	'click .knowledge':'showKnowldge', 'click .askus':'showAskus','click .international':'showInternational'} ,
+    	'click .knowledge':'showKnowldge', 'click .askus':'showAskus','click .international':'showInternational','click .testimonies':'showTestimonials'} ,
     render: function(){
     	//this.$el.html(welcomeTemplate);
     	//this.fadeIn(welcomeTemplate, this.$el);
@@ -44,8 +44,11 @@ define([
     },
     showInternational:function(event){
     	this.goTo("international");
+    },
+    showTestimonials:function(event){
+    //	$('.testimony').html(testimonialsTemplate);
+    	this.goTo("testimonials");
     }
-    
     
     
   });
