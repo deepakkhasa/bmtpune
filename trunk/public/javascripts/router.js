@@ -9,8 +9,10 @@ define([
   'views/VideosView',
   'views/KnowledgeView',
   'views/AskUsView',
-  'views/InternationalView'
-], function($, _, Backbone, WelcomeView,AboutUsView, ContactUsView,VideosView,KnowledgeView,AskUsView,InternationalView) {
+  'views/InternationalView',
+  'views/InternationalContactView',
+  'views/TestimonialsView'
+], function($, _, Backbone, WelcomeView,AboutUsView, ContactUsView,VideosView,KnowledgeView,AskUsView,InternationalView,InternationalContactView,TestimonialsView) {
   
   var AppRouter = Backbone.Router.extend({
 	  initialize: function(el) {
@@ -27,7 +29,8 @@ define([
       'knowledge': 'showKnowledge',
       'askme' : 'showAskme',
       'international' : 'showInternational',
-
+      'icontact' : 'showiContactUs',
+      'testimonials':'showTestimonials',
       // Default
       '*default': 'decideAction'
     }
@@ -91,6 +94,19 @@ define([
 
     });
 
+    app_router.on('route:showiContactUs', function(){
+    	event.preventDefault();
+    	var internationalContactView= new InternationalContactView();
+    	internationalContactView.render();
+
+    });
+    app_router.on('route:showTestimonials', function(){
+    	event.preventDefault();
+    	var testimonialsView= new TestimonialsView();
+    	testimonialsView.render();
+
+    });
+
     
     app_router.on('route:decideAction', function(){
     	var welcomeView = new WelcomeView();
@@ -106,7 +122,23 @@ define([
     	app_router.navigate(loc, true);
       };
       Backbone.View.prototype.getRouter= app_router;
-
+      $.fn.onAvailable = function(fn){
+    	    var sel = this.selector;
+    	    var timer;
+    	    var self = this;
+    	    if (this.length > 0) {
+    	        fn.call(this);   
+    	    }
+    	    else {
+    	        timer = setInterval(function(){
+    	        	console.log(sel);
+    	            if ($(sel).length > 0) {
+    	                fn.call($(sel));
+    	                clearInterval(timer);  
+    	            }
+    	        },50);  
+    	    }
+    	};
      Backbone.history.start();
   };
   return { 
