@@ -6,7 +6,7 @@
 GET     /                           controllers.Vijay.welcome
 GET /knowledgecenter					controllers.Application.knowledgeCenter
 POST /askForm						controllers.Vijay.askForm
-
+POST /donateForm					controllers.Vijay.donateForm
 
 
 # Map static resources from the /public folder to the /assets URL path
