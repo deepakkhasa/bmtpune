@@ -47,6 +47,24 @@ public class Vijay extends Controller {
 */	    return ok("success");
 	  }
 	  
-  
+	public static class DonateForm {
+
+		public String emailid;
+		public String phonenumber;
+		public String name;
+		public String amount;
+
+	}
+  public static Result donateForm() {
+	  Form<DonateForm> askForm = form(DonateForm.class).bindFromRequest();
+	  String subject = askForm.get().name+ " would like to donate.";
+	  String[] emails = {"bmtpune@gmail.com"};
+	  String body = "<b>Name:</b> "+ askForm.get().name+".<br>"+"<b>Email ID:</b> "+ askForm.get().emailid+".<br>"+"<b>Phone Number:</b> "+ askForm.get().phonenumber+
+			  ".<br>"+"<b>Amount:</b> " + askForm.get().amount;
+	  
+	  MailerScheduler.scheduleMail(emails,subject,body);
+	  return ok("success");
+	  }
+    
 
 }
