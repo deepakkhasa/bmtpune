@@ -8,7 +8,8 @@ define([
   var WelcomeView = Backbone.View.extend({
     el: $("#maincontainer"),
     events: {'click .aboutus' : 'showaboutus','click .logo': 'showhome', 'click .contactus':'showcontactus', 'click .myvideos': 'showVideos',
-    	'click .knowledge':'showKnowldge', 'click .askus':'showAskus','click .international':'showInternational','click .testimonies':'showTestimonials'} ,
+    	'click .knowledge':'showKnowldge', 'click .askus':'showAskus','click .international':'showInternational','click .testimonies':'showTestimonials',
+    	'click .clinical':'showClinical','click .donate':'showDonate'} ,
     render: function(){
     	//this.$el.html(welcomeTemplate);
     	//this.fadeIn(welcomeTemplate, this.$el);
@@ -55,7 +56,18 @@ define([
     //	$('.testimony').html(testimonialsTemplate);
     	event.preventDefault();
     	this.goTo("testimonials");
-    }
+    },
+    showClinical:function(event){
+    //	$('.testimony').html(testimonialsTemplate);
+    	event.preventDefault();
+    	this.goTo("clinical");
+    },
+    showDonate:function(event){
+        //	$('.testimony').html(testimonialsTemplate);
+        	event.preventDefault();
+        	this.goTo("donate");
+        }
+
     
     
   });
