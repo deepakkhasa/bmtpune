@@ -11,8 +11,10 @@ define([
   'views/AskUsView',
   'views/InternationalView',
   'views/InternationalContactView',
-  'views/TestimonialsView'
-], function($, _, Backbone, WelcomeView,AboutUsView, ContactUsView,VideosView,KnowledgeView,AskUsView,InternationalView,InternationalContactView,TestimonialsView) {
+  'views/TestimonialsView',
+  'views/ClinicalView',
+  'views/DonateView'
+], function($, _, Backbone, WelcomeView,AboutUsView, ContactUsView,VideosView,KnowledgeView,AskUsView,InternationalView,InternationalContactView,TestimonialsView,ClinicalView,DonateView) {
   
   var AppRouter = Backbone.Router.extend({
 	  initialize: function(el) {
@@ -31,6 +33,8 @@ define([
       'international' : 'showInternational',
       'icontact' : 'showiContactUs',
       'testimonials':'showTestimonials',
+      'clinical': 'showClinical',
+      'donate':'showDonate',
       // Default
       '*default': 'decideAction'
     }
@@ -107,7 +111,18 @@ define([
 
     });
 
-    
+    app_router.on('route:showClinical', function(){
+    	var clinicalView= new ClinicalView();
+    	clinicalView.render();
+
+    });
+    app_router.on('route:showDonate', function(){
+    	var donateView= new DonateView();
+    	donateView.render();
+
+    });
+
+        
     app_router.on('route:decideAction', function(){
     	var welcomeView = new WelcomeView();
     	welcomeView.render();
