@@ -197,7 +197,7 @@ legend.collapsed {	color:green;background: transparent url(../images/collapsed.g
 .brickletmore{float:right;font-size: 16px;font-family: Verdana, Geneva, sans-serif;font-weight: bold;color:#fff;text-align:center;cursor:pointer;}
 .intro p{font-size: 14px;font-family: Verdana, Geneva, sans-serif;font-weight: bold;color:#000;padding-right:5px;}
 .brickletinfo{padding-top:10px;padding-left:3px;height:50%;font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#fff;}
-.vijay{float:left;height: 100%;margin-left: 10px;padding-top: 5px;width: 45%;}
+.vijay{float:left;height: 100%;margin-left: 10px;padding-top: 5px;width: 35%;}
 .vijay img{height: 45px;float: right;padding-top:0px;}
 .options{cursor: pointer;float:right;;font-family:"Trebuchet MS",sans-serif;font-size:14px;padding-right:5px;padding-top:15px;}
 .option{background-color: #6E6E6E;margin-right: 3px;float: right;line-height:30px;width:125px; font-size: 16px;font-family: Verdana, Geneva, sans-serif;color:#fff;text-align:center;border-radius: 2px;-moz-border-radius: 2px;-webkit-border-radius: 2px;border: 1px solid #000;-webkit-box-shadow: rgba(0,0,0,.6) 0px 2px 12px;-moz-box-shadow:  rgba(0,0,0,.6) 0px 2px 12px;}
