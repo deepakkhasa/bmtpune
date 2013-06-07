@@ -13,8 +13,12 @@ define([
   'views/InternationalContactView',
   'views/TestimonialsView',
   'views/ClinicalView',
-  'views/DonateView'
-], function($, _, Backbone, WelcomeView,AboutUsView, ContactUsView,VideosView,KnowledgeView,AskUsView,InternationalView,InternationalContactView,TestimonialsView,ClinicalView,DonateView) {
+  'views/DonateView',
+  'views/SetSessionView',
+  'views/GenerateTokenView',
+  'views/OpenSessionView'
+], function($, _, Backbone, WelcomeView,AboutUsView, ContactUsView,VideosView,KnowledgeView,AskUsView,
+		InternationalView,InternationalContactView,TestimonialsView,ClinicalView,DonateView,SetSessionView,GenerateTokenView,OpenSessionView) {
   
   var AppRouter = Backbone.Router.extend({
 	  initialize: function(el) {
@@ -35,6 +39,9 @@ define([
       'testimonials':'showTestimonials',
       'clinical': 'showClinical',
       'donate':'showDonate',
+      'setsession?session=:session': 'setSession',
+      'generatetoken?sessionid=:sessionid&on=:on&email=:email': 'generateToken',
+      'opensession?session=:session': 'openSession',
       // Default
       '*default': 'decideAction'
     }
@@ -122,7 +129,26 @@ define([
 
     });
 
-        
+    
+    app_router.on('route:setSession', function(session){
+    	var setSessionView= new SetSessionView();
+    	setSessionView.render(session);
+
+    });
+
+    app_router.on('route:generateToken', function(sessionid,on,email){
+    	var generateTokenView= new GenerateTokenView();
+    	generateTokenView.render(sessionid,on,email);
+
+    });
+
+    app_router.on('route:openSession', function(session){
+    	var openSessionView= new OpenSessionView();
+    	openSessionView.render(session);
+
+    });
+
+    
     app_router.on('route:decideAction', function(){
     	var welcomeView = new WelcomeView();
     	welcomeView.render();
@@ -146,7 +172,6 @@ define([
     	    }
     	    else {
     	        timer = setInterval(function(){
-    	        	console.log(sel);
     	            if ($(sel).length > 0) {
     	                fn.call($(sel));
     	                clearInterval(timer);  
