@@ -54,6 +54,8 @@ define([
     		$("#email-message").text("");
     	}
     	if(!error){
+    		this.model.set("country", $("#country").val());
+    		console.log(this.model);
           	this.model.save(null, {
           	    success: function (model, response) {
           	    	 $(".msg").html("Email has been sent to Dr. Vijay Ramanan. You will hear back soon. Thanks!");
