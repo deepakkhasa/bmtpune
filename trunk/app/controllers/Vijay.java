@@ -97,7 +97,7 @@ public class Vijay extends Controller {
 	  contactDetails.save();	
 			  
 	  String subject = "International Patient: "+contactForm.get().name+ " would like to get in touch.";
-	  String[] emails = {"padmaraj.m@gmail.com"};
+	  String[] emails = {"bmtpune@gmail.com"};
 	  StringBuilder body = new StringBuilder();
 	  body.append("<b>Name:</b> "+ contactForm.get().name+".<br>"+"<b>Email ID:</b> "+ contactForm.get().emailid+".<br>"+"<b>Phone Number:</b> "+ contactForm.get().phonenumber);
 	  if("Y".equals(contactForm.get().video)){
@@ -130,7 +130,7 @@ public class Vijay extends Controller {
 	        String encodedUrl = URLEncoder.encode(url, "UTF-8");
 	        String subject="Video session with Dr. Vijay Ramanan.";
 	        
-	  	  String[] emails = {econtactDetails.email,"padmaraj.m@gmail.com"};
+	  	  String[] emails = {econtactDetails.email,"bmtpune@gmail.com"};
 		  String body = "Hi,<br> I have scheduled a video conference on "+datetime+
 		  ". You can use this link to attend:<br>http://www.vijayramanan.com/#opensession?session="+id+"  <br>You can login using this on the scheduled date.<br>Thanks,<br>Dr. Vijay Ramanan";
 	        subject="Start session with "+econtactDetails.name;
