@@ -6,7 +6,7 @@ define([
 ], function($, _, Backbone,knowledgeTemplate){
   var VideosView = Backbone.View.extend({
     el: $(".toppart"),
- //   events: {'click .docappointment' : 'showdocview','click .patappointment' : 'showpatview','click .docappointmentprint' : 'showrddocview'} ,
+   // events: {'click #showdocuments' : 'showDocuments'} ,
     render: function(){
     	//this.$el.html(welcomeTemplate);
     	this.fadeIn(knowledgeTemplate, this.$el);
@@ -34,6 +34,7 @@ define([
 //		        	totalrows=totalrows*180;
 //		        	$('.toppart').animate({height:totalrows+'px'}, 500);
 		        	$('#nav-menu').html(documentNames);
+
 		        }
 		    });
 
@@ -43,3 +44,14 @@ define([
   return VideosView;
 });
 
+
+function loadDocument(docId,accessKey){
+	$('#nav-menu').hide();
+	$('#showdocuments').show();
+	$('#showdocuments').click(function(){
+		window.location.hash="knowledge";
+	});
+	$('#documentdisplay').show();
+	 var scribd_doc = scribd.Document.getDoc(docId, accessKey);
+	 scribd_doc.write('documentdisplay');
+} 
