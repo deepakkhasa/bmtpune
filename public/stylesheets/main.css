@@ -1,4 +1,5 @@
 #maincontainer{margin:0 auto;width:1200px}
+#google_translate_element{float: right}
 .logoheader{background-color: white;/* background: url(../images/logo.jpg) no-repeat  */;height: 162px; width: 1200px;}
 #topsection{background: url(../images/blood_cells.jpg) repeat-x top center;border-bottom:0;height:162px;margin:0 0 15px 0;overflow:hidden;padding:0;}
 #topsection #searchandlogin{height:40px;margin:19px 0px 0px 652px;padding:0px;}
