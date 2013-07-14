@@ -9,7 +9,7 @@ define([
     el: $("#maincontainer"),
     events: {'click .aboutus' : 'showaboutus','click .logo': 'showhome', 'click .contactus':'showcontactus', 'click .myvideos': 'showVideos',
     	'click .knowledge':'showKnowldge', 'click .askus':'showAskus','click .international':'showInternational','click .testimonies':'showTestimonials',
-    	'click .clinical':'showClinical','click .donate':'showDonate'} ,
+    	'click .clinical':'showClinical','click .donate':'showDonate', 'click .home':'showHome'} ,
     render: function(){
     	//this.$el.html(welcomeTemplate);
     	//this.fadeIn(welcomeTemplate, this.$el);
@@ -22,6 +22,11 @@ define([
       	});
         $('.vban').css('display','block');
 
+    },
+    showHome: function(event){
+    	event.preventDefault();
+    	window.location.href="/"
+    	
     },
     showaboutus: function(event){
     	event.preventDefault();
