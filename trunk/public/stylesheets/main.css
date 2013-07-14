@@ -1,4 +1,5 @@
 #maincontainer{margin:0 auto;width:1200px}
+.logoheader{background-color: white;/* background: url(../images/logo.jpg) no-repeat  */;height: 162px; width: 1200px;}
 #topsection{background: url(../images/blood_cells.jpg) repeat-x top center;border-bottom:0;height:162px;margin:0 0 15px 0;overflow:hidden;padding:0;}
 #topsection #searchandlogin{height:40px;margin:19px 0px 0px 652px;padding:0px;}
 #topsection #searchandlogin #searcharea{padding-top:0px;}
@@ -63,7 +64,7 @@
 .mainpart p {text-indent: 20px;padding-bottom:10px;padding-left:3px;padding-right:3px;}
 .mainpart ul {font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#000;height:50px;padding-left: 40px;}
 .mainpart ul a{font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#000;height:50px;padding-left: 40px;}
-.mainpart #intro {font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#000;padding-right: 10px;}
+.mainpart #intro {font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#000;padding-right: 10px;text-align: center}
 .mainpart #intro ul{font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#000;padding-right: 10px;}
 .toppart{min-height: 740px;bottom:0;width:100%; -moz-box-shadow: 4px 4px 14px #000;  -webkit-box-shadow: 4px 4px 14px #000;  box-shadow: 4px 4px 14px #000;    filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=.2)}
 #highlights{margin:0 auto;width:1050px;float:left}
@@ -197,7 +198,7 @@ legend.collapsed {	color:green;background: transparent url(../images/collapsed.g
 .brickletmore{float:right;font-size: 16px;font-family: Verdana, Geneva, sans-serif;font-weight: bold;color:#fff;text-align:center;cursor:pointer;}
 .intro p{font-size: 14px;font-family: Verdana, Geneva, sans-serif;font-weight: bold;color:#000;padding-right:5px;}
 .brickletinfo{padding-top:10px;padding-left:3px;height:50%;font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#fff;}
-.vijay{float:left;height: 100%;margin-left: 10px;padding-top: 5px;width: 35%;}
+.vijay{float:left;height: 100%;margin-left: 10px;padding-top: 5px;width: 25%;}
 .vijay img{height: 45px;float: right;padding-top:0px;}
 .options{cursor: pointer;float:right;;font-family:"Trebuchet MS",sans-serif;font-size:14px;padding-right:5px;padding-top:15px;}
 .option{background-color: #6E6E6E;margin-right: 3px;float: right;line-height:30px;width:125px; font-size: 16px;font-family: Verdana, Geneva, sans-serif;color:#fff;text-align:center;border-radius: 2px;-moz-border-radius: 2px;-webkit-border-radius: 2px;border: 1px solid #000;-webkit-box-shadow: rgba(0,0,0,.6) 0px 2px 12px;-moz-box-shadow:  rgba(0,0,0,.6) 0px 2px 12px;}
