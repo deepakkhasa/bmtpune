@@ -65,7 +65,7 @@
 .mainpart p {text-indent: 20px;padding-bottom:10px;padding-left:3px;padding-right:3px;}
 .mainpart ul {font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#000;height:50px;padding-left: 40px;}
 .mainpart ul a{font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#000;height:50px;padding-left: 40px;}
-.mainpart #intro {font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#000;padding-right: 10px;text-align: center}
+.mainpart #intro {font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#000;padding-right: 10px;}
 .mainpart #intro ul{font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#000;padding-right: 10px;}
 .toppart{min-height: 740px;bottom:0;width:100%; -moz-box-shadow: 4px 4px 14px #000;  -webkit-box-shadow: 4px 4px 14px #000;  box-shadow: 4px 4px 14px #000;    filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=.2)}
 #highlights{margin:0 auto;width:1050px;float:left}
@@ -197,7 +197,7 @@ legend.collapsed {	color:green;background: transparent url(../images/collapsed.g
 .bricklet{background-color: #6E6E6E;opacity: 0.9;margin-right:4px;width:19%;float: left;height:100%;border-radius: 2px;-moz-border-radius: 2px;-webkit-border-radius: 2px;border: 1px solid #000;-webkit-box-shadow: rgba(0,0,0,.6) 0px 2px 12px;-moz-box-shadow:  rgba(0,0,0,.6) 0px 2px 12px;}
 .brickletheader{border-bottom:1px;border-bottom-color: #000;border-bottom-style: solid;font-size: 20px;font-family: Verdana, Geneva, sans-serif;color:#fff;text-align:center;height:30px;width:100%}
 .brickletmore{float:right;font-size: 16px;font-family: Verdana, Geneva, sans-serif;font-weight: bold;color:#fff;text-align:center;cursor:pointer;}
-.intro p{font-size: 14px;font-family: Verdana, Geneva, sans-serif;font-weight: bold;color:#000;padding-right:5px;}
+.intro p{font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#000;padding-right:5px;}
 .brickletinfo{padding-top:10px;padding-left:3px;height:50%;font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#fff;}
 .vijay{float:left;height: 100%;margin-left: 10px;padding-top: 5px;width: 25%;}
 .vijay img{height: 45px;float: right;padding-top:0px;}
@@ -253,3 +253,5 @@ input[type="button"]:active{background-color:#c7e4f6;}
 .myself{height: 300px;width:400px;}
 .other{height: 500px;width:600px;}
 #showdocuments:HOVER {cursor: pointer;}
+.intro{width: 75%;float: left;height:272px;text-align: left;}
+.rss{width:20%;float:right;height:240px;margin-bottom: 2px;margin-right: 3px;border-width: 1px;border-style: solid;font-size: 25px;font-family: Verdana, Geneva, sans-serif;text-align: center;padding-top: 30px;}
