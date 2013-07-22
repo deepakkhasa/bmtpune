@@ -15,7 +15,8 @@ import securesocial.core.java.SocialUser;
 import views.html.*;
 import play.data.Form;
 import static play.libs.Json.toJson;
-
+import java.util.Comparator;
+import java.util.Collections;
 import java.io.IOException;
 
 import com.google.code.javascribd.connection.ScribdClient;
@@ -205,6 +206,7 @@ public class Application extends Controller {
 	public static class Documents {
 
 		public String documentId;
+		public int docId;
 		public String title;
 		public String description;
 		public String thumbNailURI;
@@ -234,11 +236,24 @@ public class Application extends Controller {
     	  	Documents d1 = new Documents();
     	  	d1.title = res.getTitle();
     	  	d1.documentId = res.getDocId().toString();
+    	  	d1.docId = res.getDocId().intValue();
     	  	d1.description = res.getDescription();
     	  	d1.thumbNailURI =res.getThumbnailUrl().toString();
     	  	d1.accessKey= res.getAccessKey();
     	  	documents.add(d1);
       }
+      
+      Collections.sort(documents, new Comparator<Documents>(){
+    	  public int compare(Documents s1, Documents s2) {
+    		    if (s1.docId > s2.docId) {
+    		        return -1;
+    		      } else if (s1.docId < s2.docId) {
+    		        return 1;
+    		      }  
+    		      return 0;
+    	    //return s1.docId>s2.docId?1:0;
+    	  }
+    	});
 
       return ok(toJson(documents));
   }
