@@ -254,4 +254,4 @@ input[type="button"]:active{background-color:#c7e4f6;}
 .other{height: 500px;width:600px;}
 #showdocuments:HOVER {cursor: pointer;}
 .intro{width: 75%;float: left;height:272px;text-align: left;}
-.rss{width:20%;float:right;height:240px;margin-bottom: 2px;margin-right: 3px;border-width: 1px;border-style: solid;font-size: 25px;font-family: Verdana, Geneva, sans-serif;text-align: center;padding-top: 30px;}
+.rss{ width:151px;float:right;margin-right: 30px;font-family: Verdana, Geneva, sans-serif;text-align: center;}
