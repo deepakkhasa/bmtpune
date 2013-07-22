@@ -24,12 +24,13 @@ define([
 
     },
     showHome: function(event){
-    	event.preventDefault();
+    	event.preventDefault();    	
     	window.location.href="/"
     	
     },
     showaboutus: function(event){
     	event.preventDefault();
+    	$('.toppart').css('height','740px');
     	this.goTo("aboutus");
    	 
    },
@@ -60,6 +61,7 @@ define([
     showTestimonials:function(event){
     //	$('.testimony').html(testimonialsTemplate);
     	event.preventDefault();
+    	$('.toppart').css('height','640px');
     	this.goTo("testimonials");
     },
     showClinical:function(event){
