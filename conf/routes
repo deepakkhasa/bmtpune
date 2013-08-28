@@ -11,6 +11,9 @@ POST /createSession					controllers.Vijay.createSession(datetime:String,id:Strin
 GET /generateToken					controllers.Vijay.generateToken(sessionid:String)
 GET /openSession					controllers.Vijay.openSession(session:String)
 POST /requestContact				controllers.Vijay.requestContact
+GET /updateRegistrationId			controllers.Vijay.updateRegistrationId(registrationId:String)
+#GET /gcmMessage						controllers.Vijay.gcmMessage
+#POST /gcmMessage					controllers.Vijay.setgcmMessage(message:String)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
