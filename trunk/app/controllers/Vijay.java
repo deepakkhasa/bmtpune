@@ -53,6 +53,15 @@ public class Vijay extends Controller {
 		public String amount;
 
 	}
+	
+	
+	public static Result updateRegistrationId(String registrationId) {
+			GCMUser gcmUser = new GCMUser();
+			gcmUser.regId = registrationId;
+			gcmUser.save();
+		  return ok("success");
+		  }
+
   public static Result donateForm() {
 	  Form<DonateForm> askForm = form(DonateForm.class).bindFromRequest();
 	  String subject = askForm.get().name+ " would like to donate.";
