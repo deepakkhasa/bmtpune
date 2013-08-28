@@ -59,7 +59,7 @@ public class Vijay extends Controller {
 			GCMUser gcmUser = new GCMUser();
 			gcmUser.regId = registrationId;
 			gcmUser.save();
-		  return ok("success");
+		  return ok(toJson("success"));
 		  }
 
   public static Result donateForm() {
@@ -70,7 +70,7 @@ public class Vijay extends Controller {
 			  ".<br>"+"<b>Amount:</b> " + askForm.get().amount;
 	  
 	  MailerScheduler.scheduleMail(emails,subject,body);
-	  return ok("success");
+	  return ok(toJson("success"));
 	  }
   
 	public static class ContactForm {
