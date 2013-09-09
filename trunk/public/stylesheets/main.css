@@ -11,9 +11,6 @@
 .itemul>li{display: inline-block;position: relative;margin: 5px;vertical-align: top;width: 270px;}
 .item{width:270px;height: 270px;margin:auto;}
 .internl{background:  url(../images/international.jpg) no-repeat;}
-.kt{background:  url(../images/kt.jpg) no-repeat;}
-.android{background:  url(../images/and.jpg) no-repeat;}
-.testimonials{background:  url(../images/testimonials.jpg) no-repeat;}
 .itemheader{float:left;}
 .itemtext{float: left;height: 80px;padding: 0 15px 0 20px;margin: 10px 0 0 0;font-size: 14px;}
 .social{position: fixed;top: 20%;left: 0px;width:54px;height:450px;z-index: 100000}
@@ -220,7 +217,7 @@ legend.collapsed {	color:green;background: transparent url(../images/collapsed.g
 .options{cursor: pointer;float:right;;font-family:"Trebuchet MS",sans-serif;font-size:14px;padding-right:5px;padding-top:15px;}
 .option{background-color: #6E6E6E;margin-right: 3px;float: right;line-height:30px;width:125px; font-size: 16px;font-family: Verdana, Geneva, sans-serif;color:#fff;text-align:center;border-radius: 2px;-moz-border-radius: 2px;-webkit-border-radius: 2px;border: 1px solid #000;-webkit-box-shadow: rgba(0,0,0,.6) 0px 2px 12px;-moz-box-shadow:  rgba(0,0,0,.6) 0px 2px 12px;}
 .logo{cursor: pointer;float:left;}
-.pcontactus{font-size: 16px;font-family: Verdana, Geneva, sans-serif;font-weight: bold;color:#000;text-align:center;}
+.pcontactus{padding-top:20px;font-size: 16px;font-family: Verdana, Geneva, sans-serif;font-weight: bold;color:#000;text-align:center;}
 .paboutus{font-size: 16px;font-family: Verdana, Geneva, sans-serif;font-weight: bold;color:#000;padding-top: 50px;padding-left: 100px;line-height: 30px;}
 #playerContainer{padding-top:50px}
 #videos2{padding-left:30px}
