@@ -1,6 +1,7 @@
 package controllers;
 
 import views.html.*;
+
 import java.text.*;
 import java.util.Date;
 import play.mvc.*;
@@ -17,15 +18,91 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 import static play.libs.Json.toJson;
+import java.io.IOException;
+import java.util.Comparator;
+import java.util.Collections;
+
+import com.google.code.javascribd.connection.ScribdClient;
+import com.google.code.javascribd.connection.ScribdConnectionException;
+import com.google.code.javascribd.docs.GetList;
+import com.google.code.javascribd.docs.GetListResponse;
+import com.google.code.javascribd.docs.Search;
+import com.google.code.javascribd.docs.SearchResponse;
+import com.google.code.javascribd.type.ApiKey;
+import com.google.code.javascribd.type.SearchScope;
+import com.google.code.javascribd.type.SessionKey;
+import com.google.code.javascribd.user.Login;
+import com.google.code.javascribd.user.LoginResponse;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Vijay extends Controller {
 
 
+	public static class Documents {
+
+		public String documentId;
+		public int docId;
+		public String title;
+		public String description;
+		public String thumbNailURI;
+		public String accessKey;
+
+	} 
 
   public static Result welcome() {
     return ok(welcome.render());
   }
-	
+
+  public static Result contactUs() {
+	    return ok(contactus.render());
+	  }
+  
+  public static Result videos() {
+      return ok(videos.render());
+  }
+
+  public static Result documents() throws ScribdConnectionException, IOException{
+      ScribdClient conn = new ScribdClient();
+      conn.setUrl("http://api.scribd.com/api");
+      ApiKey key = new ApiKey("61ek1y88milxwuxacyw4o");
+      Login method = new Login(key, "", "");
+      LoginResponse result = conn.execute(method);
+      if (result.getError() != null) {
+              System.out.println("rsp.error.code=" + result.getError().getCode());
+              System.out.println("rsp.error.message=" + result.getError().getMessage());
+      }
+      SessionKey session = result.getSessionKey();
+      GetList getList = new GetList(key, session);
+      GetListResponse resultList = conn.execute(getList);
+      List<Documents> documents =new ArrayList<Documents>();
+      for (GetListResponse.Entry res : resultList.getResultSet().getEntries()) {
+    	  	Documents d1 = new Documents();
+    	  	d1.title = res.getTitle();
+    	  	d1.documentId = res.getDocId().toString();
+    	  	d1.docId = res.getDocId().intValue();
+    	  	d1.description = res.getDescription();
+    	  	d1.thumbNailURI =res.getThumbnailUrl().toString();
+    	  	d1.accessKey= res.getAccessKey();
+    	  	documents.add(d1);
+      }
+      
+      Collections.sort(documents, new Comparator<Documents>(){
+    	  public int compare(Documents s1, Documents s2) {
+    		    if (s1.docId > s2.docId) {
+    		        return -1;
+    		      } else if (s1.docId < s2.docId) {
+    		        return 1;
+    		      }  
+    		      return 0;
+    	  }
+    	});
+
+
+      return ok(knowledgecenter.render());
+  }
+
 	public static class AskForm {
 
 		public String emailid;

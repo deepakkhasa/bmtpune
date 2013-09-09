@@ -1,6 +1,7 @@
 package controllers;
 
 import java.util.Date;
+
 import java.util.List;
 import utils.MailerScheduler;
 import java.text.*;
@@ -194,10 +195,10 @@ public class Application extends Controller {
   }
  
 
-  public static Result contactus() {
+/*  public static Result contactus() {
       return ok(contactus.render(SecureSocial.currentUser()));
   }
-
+*/
 
   public static Result aboutus() {
       return ok(aboutus.render(SecureSocial.currentUser()));
@@ -258,10 +259,10 @@ public class Application extends Controller {
       return ok(toJson(documents));
   }
 
-  public static Result videos() {
+/*  public static Result videos() {
       return ok(videos.render(SecureSocial.currentUser()));
   }
-
+*/
 	public static class UserDetails {
 
 		public String userId;
