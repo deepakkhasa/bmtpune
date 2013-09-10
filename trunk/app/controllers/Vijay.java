@@ -40,16 +40,6 @@ import java.util.List;
 public class Vijay extends Controller {
 
 
-	public static class Documents {
-
-		public String documentId;
-		public int docId;
-		public String title;
-		public String description;
-		public String thumbNailURI;
-		public String accessKey;
-
-	} 
 
   public static Result welcome() {
     return ok(welcome.render());
@@ -61,6 +51,9 @@ public class Vijay extends Controller {
   
   public static Result videos() {
       return ok(videos.render());
+  }
+  public static Result testimonials() {
+      return ok(testimonials.render());
   }
 
   public static Result documents() throws ScribdConnectionException, IOException{
@@ -100,7 +93,7 @@ public class Vijay extends Controller {
     	});
 
 
-      return ok(knowledgecenter.render());
+      return ok(knowledgecenter.render(documents));
   }
 
 	public static class AskForm {
