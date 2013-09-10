@@ -4,6 +4,10 @@
 
 # Home page
 GET / 		                        controllers.Vijay.welcome
+GET /contactus						controllers.Vijay.contactUs
+GET /videos							controllers.Vijay.videos
+GET /documents						controllers.Vijay.documents
+GET /testimonials					controllers.Vijay.testimonials
 GET /knowledgecenter				controllers.Application.knowledgeCenter
 POST /askForm						controllers.Vijay.askForm
 POST /donateForm					controllers.Vijay.donateForm
