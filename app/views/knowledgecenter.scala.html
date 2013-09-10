@@ -1,3 +1,4 @@
+@(documents: java.util.List[Documents])
 <!DOCTYPE html>
 
 <html>
@@ -16,17 +17,52 @@
   		<meta name="title" content="Dr. Vijay Ramanan | Hematologist" />  		
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")?v=12">
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/jquery.bxslider.css")">
-                <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/camera.css")?v=12">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/tabs.css")?v=12">
         <!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" /> -->
         <!-- <script type="text/javascript" data-main="/assets/javascripts/main" src="@routes.Assets.at("javascripts/require.js")"></script> -->    
         <script type="text/javascript" src="http://www.google.com/jsapi?key=AIzaSyBV6MeANy_ZaLB2f2c-XKCMA7hIu2Fy744"></script>  
         <script type="text/javascript" src='http://www.scribd.com/javascripts/scribd_api.js'></script>
         <script type="text/javascript" data-main="/assets/javascripts/main" src="@routes.Assets.at("javascripts/jquery-1.8.1.min.js")"></script>
-        <script type="text/javascript" data-main="/assets/javascripts/main" src="@routes.Assets.at("javascripts/camera.min.js")"></script>
-        <script type="text/javascript" data-main="/assets/javascripts/main" src="@routes.Assets.at("javascripts/jquery.easing.1.3.js")"></script>
-        <script type="text/javascript" data-main="/assets/javascripts/main" src="@routes.Assets.at("javascripts/jquery.mobile.customized.min.js")"></script>
+        <script type="text/javascript" data-main="/assets/javascripts/main" src="@routes.Assets.at("javascripts/tdi.tabs.js")"></script>
 	    <script type="text/javascript">
 			google.load("feeds", "1");
+			$.fn.onAvailable = function(fn){
+	    	    var sel = this.selector;
+	    	    var timer;
+	    	    var self = this;
+	    	    if (this.length > 0) {
+	    	        fn.call(this);   
+	    	    }
+	    	    else {
+	    	        timer = setInterval(function(){
+	    	            if ($(sel).length > 0) {
+	    	                fn.call($(sel));
+	    	                clearInterval(timer);  
+	    	            }
+	    	        },50);  
+	    	    }
+	    	};
+			$(document).ready(function() {
+				$("#adddivtab").dynatabs({
+					tabBodyID : 'ktcontent',
+					showCloseBtn : true
+				});
+			});
+			function loadDocument(docId,accessKey,title){
+	        	$('.maincontent').append("<div id=\""+docId+"\"></div>");
+				 var scribd_doc = scribd.Document.getDoc(docId, accessKey);
+				 scribd_doc.write(docId);
+				 $("#"+docId +"> embed").onAvailable(function(){
+					 console.log("hi");
+						$.addDynaTab({
+							tabID : 'adddivtab',
+							type : 'div',
+							divID : docId,
+							tabTitle : title
+						});
+				 });
+			} 
+
 		</script>
         
     	</head>
@@ -34,7 +70,7 @@
 			<div id="maincontainer" >
 				<div class="logoheader">
 					<div class="yheaders">
-						<div class="logo">
+						<div class="logo" onclick="window.location.href='/'">
 							<!-- <img src="/assets/images/yashoda_logo.jpg" alt="Dr Vijay Ramanan Hematologist" /> -->
 						</div>
 						<div id="google_translate_element"></div>
@@ -46,13 +82,39 @@
 						<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 					</div>
 				</div>
-		
-				<div class="maincontent">
-					 <div id="showdocuments">Show Document List
-					</div>
-					<div id="nav-menu">
-					</div>
-					<div id="documentdisplay" class="documentdisplay"></div>
+				
+				<div class="maincontent" style="padding-top: 20px;">
+					<ul class="tabs" id="adddivtab">
+ 						<li><a href="#mainTab">Documents</a></li>
+			 		</ul>
+					<div class="tabcontents" id="ktcontent">
+						<div id="mainTab">
+						
+			 				<table class="knowledgetable">
+			 				@for(document  <- documents ){
+			 					<tr>
+			 						<td width="30%">
+			 							<a href="#"  onClick="loadDocument('@document.documentId','@document.accessKey','@document.title')">
+			 								<img src="@document.thumbNailURI">
+			 							</a>
+			 						</td>
+			 						<td width="70%">
+			 							<div class="desc">
+			 								<h2>
+			 									<a href="#"  onClick="loadDocument('@document.documentId','@document.accessKey','@document.title')">
+			 										@document.title
+			 									</a>
+			 								</h2>
+			 								<div>
+			 									@document.description
+			 								</div>
+			 							</div>
+			 						</td>
+			 					</tr>
+			 				}
+			 				</table>
+			 			</div>
+			 		</div>
 				</div>
 
 
