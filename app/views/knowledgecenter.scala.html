@@ -50,10 +50,15 @@
 			});
 			function loadDocument(docId,accessKey,title){
 	        	$('.maincontent').append("<div id=\""+docId+"\"></div>");
+
 				 var scribd_doc = scribd.Document.getDoc(docId, accessKey);
+				 scribd_doc.addParam('default_embed_format', 'flash');
+				scribd_doc.addParam('jsapi_version', '1');
+				scribd_doc.addParam('mode', 'book');
+				scribd_doc.addParam('allow_share', false);
+				
 				 scribd_doc.write(docId);
 				 $("#"+docId +"> embed").onAvailable(function(){
-					 console.log("hi");
 						$.addDynaTab({
 							tabID : 'adddivtab',
 							type : 'div',
