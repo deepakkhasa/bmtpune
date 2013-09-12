@@ -1,5 +1,5 @@
 #maincontainer{width:100%;background: #fe5d62}
-.fluid_container {margin: 0 auto;max-width: 1200px;width: 100%;padding-top: 20px}
+.fluid_container {margin: 0 auto;max-width: 1200px;width: 85%;padding-top: 20px}
 #google_translate_element{float: right}
 .logo{background: url(../images/yashoda_logo.png);width: 200px;height: 90px}
 .logoheader{background-color: #2a2a2a;height: 90px; width: 100%;-moz-box-shadow: 4px 4px 14px #000;  -webkit-box-shadow: 4px 4px 14px #000;  box-shadow: 4px 4px 14px #000;    }
@@ -15,8 +15,8 @@
 .internl{background:  url(../images/international.jpg) no-repeat;}
 .itemheader{float:left;}
 .itemtext{float: left;height: 80px;padding: 0 15px 0 20px;margin: 10px 0 0 0;font-size: 14px;}
-.social{position: fixed;top: 20%;left: 0px;width:52px;height:450px;z-index: 100000;opacity:0.3;}
-.social:hover{opacity:1;}
+.social{position: fixed;top: 20%;left: -10px;height:450px;z-index: 100000;opacity:0.3;}
+.social:hover{opacity:1;left:0px}
 #topsection{background: url(../images/blood_cells.jpg) repeat-x top center;border-bottom:0;height:162px;margin:0 0 15px 0;overflow:hidden;padding:0;}
 #topsection #searchandlogin{height:40px;margin:19px 0px 0px 652px;padding:0px;}
 #topsection #searchandlogin #searcharea{padding-top:0px;}
