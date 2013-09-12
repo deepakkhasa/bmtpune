@@ -1,5 +1,5 @@
 #maincontainer{width:100%;background: #fe5d62}
-.fluid_container {margin: 0 auto;max-width: 1200px;width: 85%;padding-top: 20px}
+.fluid_container {margin: 0 auto;max-width: 1200px;width: 100%;padding-top: 20px}
 #google_translate_element{float: right}
 .logo{background: url(../images/yashoda_logo.png);width: 200px;height: 90px}
 .logoheader{background-color: #2a2a2a;height: 90px; width: 100%;-moz-box-shadow: 4px 4px 14px #000;  -webkit-box-shadow: 4px 4px 14px #000;  box-shadow: 4px 4px 14px #000;    }
