@@ -14,7 +14,7 @@
   		<meta name="robots" content="index, follow" />
   		<meta name="keywords" content="HEMATOLOGY,Dr Vijay Ramanan, Best Hematologist, Clinical Hematologist/Oncologist/ Bone Marrow Transplantation, Pune.,Medical Tourism" />
   		<meta name="title" content="Dr. Vijay Ramanan | Hematologist" />  		
-        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")?v=12">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")?v=16">
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/jquery.bxslider.css")">
                 <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/camera.css")?v=12">
         <!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" /> -->
@@ -25,6 +25,7 @@
         <script type="text/javascript" data-main="/assets/javascripts/main" src="@routes.Assets.at("javascripts/camera.min.js")"></script>
         <script type="text/javascript" data-main="/assets/javascripts/main" src="@routes.Assets.at("javascripts/jquery.easing.1.3.js")"></script>
         <script type="text/javascript" data-main="/assets/javascripts/main" src="@routes.Assets.at("javascripts/jquery.mobile.customized.min.js")"></script>
+        <script type="text/javascript" data-main="/assets/javascripts/main" src="@routes.Assets.at("javascripts/jquery.ticker.min.js")"></script>
 	    <script type="text/javascript">
 			google.load("feeds", "1")
 		</script>
@@ -37,6 +38,7 @@
 				thumbnails: false,
 				imagePath: '../images/'
 			});
+			 $('#js-news').ticker();
 
 		});
 	</script>
@@ -59,7 +61,20 @@
 						<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 					</div>
 				</div>
+				
 				<div class="slideshow">
+					<div class="myticker">
+						<ul id="js-news" class="js-hidden">
+						    <li class="news-item"><a href="http://www.indianexpress.com/news/a-first-for-india-unrelated-cord-blood-transplant-treats-sickle-cell-disease/1137450/" target="_blank">Indian Express(July 4th,2013): A first for India: Unrelated cord blood transplant treats sickle cell disease.</a></li>
+						    <li class="news-item"><a href="http://www.indianexpress.com/news/the-bone-identity/1115794/" target="_blank">Indian Express(May 15th 2013): The Bone Identity.</a></li>
+						    <li class="news-item"><a href="http://www.indianexpress.com/news/new-thalassaemia-hope-cord-blood-from-nonrelated-donors/1113315/" target="_blank">Indian Express(May 9th 2013): New thalassaemia hope, cord blood from non-related donors - See more at: http://www.indianexpress.com/news/new-thalassaemia-hope-cord-blood-from-nonrelated-donors/1113315/#sthash.vlXuEDN4.dpuf</a></li>
+						    <li class="news-item"><a href="http://www.indianexpress.com/news/charity-fund-raiser-on-thalassaemia-awareness-this-sunday/1073960/">Indian Express(Feb 14th 2013): Charity fund raiser on thalassaemia awareness this Sunday.</a></li>
+						    <li class="news-item"><a href="http://www.indianexpress.com/news/tejas-survives-after-bone-marrow-transplant-from-mother/1069490/">Indian Express(Feb 5th 2013): Tejas survives after bone marrow transplant from mother.</a></li>
+						    <li class="news-item"><a href="http://www.indianexpress.com/news/for-some-thalassaemic-patients-blood-transfusion-a-thing-of-past/1012814/">Indian Express(Oct 6th 2012): For some thalassaemic patients, blood transfusion a thing of past.</a></li>
+						    <li class="news-item"><a href="http://www.indianexpress.com/news/sister-gives-bone-marrow-provides-lifeline-to-thalassaemic-twins/1002368/">Indian Express(Sep 14th 2012): Sister gives bone marrow, provides lifeline to thalassaemic twins.</a></li>
+						</ul>
+					</div>
+				
 					<div class="fluid_container">
 				        <div class="camera_wrap camera_emboss" id="camera_wrap_3">
 				        	<div data-thumb="/assets/timages/tstory3.jpg" data-src="/assets/images/story3.jpg">
@@ -163,7 +178,104 @@
 						</ul>
 					</section>
 				</div>
-
+			<div class="additional">
+				<div class="additionalbox">
+					<div class="quicklinks">
+						<h3 class="quicklinkheader">Quick Links</h3>
+						<ul>
+							<li>
+								<a href="/">Home</a>
+							</li>
+							<li>
+								<a href="/">International Patients</a>
+							</li>
+							<li>
+								<a href="/">Contact Us</a>
+							</li>
+							<li>
+								<a href="/">Testimonials</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a href="/">About Us</a>
+							</li>
+							<li>
+								<a href="/">Ask a Question</a>
+							</li>
+							<li>
+								<a href="/">Knowledge Center</a>
+							</li>
+							<li>
+								<a href="/">Videos</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a href="/">Appointments</a>
+							</li>
+							<li>
+								<a href="/">Donate for poor</a>
+							</li>
+							<li>
+								<a href="/">Our Labs</a>
+							</li>
+							<li>
+								<a href="/">Clinical Studies</a>
+							</li>							
+						</ul>
+																													
+					</div>
+					<div class="android">
+						<ul>
+							<li>
+								<a href="https://play.google.com/store/search?q=pub:Padmaraj Madatha">
+  									<img alt="Android app on Google Play"
+       													src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
+								</a>
+							</li>
+						</ul>					
+					</div>
+					<div class="newslinks">
+						<h3 class="quicklinkheader">Connect</h3>
+						<ul>
+							<li>
+								<a href="https://www.facebook.com/groups/127749527387241/" target="_blank">
+									<span class="connectLinkFB"></span>
+									Facebook</a>
+							</li>
+							<li>
+								<a href="https://twitter.com/drvijayramanan" target="_blank">
+									<span class="connectLinkT"></span>
+									Twitter</a>
+							</li>
+							<li>
+								<a href="https://plus.google.com/110019530475844593844/posts"  target="_blank">
+									<span class="connectLinkG"></span>
+									Google+</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a href="http://www.linkedin.com/profile/view?id=199427214&locale=en_US&trk=tyah&trkInfo=tas%3Avijay" target="_blank">
+									<span class="connectLinkLI"></span>
+									LinkedIn</a>
+							</li>
+							<li>
+								<a href="/videos">
+									<span class="connectLinkYT"></span>
+									Youtube</a>
+							</li>
+							<li>
+								<a href="http://haematology.blogspot.in/" target="_blank">
+									<span class="connectLinkB"></span>
+									Blog</a>
+							</li>
+						</ul>
+						
+					</div>					
+				</div>
+			</div>
 
 	
 		    </div>
