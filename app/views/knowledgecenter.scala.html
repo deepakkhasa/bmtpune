@@ -15,7 +15,7 @@
   		<meta name="robots" content="index, follow" />
   		<meta name="keywords" content="HEMATOLOGY,Dr Vijay Ramanan, Best Hematologist, Clinical Hematologist/Oncologist/ Bone Marrow Transplantation, Pune.,Medical Tourism" />
   		<meta name="title" content="Dr. Vijay Ramanan | Hematologist" />  		
-        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")?v=12">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")?v=15">
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/jquery.bxslider.css")">
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/tabs.css")?v=12">
         <!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" /> -->
@@ -52,13 +52,14 @@
 	        	$('.maincontent').append("<div id=\""+docId+"\"></div>");
 
 				 var scribd_doc = scribd.Document.getDoc(docId, accessKey);
-				 scribd_doc.addParam('default_embed_format', 'flash');
+				 scribd_doc.addParam('default_embed_format', 'html5');
 				scribd_doc.addParam('jsapi_version', '1');
 				scribd_doc.addParam('mode', 'book');
+				scribd_doc.addParam('width', '1000');
 				scribd_doc.addParam('allow_share', false);
 				
 				 scribd_doc.write(docId);
-				 $("#"+docId +"> embed").onAvailable(function(){
+				 $("#"+docId +"> iframe").onAvailable(function(){
 						$.addDynaTab({
 							tabID : 'adddivtab',
 							type : 'div',
