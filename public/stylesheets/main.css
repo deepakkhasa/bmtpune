@@ -1,5 +1,24 @@
 #maincontainer{width:100%;background: #fe5d62}
-.fluid_container {margin: 0 auto;max-width: 1200px;width: 100%;padding-top: 20px}
+.additional{background-color: #2a2a2a;min-height: 150px}
+.additionalbox{margin: 0 auto;max-width: 1200px;width: 1200px;}
+.quicklinks{float: left;width: 38%;border-right: 1px solid rgba(0,0,0,0.2);box-shadow: 1px 0px 0px 0px rgba(255,255,255,0.4);}
+.newslinks{float: right;width: 38%;}
+.android{min-height: 120px;float: left;width: 20%;border-right: 1px solid rgba(0,0,0,0.2);box-shadow: 1px 0px 0px 0px rgba(255,255,255,0.4);}
+.quicklinkheader{text-align: center;color: white;font-size:14px;font-weight:normal;font-family: 'Open Sans', sans-serif;border-bottom: 1px solid rgba(246, 232, 232, 0.2);padding-bottom: 5px;margin-right: 5px;margin-left: 5px;}
+.quicklinks ul{text-align: center;color: white;width: 150px;list-style: none;overflow: hidden;float: left;padding-top: 5px;font-family: 'Open Sans', sans-serif;font-size: 14px;}
+.quicklinks ul a{color: white;text-decoration: none;display: inline-block;padding-bottom: 10px;}
+.newslinks ul{color: white;width: 200px;list-style: none;overflow: hidden;float: left;padding-top: 5px;font-family: 'Open Sans', sans-serif;font-size: 14px;}
+.newslinks  ul li span {width: 26px;height: 22px;float: left;margin: 0 5px 0 0;}
+.newslinks ul a{color: white;text-decoration: none;display: inline-block;padding-bottom: 10px;}
+.connectLinkFB {background: url('../images/connect.jpg') no-repeat -6px -3px scroll transparent;}
+.connectLinkLI {background: url('../images/connect.jpg') no-repeat -34px -3px scroll transparent;}
+.connectLinkT {background: url('../images/connect.jpg') no-repeat -3px -28px scroll transparent;}
+.connectLinkYT {background: url('../images/connect.jpg') no-repeat -33px -28px scroll transparent;}
+.connectLinkG {background: url('../images/connect.jpg') no-repeat -6px -52px scroll transparent;}
+.connectLinkB {background: url('../images/connect.jpg') no-repeat -34px -56px  scroll transparent;}
+.android ul{text-align: center;margin-top: 30px;color: white;list-style: none;overflow: hidden;padding-top: 5px;font-family: 'Open Sans', sans-serif;font-size: 14px;}
+.myticker {margin: 0 auto;max-width: 1200px;width: 100%;}
+.fluid_container {margin: 0 auto;max-width: 1200px;width: 100%;}
 #google_translate_element{float: right}
 .logo{background: url(../images/yashoda_logo.png);width: 200px;height: 90px}
 .logoheader{background-color: #2a2a2a;height: 90px; width: 100%;-moz-box-shadow: 4px 4px 14px #000;  -webkit-box-shadow: 4px 4px 14px #000;  box-shadow: 4px 4px 14px #000;    }
@@ -115,7 +134,8 @@ a.form_button {float: left;width: 93px; height: 31px;margin-right: 15px;}
 .appmentFont{color: #536376;font-size: .9em;font-weight:bold;}
 p a{color:#000;}
 a{color:#000;}
-.footer{background-color: #2a2a2a;font-family:Verdana,Arial,Sans-Serif;font-size:12px;text-align: right;height:30px;color:white;margin: 0 auto;}
+.footer{background-color: #2a2a2a;font-family:Verdana,Arial,Sans-Serif;font-size:12px;padding-top:8px;text-align: right;height:30px;color:white;margin: 0 auto;border-top: 1px solid rgba(0,0,0,0.2);
+box-shadow: inset 0 1px 0 rgba(255,255,255,0.4);}
 .arrowlistmenu{width: 30%;float: left; /*width of accordion menu*/}
 .arrowlistmenu .menuheader{ /*CSS class for menu headers in general (expanding or not!)*/font: bold 14px Arial;color: white;background: black url(../images/titlebar.png) repeat-x center left;margin-bottom: 10px; /*bottom spacing between header and rest of content*/text-transform: uppercase;padding: 4px 0 4px 10px; /*header text is indented 10px*/cursor: hand;cursor: pointer;}
 .arrowlistmenu .openheader{ /*CSS class to apply to expandable header when it's expanded*/background-image: url(../images/titlebar-active.png);}
@@ -271,3 +291,4 @@ input[type="button"]:active{background-color:#c7e4f6;}
 #showdocuments:HOVER {cursor: pointer;}
 .intro{width: 75%;float: left;height:300px;text-align: left;}
 .rss{ width:151px;height:300px;float:right;margin-right: 30px;font-family: Verdana, Geneva, sans-serif;text-align: center;}
+.ticker-wrapper.has-js{margin:20px 0;padding:0 20px;width:1150px;height:32px;display:block;-webkit-border-radius:1px;-moz-border-radius:1px;border-radius:1px;background-color:#f8f0db;font-size:.75em}.ticker{width:1080px;height:23px;display:block;position:relative;overflow:hidden;background-color:#f8f0db}.ticker-title{padding-top:9px;color:#900;font-weight:700;background-color:#f8f0db;text-transform:uppercase}.ticker-content{margin:0;padding-top:9px;position:absolute;color:#1F527B;font-weight:700;background-color:#f8f0db;overflow:hidden;white-space:nowrap;line-height:1.2em}.ticker-content:focus{none}.ticker-content a{text-decoration:none;color:#1F527B}.ticker-content a:hover{text-decoration:underline;color:#0D3059}.ticker-swipe{padding-top:9px;position:absolute;top:0;background-color:#f8f0db;display:block;width:800px;height:23px}.ticker-swipe span{margin-left:1px;background-color:#f8f0db;border-bottom:1px solid #1F527B;height:12px;width:7px;display:block}.ticker-controls{padding:8px 0 0;list-style-type:none;float:left}.ticker-controls li{padding:0;margin-left:5px;float:left;cursor:pointer;height:16px;width:16px;display:block}.ticker-controls li.jnt-play-pause{background-image:url(../images/controls_ticker.png);background-position:32px 16px}.ticker-controls li.jnt-play-pause.over{background-position:32px 32px}.ticker-controls li.jnt-play-pause.down{background-position:32px 0}.ticker-controls li.jnt-play-pause.paused{background-image:url(../images/controls_ticker.png);background-position:48px 16px}.ticker-controls li.jnt-play-pause.paused.over{background-position:48px 32px}.ticker-controls li.jnt-play-pause.paused.down{background-position:48px 0}.ticker-controls li.jnt-prev{background-image:url(../images/controls_ticker.png);background-position:0 16px}.ticker-controls li.jnt-prev.over{background-position:0 32px}.ticker-controls li.jnt-prev.down{background-position:0 0}.ticker-controls li.jnt-next{background-image:url(../images/controls_ticker.png);background-position:16px 16px}.ticker-controls li.jnt-next.over{background-position:16px 32px}.ticker-controls li.jnt-next.down{background-position:16px 0}.js-hidden{display:none}.no-js-news{padding:10px 0 0 45px;color:#F8F0DB}.left .ticker-swipe{}.left .ticker-controls,.left .ticker-content,.left .ticker-title,.left .ticker{float:left}.left .ticker-controls{padding-left:6px}.right .ticker-swipe{}.right .ticker-controls,.right .ticker-content,.right .ticker-title,.right .ticker{float:right}.right .ticker-controls{padding-right:6px}
