@@ -5,6 +5,10 @@
 # Home page
 GET / 		                        controllers.Vijay.welcome
 GET /contactus						controllers.Vijay.contactUs
+GET /aboutus						controllers.Vijay.aboutUs
+GET /labs						controllers.Vijay.labs
+GET /clinicalstudies				controllers.Vijay.clinicalStudies
+GET /international				controllers.Vijay.international
 GET /videos							controllers.Vijay.videos
 GET /documents						controllers.Vijay.documents
 GET /testimonials					controllers.Vijay.testimonials
