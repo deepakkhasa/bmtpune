@@ -21,7 +21,7 @@
 .fluid_container {margin: 0 auto;max-width: 1200px;width: 100%;}
 #google_translate_element{float: right}
 .logo{background: url(../images/yashoda_logo.png);width: 200px;height: 90px}
-.logoheader{background-color: #2a2a2a;height: 90px; width: 100%;-moz-box-shadow: 4px 4px 14px #000;  -webkit-box-shadow: 4px 4px 14px #000;  box-shadow: 4px 4px 14px #000;    }
+.logoheader{background-color: #ce8a6f;height: 90px; width: 100%;-moz-box-shadow: 4px 4px 14px #000;  -webkit-box-shadow: 4px 4px 14px #000;  box-shadow: 4px 4px 14px #000;    }
 .yheaders{margin:0 auto; width: 1200px;}
 .slideshow{ width:100%;background: url(../images/back.jpg) no-repeat;overflow:hidden;background-size:cover;}
 .maincontent{margin: 0 auto;width:100%;max-width:1140px;padding:0 20px;font-family: 'Open Sans', sans-serif, Arial, Halvetica;line-height: 1.35em;font-size: 14px;color: white;}
@@ -30,8 +30,8 @@
 .desc{color: #000;}
 .itemul{overflow: hidden;white-space: normal;}
 .itemul>li{display: inline-block;position: relative;margin: 5px;vertical-align: top;width: 270px;}
-.item{width:270px;height: 270px;margin:auto;}
-.internl{background:  url(../images/international.jpg) no-repeat;}
+.item{margin:auto;}
+.item:hover{cursor:pointer;}
 .itemheader{float:left;}
 .itemtext{float: left;height: 80px;padding: 0 15px 0 20px;margin: 10px 0 0 0;font-size: 14px;}
 .social{position: fixed;top: 20%;left: -10px;height:450px;z-index: 100000;opacity:0.3;}
