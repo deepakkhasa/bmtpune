@@ -29,7 +29,7 @@
 .itemlist{position: relative;text-align: center;}
 .desc{color: #000;}
 .itemul{overflow: hidden;white-space: normal;}
-.itemul>li{display: inline-block;position: relative;margin: 5px;vertical-align: top;width: 270px;}
+.itemul>li{display: inline-block;position: relative;vertical-align: top;}
 .item{margin:auto;}
 .item:hover{cursor:pointer;}
 .itemheader{float:left;}
