@@ -39,6 +39,30 @@
 				imagePath: '../images/'
 			});
 			 $('#js-news').ticker();
+			 if($(window).width()> 1000){
+				 $(".item").css("width","270px");
+				 $(".item").css("height","270px");
+				 $(".item:eq(0)").css("background","url(/assets/images/international.jpg) no-repeat");
+				 $(".item:eq(1)").css("background","url(/assets/images/kt.jpg) no-repeat");
+				 $(".item:eq(2)").css("background","url(/assets/images/and.jpg) no-repeat");
+				 $(".item:eq(3)").css("background","url(/assets/images/testimonials.jpg) no-repeat");
+			 }else if($(window).width() < 800){
+				 $(".item").css("width","150px");
+				 $(".item").css("height","150px");
+				 $(".item:eq(0)").css("background","url(/assets/images/international_760.jpg) no-repeat");
+				 $(".item:eq(1)").css("background","url(/assets/images/kt_760.jpg) no-repeat");
+				 $(".item:eq(2)").css("background","url(/assets/images/and_760.jpg) no-repeat");
+				 $(".item:eq(3)").css("background","url(/assets/images/testimonials_760.jpg) no-repeat");
+				 
+			 }else {
+				 $(".item").css("width","65px");
+				 $(".item").css("height","65px");
+				 $(".item:eq(0)").css("background","url(/assets/images/international_320.jpg) no-repeat");
+				 $(".item:eq(1)").css("background","url(/assets/images/kt_320.jpg) no-repeat");
+				 $(".item:eq(2)").css("background","url(/assets/images/and_320.jpg) no-repeat");
+				 $(".item:eq(3)").css("background","url(/assets/images/testimonials_320.jpg) no-repeat");
+				 
+			 }
 
 		});
 	</script>
@@ -121,43 +145,19 @@
 					<section class="itemlist">
 						<ul class="itemul">
 							<li>
-								<div class="item internl">
+								<div class="item" onclick="window.location.href='/international'">
 								</div>
 							</li>
 							<li>
-								<div class="item">
-									<img id="kt_id"  src="/assets/images/kt.jpg" border="0" alt="Our Apps" usemap="#KMap"/>
-									<map id ="KMap" name="KMap">
-										    <area  shape ="rect" coords="50,200,200,230" 
-										           href="/documents"
-										           target="_self"
-										           onmouseover="document.getElementById('kt_id').style.cursor='pointer';" 
-										           onmouseout="document.getElementById('kt_id').style.cursor='';"> 
-									</map>
+								<div class="item" onclick="window.location.href='/documents'">
 								</div>
 							</li>
 							<li>
-								<div class="item">
-									<img id="and_id"  src="/assets/images/and.jpg" border="0" alt="Our Apps" usemap="#AMap"/>
-									<map id ="AMap" name="AMap">
-										    <area  shape ="rect" coords="50,80,220,220" 
-										           href="https://play.google.com/store/search?q=padmaraj%20madatha&hl=en"
-										           target="_blank"
-										           onmouseover="document.getElementById('and_id').style.cursor='pointer';" 
-										           onmouseout="document.getElementById('and_id').style.cursor='';"> 
-									</map>
+								<div class="item" onclick="window.location.href='https://play.google.com/store/search?q=padmaraj%20madatha&hl=en'" >
 								</div>
 							</li>
 							<li>
-								<div class="item">
-									<img id="test_id"  src="/assets/images/testimonials.jpg" border="0" alt="testimonials" usemap="#TMap"/>
-									<map id ="TMap" name="TMap">
-										    <area  shape ="rect" coords="0,210,190,220" 
-										           href="/testimonials"
-										           target="_self"
-										           onmouseover="document.getElementById('test_id').style.cursor='pointer';" 
-										           onmouseout="document.getElementById('test_id').style.cursor='';"> 
-									</map>
+								<div class="item" onclick="window.location.href='/testimonials'">
 								</div>
 							</li>
 
