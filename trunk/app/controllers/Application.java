@@ -200,10 +200,10 @@ public class Application extends Controller {
   }
 */
 
-  public static Result aboutus() {
+/*  public static Result aboutus() {
       return ok(aboutus.render(SecureSocial.currentUser()));
   }
-
+*/
 	public static class Documents {
 
 		public String documentId;
