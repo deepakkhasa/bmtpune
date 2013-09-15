@@ -1,0 +1,145 @@
+        <script type="text/javascript" data-main="/assets/javascripts/main" src="@routes.Assets.at("javascripts/jquery.lightbox_me.js")"></script>
+                <script type="text/javascript" data-main="/assets/javascripts/main" src="@routes.Assets.at("javascripts/verimail.jquery.min.js")"></script>
+        <script type="text/javascript">
+			function showAskUs(){
+				
+				
+				$(".modal").html($("#a1").html());
+				$(".modal > .modal_window").toggle();
+		        $(".modal").lightbox_me({centered: true, onLoad: function() {
+					$(".modal_window").find("input:first").focus();
+					}, onClose: function(){
+						
+					}
+		        });
+				$(".modal input#emailid").verimail({
+					denyTempEmailDomains: true,
+					messageElement: ".modal p#email-message"
+				});
+
+			}
+			
+			function sendQuestion(){
+				if($(".modal input#emailid").val() !=null &&
+						$(".modal input#name").val()  !=null &&
+						$(".modal input#phonenumber").val()  !=null &&
+						$(".modal #query").val()  !=null &&
+						$(".modal p#email-message").text() == "Email looks OK"){
+					 $.post("/askForm",
+							 	{emailid:$(".modal input#emailid").val(),
+						 		phonenumber:$(".modal input#phonenumber").val(),
+						 		name:$(".modal input#name").val(),
+						 		query:$(".modal #query").val()
+						 		},
+							 	function(result){
+						    	alert("Your question has been sent to Doctor. You will hear back soon.");
+						    	$(".modal").trigger('close');
+						  		}
+						 );
+					
+				}else{
+					alert("Please fill all the fields and also ensure that the email is correct.");
+				}
+				 
+			}
+
+			
+			function showDonate(){
+				
+				$(".modal").html($("#a2").html());
+				$(".modal > .modal_window").toggle();
+		        $(".modal").lightbox_me({centered: true, onLoad: function() {
+					$(".modal_window").find("input:first").focus();
+					}, onClose: function(){
+						
+					}
+		        });
+				$(".modal input#emailid").verimail({
+					denyTempEmailDomains: true,
+					messageElement: ".modal p#email-message"
+				});
+
+			}
+			
+			function sendDonation(){
+				if($(".modal input#emailid").val() !=null &&
+						$(".modal input#name").val()  !=null &&
+						$(".modal input#phonenumber").val()  !=null &&
+						$(".modal input#amount").val()  !=null &&
+						$(".modal p#email-message").text() == "Email looks OK"){
+					 $.post("/donateForm",
+							 	{emailid:$(".modal input#emailid").val(),
+						 		phonenumber:$(".modal input#phonenumber").val(),
+						 		name:$(".modal input#name").val(),
+						 		amount:$(".modal input#amount").val()
+						 		},
+							 	function(result){
+						    	alert("Thanks for donating. Some one will get in touch with you soon.");
+						    	$(".modal").trigger('close');
+						  		}
+						 );
+					
+				}else{
+					alert("Please fill all the fields and also ensure that the email is correct.");
+				}
+				 
+			}
+
+		</script>
+        
+		<div id="a1">
+		   <div class="modal_window" id="askUs">
+              <form class="modal_form" id="ask_form">
+              	<label class="header"><strong>Please provide the details here:</strong> </label> 
+                <input id="name" type="text" placeholder="name">
+                <p  id="name-message"></p>
+                <input id="emailid" type="text" placeholder="email">
+                <p  id="email-message"></p>
+                <input id="phonenumber" type="text" placeholder="phone number">
+                <p  id="phone-message"></p>
+                <textarea id="query" rows="10" cols="60" placeholder="Please type your query here"></textarea>
+                <p  id="query-message"></p>
+                <label class="header green msg"><strong></strong> </label> 
+                <div>
+                  <div class="actions" >
+						<input id="submitForm" type="button" value="Submit" onclick="sendQuestion()">
+                  </div>
+                   <div class="close actions" >
+						<input  type="button" value="Close">
+                  </div>
+                 </div>
+              </form>
+              
+              <a  id="close_x" class="close close_x" href="#">close</a>
+          </div>
+		
+		</div>
+          
+          
+		<div id="a2">
+		    <div class="modal_window" id="donate">
+              <form class="modal_form" id="donate_modal_form">
+              	<label class="header"><strong>Please provide the details here:</strong> </label> 
+                <input id="name" type="text" placeholder="name">
+                <p  id="name-message"></p>
+                <input id="emailid" type="text" placeholder="email">
+                <p  id="email-message"></p>
+                <input id="phonenumber" type="text" placeholder="phone number">
+                <p  id="phone-message"></p>
+                <input id="amount" type="text" placeholder="amount">
+                <p  id="amount-message"></p>
+                <label class="header green msg"><strong></strong> </label> 
+                <div>
+                  <div class="actions" >
+						<input id="donatesubmitForm" type="button" value="Submit" onclick="sendDonation()">
+                  </div>
+                   <div class="close actions" >
+						<input  type="button" value="Close">
+                  </div>
+                 </div>
+              </form>
+              
+              <a  id="close_x" class="close close_x" href="#">close</a>
+          </div>
+		
+		</div>          

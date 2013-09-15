@@ -47,21 +47,7 @@
     	</head>
 		<body class="background">
 			<div id="maincontainer" >
-				<div class="logoheader">
-					<div class="yheaders">
-						<div class="logo">
-							<!-- <img src="/assets/images/yashoda_logo.jpg" alt="Dr Vijay Ramanan Hematologist" /> -->
-						</div>
-						<div id="google_translate_element"></div>
-						<script type="text/javascript">
-								function googleTranslateElementInit() {
-								  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-								}
-						</script>
-						<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-					</div>
-				</div>
-				
+				@header()
 				<div class="slideshow">
 					<div class="myticker">
 						<ul id="js-news" class="js-hidden">
@@ -92,37 +78,37 @@
 				<div class="social">
 					<img id="img_id"  src="/assets/images/social.png" border="0" alt="social" usemap="#Map"/>
 					<map id ="Map" name="Map">
-						    <area  shape ="rect" coords="0,0,50,50" 
+						    <area  shape ="rect" coords="0,0,40,40" 
 						           href="/contactus"
 						           target="_self"
 						           onmouseover="document.getElementById('img_id').style.cursor='pointer';" 
 						           onmouseout="document.getElementById('img_id').style.cursor='';">
-						    <area  shape ="rect" coords="0,75,50,120" 
+						    <area  shape ="rect" coords="0,50,40,90" 
 						           href="https://www.facebook.com/groups/127749527387241/"
 						           target="_blank"
 						           onmouseover="document.getElementById('img_id').style.cursor='pointer';" 
 						           onmouseout="document.getElementById('img_id').style.cursor='';"> 
-						    <area  shape ="rect" coords="0,120,50,175" 
+						    <area  shape ="rect" coords="0,100,40,130" 
 						           href="https://plus.google.com/110019530475844593844/posts"
 						           target="_blank"
 						           onmouseover="document.getElementById('img_id').style.cursor='pointer';" 
 						           onmouseout="document.getElementById('img_id').style.cursor='';"> 
-						    <area  shape ="rect" coords="0,200,50,250" 
+						    <area  shape ="rect" coords="0,150,40,190" 
 						           href="/videos"
 						           target="_self"
 						           onmouseover="document.getElementById('img_id').style.cursor='pointer';" 
 						           onmouseout="document.getElementById('img_id').style.cursor='';"> 
-						    <area  shape ="rect" coords="0,260,50,310" 
+						    <area  shape ="rect" coords="0,200,40,240" 
 						           href="https://twitter.com/drvijayramanan"
 						           target="_blank"
 						           onmouseover="document.getElementById('img_id').style.cursor='pointer';" 
 						           onmouseout="document.getElementById('img_id').style.cursor='';"> 
-						    <area  shape ="rect" coords="0,325,50,375" 
+						    <area  shape ="rect" coords="0,255,40,295" 
 						           href="http://www.linkedin.com/profile/view?id=199427214&locale=en_US&trk=tyah&trkInfo=tas%3Avijay"
 						           target="_blank"
 						           onmouseover="document.getElementById('img_id').style.cursor='pointer';" 
 						           onmouseout="document.getElementById('img_id').style.cursor='';"> 
-						    <area  shape ="rect" coords="0,400,50,450" 
+						    <area  shape ="rect" coords="0,310,40,345" 
 						           href="/documents"
 						           target="_self"
 						           onmouseover="document.getElementById('img_id').style.cursor='pointer';" 
@@ -178,111 +164,7 @@
 						</ul>
 					</section>
 				</div>
-			<div class="additional">
-				<div class="additionalbox">
-					<div class="quicklinks">
-						<h3 class="quicklinkheader">Quick Links</h3>
-						<ul>
-							<li>
-								<a href="/">Home</a>
-							</li>
-							<li>
-								<a href="/">International Patients</a>
-							</li>
-							<li>
-								<a href="/">Contact Us</a>
-							</li>
-							<li>
-								<a href="/">Testimonials</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a href="/">About Us</a>
-							</li>
-							<li>
-								<a href="/">Ask a Question</a>
-							</li>
-							<li>
-								<a href="/">Knowledge Center</a>
-							</li>
-							<li>
-								<a href="/">Videos</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a href="/">Appointments</a>
-							</li>
-							<li>
-								<a href="/">Donate for poor</a>
-							</li>
-							<li>
-								<a href="/">Our Labs</a>
-							</li>
-							<li>
-								<a href="/">Clinical Studies</a>
-							</li>							
-						</ul>
-																													
-					</div>
-					<div class="android">
-						<ul>
-							<li>
-								<a href="https://play.google.com/store/search?q=pub:Padmaraj Madatha">
-  									<img alt="Android app on Google Play"
-       													src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
-								</a>
-							</li>
-						</ul>					
-					</div>
-					<div class="newslinks">
-						<h3 class="quicklinkheader">Connect</h3>
-						<ul>
-							<li>
-								<a href="https://www.facebook.com/groups/127749527387241/" target="_blank">
-									<span class="connectLinkFB"></span>
-									Facebook</a>
-							</li>
-							<li>
-								<a href="https://twitter.com/drvijayramanan" target="_blank">
-									<span class="connectLinkT"></span>
-									Twitter</a>
-							</li>
-							<li>
-								<a href="https://plus.google.com/110019530475844593844/posts"  target="_blank">
-									<span class="connectLinkG"></span>
-									Google+</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a href="http://www.linkedin.com/profile/view?id=199427214&locale=en_US&trk=tyah&trkInfo=tas%3Avijay" target="_blank">
-									<span class="connectLinkLI"></span>
-									LinkedIn</a>
-							</li>
-							<li>
-								<a href="/videos">
-									<span class="connectLinkYT"></span>
-									Youtube</a>
-							</li>
-							<li>
-								<a href="http://haematology.blogspot.in/" target="_blank">
-									<span class="connectLinkB"></span>
-									Blog</a>
-							</li>
-						</ul>
-						
-					</div>					
-				</div>
-			</div>
-
-	
-		    </div>
-			<div class="clear"></div>
-			<div  class="footer">
-		      <span>© 2013 Appment-All Rights Reserved</span>
-		    </div>
+@footer()
 		<div class="modal"></div>
 
 	</body>
