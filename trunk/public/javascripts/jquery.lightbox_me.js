@@ -92,18 +92,14 @@
 
             $(window).resize(setOverlayHeight)
                      .resize(setSelfPosition)
-                     .scroll(setSelfPosition);
-                     
-            $(window).bind('keyup.lightbox_me', observeKeyPress);
-                     
-            if (opts.closeClick) {
-                $overlay.click(function(e) { closeLightbox(); e.preventDefault; });
-            }
+                     .scroll(setSelfPosition)
+                     .keyup(observeKeyPress);
+            $overlay.click(function(e) { closeLightbox(); e.preventDefault; });
             $self.delegate(opts.closeSelector, "click", function(e) {
                 closeLightbox(); e.preventDefault();
             });
             $self.bind('close', closeLightbox);
-            $self.bind('reposition', setSelfPosition);
+            $self.bind('resize', setSelfPosition);
 
             
 
@@ -117,6 +113,7 @@
 
             /* Remove or hide all elements */
             function closeLightbox() {
+            	$self.stop();
                 var s = $self[0].style;
                 if (opts.destroyOnClose) {
                     $self.add($overlay).remove();
@@ -134,10 +131,10 @@
 				// clean up events.
                 $self.undelegate(opts.closeSelector, "click");
 
-                $(window).unbind('reposition', setOverlayHeight);
-                $(window).unbind('reposition', setSelfPosition);
+                $(window).unbind('resize', setOverlayHeight);
+                $(window).unbind('resize', setSelfPosition);
                 $(window).unbind('scroll', setSelfPosition);
-                $(window).unbind('keyup.lightbox_me');
+                $(window).unbind('keypress', observeKeyPress);
                 if (ie6)
                     s.removeExpression('top');
                 opts.onClose();
