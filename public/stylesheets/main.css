@@ -106,7 +106,7 @@
 #highlights{margin:0 auto;width:1050px;float:left}
 tr.selected {background-color: red; color: white;}
 /*light me*/
-.modal_window {-moz-border-radius: 6px;background-color:#aed0ea;-webkit-border-radius: 6px;border: 1px solid #536376;-webkit-box-shadow: rgba(0,0,0,.6) 0px 2px 12px;-moz-box-shadow:  rgba(0,0,0,.6) 0px 2px 12px;;padding: 14px 22px;width: 600px;height:auto;position: relative;}
+.modal_window {display:none;-moz-border-radius: 6px;background-color:#aed0ea;-webkit-border-radius: 6px;border: 1px solid #536376;-webkit-box-shadow: rgba(0,0,0,.6) 0px 2px 12px;-moz-box-shadow:  rgba(0,0,0,.6) 0px 2px 12px;;padding: 14px 22px;width: 600px;height:auto;position: relative;}
 .modal_window #modal_form {margin-top: 13px;font-family: Verdana, Geneva, sans-serif;color:black;}
 .modal_window label {display:block;margin-bottom: 10px;color: #000;font-size: 14px;font-family: Verdana, Geneva, sans-serif;}  
 .modal_window  input {padding: 2px 8px;font-size: 1.2em;line-height: 31px;display: block;margin-top:5px;margin-bottom: 5px;}
@@ -236,6 +236,9 @@ legend.collapsed {	color:green;background: transparent url(../images/collapsed.g
 .intro p{font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#000;padding-right:5px;}
 .brickletinfo{padding-top:10px;padding-left:3px;height:50%;font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#fff;}
 .vijay{float:left;height: 100%;margin-left: 10px;padding-top: 5px;width: 25%;}
+.vijayphoto{background: url(../images/vijay_ramanan.jpg) no-repeat;height: 255px;margin-top: 10px;margin-bottom: 10px;background-position: center;}
+.ketkiphoto{background: url(../images/ketki.jpg) no-repeat;height: 255px;margin-top: 10px;margin-bottom: 10px;background-position: center;}
+.aboutlab{margin-bottom: 10px;}
 .vijay img{height: 45px;float: right;padding-top:0px;}
 .options{cursor: pointer;float:right;;font-family:"Trebuchet MS",sans-serif;font-size:14px;padding-right:5px;padding-top:15px;}
 .option{background-color: #6E6E6E;margin-right: 3px;float: right;line-height:30px;width:125px; font-size: 16px;font-family: Verdana, Geneva, sans-serif;color:#fff;text-align:center;border-radius: 2px;-moz-border-radius: 2px;-webkit-border-radius: 2px;border: 1px solid #000;-webkit-box-shadow: rgba(0,0,0,.6) 0px 2px 12px;-moz-box-shadow:  rgba(0,0,0,.6) 0px 2px 12px;}
@@ -252,7 +255,7 @@ input[type="button"]:hover{cursor:pointer;}
 input[type="button"]:active{background-color:#c7e4f6;}
 .green{color:green !important;}
 .red{color:red !important;}
-.pinternational{font-size: 16px;font-family: Verdana, Geneva, sans-serif;font-weight: bold;color:#000;padding-top: 30px;padding-left:10px;padding-right:10px;line-height: 30px;}
+.pinternational{font-size: 16px;font-family: Verdana, Geneva, sans-serif;font-weight: bold;color:#000;padding-top: 30px;padding-left:10px;padding-right:10px;line-height: 30px;margin-bottom: 10px;}
 .pinternational h2{text-align: center;padding-bottom: 10px}
 .bleft{padding-left: 50px}
 .ibricklets{margin:auto; width:90%;height:200px; bottom:0px;padding-top: 5px;padding-left: 10px}
