@@ -48,6 +48,22 @@ public class Vijay extends Controller {
   public static Result contactUs() {
 	    return ok(contactus.render());
 	  }
+
+  public static Result aboutUs() {
+	    return ok(aboutus.render());
+	  }
+  
+  public static Result labs() {
+	    return ok(labs.render());
+	  }
+
+  public static Result clinicalStudies() {
+	    return ok(clinicalstudies.render());
+	  }
+
+  public static Result international() {
+	    return ok(international.render());
+	  }
   
   public static Result videos() {
       return ok(videos.render());
