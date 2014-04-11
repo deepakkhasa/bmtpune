@@ -19,7 +19,7 @@
 .android ul{text-align: center;margin-top: 30px;color: white;list-style: none;overflow: hidden;padding-top: 5px;font-family: 'Open Sans', sans-serif;font-size: 14px;}
 .myticker {margin: 0 auto;max-width: 1200px;width: 100%;}
 .fluid_container {margin: 0 auto;max-width: 1200px;width: 100%;}
-#google_translate_element{float: right}
+#google_translate_element{float: right;display: inline-block;}
 .logo{background: url(../images/yashoda_logo.png);width: 200px;height: 90px}
 .logoheader{background-color: #ce8a6f;height: 90px; width: 100%;-moz-box-shadow: 4px 4px 14px #000;  -webkit-box-shadow: 4px 4px 14px #000;  box-shadow: 4px 4px 14px #000;    }
 .yheaders{margin:0 auto; width: 1200px;}
