@@ -237,14 +237,14 @@ legend.collapsed {	color:green;background: transparent url(../images/collapsed.g
 .intro p{font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#000;padding-right:5px;}
 .brickletinfo{padding-top:10px;padding-left:3px;height:50%;font-size: 14px;font-family: Verdana, Geneva, sans-serif;color:#fff;}
 .vijay{float:left;height: 100%;margin-left: 10px;padding-top: 5px;width: 25%;}
-.vijayphoto{background: url(../images/vijay_ramanan.jpg) no-repeat;height: 255px;margin-top: 10px;margin-bottom: 10px;background-position: center;}
+.vijayphoto{background: url(../images/vijay_ramanan.jpg) no-repeat;height: 255px;margin-top: 80px;margin-bottom: 10px;background-position: center;}
 .ketkiphoto{background: url(../images/ketki.jpg) no-repeat;height: 255px;margin-top: 10px;margin-bottom: 10px;background-position: center;}
 .aboutlab{margin-bottom: 10px;}
 .vijay img{height: 45px;float: right;padding-top:0px;}
 .options{cursor: pointer;float:right;;font-family:"Trebuchet MS",sans-serif;font-size:14px;padding-right:5px;padding-top:15px;}
 .option{background-color: #6E6E6E;margin-right: 3px;float: right;line-height:30px;width:125px; font-size: 16px;font-family: Verdana, Geneva, sans-serif;color:#fff;text-align:center;border-radius: 2px;-moz-border-radius: 2px;-webkit-border-radius: 2px;border: 1px solid #000;-webkit-box-shadow: rgba(0,0,0,.6) 0px 2px 12px;-moz-box-shadow:  rgba(0,0,0,.6) 0px 2px 12px;}
 .logo{cursor: pointer;float:left;}
-.pcontactus{padding-top:20px;font-size: 16px;font-family: Verdana, Geneva, sans-serif;font-weight: bold;color:#000;text-align:center;}
+.pcontactus{padding-top:40px;font-size: 16px;font-family: Verdana, Geneva, sans-serif;font-weight: bold;color:#000;text-align:center;}
 .paboutus{font-size: 16px;font-family: Verdana, Geneva, sans-serif;font-weight: bold;color:#000;padding-top: 50px;padding-left: 100px;line-height: 30px;}
 #playerContainer{padding-top:50px}
 #videos2{padding-left:30px}
@@ -268,7 +268,7 @@ input[type="button"]:active{background-color:#c7e4f6;}
 .modal_window1 #modal_form {margin-top: 13px;font-family: Verdana, Geneva, sans-serif;color:black;}
 #faqs dt, #faqs dd { padding: 0 0 0 50px }
 #faqs dt { font-size:20px; color: #000; cursor: pointer; height: 37px; line-height: 37px; margin: 0 0 15px 25px}
-#faqs dd { font-size: 14px;font-family: Verdana, Geneva, sans-serif; margin: 0 0 20px 25px}
+#faqs dd { font-size: 14px;font-family: Verdana, Geneva, sans-serif; margin: 0 0 20px 25px;color: #000;}
 #faqs dd ul{margin-left: 30px;}
 #faqs dt { background: url(../images/expand-icon.png) no-repeat left}
 #faqs .expanded { background: url(../images/expanded-icon.png) no-repeat left}
