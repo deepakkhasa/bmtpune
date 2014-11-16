@@ -84,8 +84,11 @@ public class Vijay extends Controller {
       }
       SessionKey session = result.getSessionKey();
       GetList getList = new GetList(key, session);
+      conn.execute(getList);
       GetListResponse resultList = conn.execute(getList);
       List<Documents> documents =new ArrayList<Documents>();
+      SimpleDateFormat IN_DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+      SimpleDateFormat OUT_DATE_FORMAT = new SimpleDateFormat("EEE, d MMM yyyy hh:mm aaa");
       for (GetListResponse.Entry res : resultList.getResultSet().getEntries()) {
     	  	Documents d1 = new Documents();
     	  	d1.title = res.getTitle();
@@ -94,16 +97,31 @@ public class Vijay extends Controller {
     	  	d1.description = res.getDescription();
     	  	d1.thumbNailURI =res.getThumbnailUrl().toString();
     	  	d1.accessKey= res.getAccessKey();
+    	  	try{
+    	  		d1.whenUploaded =OUT_DATE_FORMAT.format(IN_DATE_FORMAT.parse(res.getWhenUploaded()));
+        	  	d1.whenUpdated = OUT_DATE_FORMAT.format(IN_DATE_FORMAT.parse(res.getWhenUpdated()));
+    	  	}catch(ParseException e){
+    	  		System.out.println("error");
+    	  	}
+    	  	
+    	  	d1.reads = res.getReads();
+    	  	d1.pageCount = res.getPageCount();
     	  	documents.add(d1);
       }
       
       Collections.sort(documents, new Comparator<Documents>(){
+          SimpleDateFormat IN_DATE_FORMAT = new SimpleDateFormat("EEE, d MMM yyyy hh:mm aaa");
     	  public int compare(Documents s1, Documents s2) {
-    		    if (s1.docId > s2.docId) {
+    		  try{
+      		    if (IN_DATE_FORMAT.parse(s1.whenUpdated).after(IN_DATE_FORMAT.parse(s2.whenUpdated))) {
     		        return -1;
-    		      } else if (s1.docId < s2.docId) {
+    		      } else if (IN_DATE_FORMAT.parse(s1.whenUpdated).before(IN_DATE_FORMAT.parse(s2.whenUpdated))) {
     		        return 1;
     		      }  
+    			  
+    		  }catch(ParseException e){
+      	  		System.out.println("error1");
+      	  	}
     		      return 0;
     	  }
     	});
