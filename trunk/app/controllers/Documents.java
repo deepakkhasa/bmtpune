@@ -9,4 +9,8 @@ public class Documents {
 	public String description;
 	public String thumbNailURI;
 	public String accessKey;
+	public String whenUploaded;
+	public String whenUpdated;
+	public Integer reads;
+	public Integer pageCount;
 }

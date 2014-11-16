@@ -11,7 +11,7 @@
 		<meta Name="author" Content="Appment"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
   		<meta name="robots" content="index, follow" />
-  		<meta name="keywords" content="HEMATOLOGY,Dr Vijay Ramanan, Best Hematologist, best bone marrow stem cell transplant in India, leading bone marrow transplant physician, Clinical Hematologist/Oncologist/ Bone Marrow Transplantation, Pune.,Medical Tourism,leading bone marrow transplan center, best thalassemia doctor, best myeloma, lymphoma treatment" />
+  		<meta name="keywords" content="HEMATOLOGY,Dr Vijay Ramanan, Best Hematologist, best bone marrow stem cell transplant in India, leading bone marrow transplant physician, Clinical Hematologist/Oncologist/ Bone Marrow Transplantation, Pune.,Medical Tourism,leading bone marrow transplan center, best thalassemia doctor, best myeloma, lymphoma treatment,best bone marrow and stem cell transplant with comprehensive care of blood cancers,aplastic anemia" />
   		<meta name="title" content="Dr. Vijay Ramanan | Hematologist" />  		
 	    <meta charset="utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -174,6 +174,18 @@
                 </div>
             </div>
 
+
+            <div class="item ">
+                <img src="/assets/images/story7.jpg" alt="Second slide">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1></h1>
+                        <p></p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
             <div class="item ">
                 <img src="/assets/images/story4.jpg" alt="Second slide">
                 <div class="container">
@@ -249,11 +261,20 @@
             </div>
             <!-- /.col-lg-4 -->
             <div class="col-lg-4">
-                <!-- <img class="img-circle" src="http://pinegrow.com/placeholders/img8.jpg" alt="Generic placeholder image"> -->
-                <h2>Our Apps</h2>
-                <p>We have apps which will help you do anemia diagnosis on your own!!! Also there are other apps for Thalessemia, anemia etc. Currently these are only Android apps.</p>
-                <p><a class="btn btn-default" href="https://play.google.com/store/search?q=pub:Padmaraj%20Madatha" role="button" target="_blank"> View details »</a>
-                </p>
+				<!-- 	<div class="col-md-4"> -->
+						<div class="panel panel-default">
+							<div class="panel-heading"> <span class="glyphicon glyphicon-list-alt"></span><b>News</b></div>
+								<div class="panel-body">
+									<div class="row">
+										<div class="col-xs-12">
+											<ul id="demo3">
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="panel-footer"> </div>
+							</div>
+						<!-- </div> -->
             </div>
             <!-- /.col-lg-4 -->
         </div>
@@ -289,24 +310,24 @@
         <hr class="featurette-divider">
 
         <div class="row featurette">
-            <div class="col-md-7">
-                <h2 class="featurette-heading">If you want to participate in clinical studies. <span class="text-muted"></span></h2>
-                <p class="lead"><br><a href="https://play.google.com/store/search?q=padmaraj&c=apps&hl=en" target="_blank">Know More</a></p>
-            </div>
             <div class="col-md-5">
-                <img class="featurette-image img-responsive" src="assets/images/clinical.jpg" alt="Generic placeholder image">
+                <img class="featurette-image img-responsive" src="assets/images/lab.jpg" alt="Generic placeholder image">
+            </div>
+            <div class="col-md-7">
+                <h2 class="featurette-heading">We have affiliation with Anjali Labs.<span class="text-muted"></span></h2>
+                <p class="lead">Anjali Labs, lead by Dr. Ketki Kelkar Ramanan is leading lab. It is contributing to cutting edge reasearch with <a href="http://www.genepathdx.com/" target="_blank">genepath<a>.<br><a href="labs" target="_blank">Know More</a></p>
             </div>
         </div>
 
         <hr class="featurette-divider">
 
         <div class="row featurette">
-            <div class="col-md-5">
-                <img class="featurette-image img-responsive" src="assets/images/lab.jpg" alt="Generic placeholder image">
-            </div>
             <div class="col-md-7">
-                <h2 class="featurette-heading">We have affiliation with Anjali Labs.<span class="text-muted"></span></h2>
-                <p class="lead">Anjali Labs, lead by Dr. Ketki Kelkar Ramanan is leading lab. It is contributing to cutting edge reasearch with genepath..<br><a href="labs" target="_blank">Know More</a></p>
+                <h2 class="featurette-heading">If you want to participate in clinical studies.<span class="text-muted"></span></h2>
+                <p class="lead">If you would like to Donate for poor please click <a href="http://mvrfoundation.org/" target="_blank">here</a>.<br><a href="https://play.google.com/store/search?q=padmaraj&c=apps&hl=en" target="_blank">Know More</a></p>
+            </div>
+            <div class="col-md-5">
+                <img class="featurette-image img-responsive" src="assets/images/clinical.jpg" alt="Generic placeholder image">
             </div>
         </div>
 
@@ -353,12 +374,40 @@
   </div>
   </form>
 </div>
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="assets/javascripts/jquery.bootstrap.newsbox.min.js" type="text/javascript"></script>
     <script src="assets/javascripts/bootstrap.min.js"></script>
+<script type="text/javascript">
+
+$.ajax({
+    type: "GET",
+    url: "https://spreadsheets.google.com/feeds/list/1H8h4m8gP9W5VFPKPFoUIw1249_yzitZHZsoVmYn43fk/od6/public/values?alt=json", //process to mail
+    success: function(data){
+    	var newsdata = data.feed.entry;
+    	var news="";
+    	for(var n in newsdata){
+    		news=news+
+    		"<li class=\"news-item\">"+newsdata[n].gsx$description.$t+" "+"<a href=\""+newsdata[n].gsx$url.$t+"\" target=\"_blank\">Read more...</a></li>";
+    	}
+    	$("#demo3").html(news);
+    	$("#demo3").bootstrapNews({
+    	    newsPerPage: 3,
+    	    autoplay: false,
+    	    
+    	    onToDo: function () {
+    	        //console.log(this);
+    	    }
+    	});
+    },
+    error: function(){
+        alert("failure");
+    }
+});
+
+</script>
 
 </body>
 
