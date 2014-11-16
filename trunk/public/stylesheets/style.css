@@ -28,3 +28,35 @@
 .navbar-custom .icon-bar {
   	background-color:#105d89;
 }
+.list-group-item> p{
+	text-align:left;
+	padding-left:20px;
+}
+.fine-print{
+	font-size: 12px;
+	font-weight: bold;
+	color: grey;
+}
+
+.fine-print > span{
+	padding-right: 15px;
+}
+.glyphicon {
+margin-right: 4px !important; /*override*/
+}
+.pagination .glyphicon {
+margin-right: 0px !important; /*override*/
+}
+.pagination a {
+color: #555;
+}
+.panel ul {
+padding: 0px;
+margin: 0px;
+list-style: none;
+}
+.news-item {
+padding: 4px 4px;
+margin: 0px;
+border-bottom: 1px dotted #555;
+}
